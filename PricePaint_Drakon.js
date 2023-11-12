@@ -385,7 +385,7 @@ function table_Copy_Test() {
       // Ожидаемый результат
       const wanted = [[1, 2], [3, 4]];
     // item 188
-    if (arrays_Eual(wanted,
+    if (arrays_Equal(wanted,
 	   	table_New)) {
         
     } else {
