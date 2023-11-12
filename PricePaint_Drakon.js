@@ -118,7 +118,7 @@ function SKUs_Hystory_Row_Add(table, SKU, price) {
     // item 227
     // ДатаВремя	Артикул	Цена	Пользователь
     
-    const row[1D] = [];
+    const row_1D = [];
     
     row_1D[0] = new Date().toISOString().slice(0, 10);
     
