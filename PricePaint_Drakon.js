@@ -44,7 +44,6 @@ function NS() {
     // item 37
     /**
     В JS функция это глобальная переменная
-    
     */
 }
 
@@ -276,7 +275,17 @@ JSON.stringify(table)) {
 }
 
 function table_Row_by_Column_Value(table, column_Number, needle) {
-    
+    // item 209
+    row_Number = table.find(
+    	row => row[column_Number] === needle);
+    // item 210
+    if (row_Number) {
+        // item 213
+        return row_Number;
+    } else {
+        // item 214
+        return -1;
+    }
 }
 
 function table_Row_by_Column_Value_Test() {
