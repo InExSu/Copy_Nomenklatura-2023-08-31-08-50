@@ -135,6 +135,34 @@ function SKUs_Hystory_Date_Update_If(table, row, price_New) {
     }
 }
 
+function SKUs_Hystory_Date_Update_If_Test() {
+    // item 258
+      var table = [
+        ["2023-11-12", "SKU1", 20.99, "user1@ex.com"],
+        ["2023-11-13", "SKU2", 30.99, "user2@ex.com"],
+        // ... другие строки
+      ];
+    
+      var row = 1;
+      var price = 40.99; // новая цена
+    
+      // Получаем старую цену для сравнения
+      var price_Old = table[row][2];
+    
+      SKUs_Hystory_Date_Update_If(table, row, price);
+    // item 259
+    const price_New = table[row][2];
+    // item 260
+    if (price_New === price_Old) {
+        // item 264
+        Logger.log(
+        	'Ошибка в ' + 
+        	'SKUs_Hystory_Date_Update_If_Test');
+    } else {
+        
+    }
+}
+
 function SKUs_Hystory_Row_Add(table, SKU, price) {
     // item 227
     // ДатаВремя	Артикул	Цена	Пользователь
