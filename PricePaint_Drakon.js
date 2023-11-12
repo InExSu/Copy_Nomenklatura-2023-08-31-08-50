@@ -29,6 +29,7 @@ function AMain_Drakon(cell) {
 
 function ATests_RUN() {
     // item 169
+    ranges_2_NS_Test();
     SKUs_History_Update_Test();
     cellS_Has_SKU_Test();
     string_Filter_Test();
@@ -207,7 +208,7 @@ function ranges_2_NS() {
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
 }
 
-function ranges_2_NS_Tests() {
+function ranges_2_NS_Test() {
     // item 151
     console.time('range_2_NS');
     // item 153

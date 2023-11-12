@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Достать из файла строки ^function.*_Test
+# вывести их на экран
+
 # Путь к вашему файлу
 file_path="PricePaint_Drakon.js"
 
