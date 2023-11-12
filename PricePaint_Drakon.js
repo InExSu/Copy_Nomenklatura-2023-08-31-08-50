@@ -2,11 +2,15 @@
 
 
 function AATests_RUN() {
+    // item 192
+    // Чистые функции
+    string_Filter_Test();
+    table_Copy_Test();
     // item 169
+    // Функции данных
     ranges_2_NS_Test();
     SKUs_History_Update_Test();
     cellS_Has_SKU_Test();
-    string_Filter_Test();
 }
 
 function AMain_Drakon(cell) {
@@ -241,9 +245,30 @@ function string_Filter_Test() {
     
 }
 
-function table_Copy() {
+function table_Copy(table) {
     // item 181
     return table.map(row => [...row]);
+}
+
+function table_Copy_Test() {
+    // item 187
+      // Указываем тестовые данные
+      table = [[1, 2], [3, 4]];
+    
+      // Вызываем функцию копирования
+      table_Copy = table_Copy(table);
+    
+      // Ожидаемый результат
+      wanted = [[1, 2], [3, 4]];
+    // item 188
+    if (JSON.stringify(wanted) === 
+JSON.stringify(table)) {
+        
+    } else {
+        // item 191
+        Logger.Log(
+        	'Ошибка в table_Copy_Test');
+    }
 }
 
 
