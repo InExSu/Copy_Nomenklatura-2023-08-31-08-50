@@ -153,7 +153,7 @@ function cellS_Has_SKU_Test() {
     table_Decision = [ 
     	['A1',    false],
     	['D8',    true],
-    	['Q1123', true]];
+    	['Q123', true]];
     // item 49
     regex = /\d{3}-\d{3}-\d{4}/;
     
