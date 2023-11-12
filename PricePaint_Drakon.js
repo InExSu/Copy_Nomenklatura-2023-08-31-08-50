@@ -19,7 +19,8 @@ function AATests_RUN() {
 function AMain_Drakon(cell) {
     var _sw150000_ = 0;
     // item 150000
-    _sw150000_ = cellS_Has_SKU(cell, 
+    _sw150000_ = cellS_Has_SKU(
+    	cell, 
     	/\d{3}-\d{3}-\d{4}/);
     // item 150001
     if (_sw150000_ === true) {
@@ -27,6 +28,8 @@ function AMain_Drakon(cell) {
         ranges_2_NS();
         // item 23
         SKUs_History_Update();
+        // item 357
+        price_BackGrounds_Paint();
         // item 123
         NS.range_Prices
         	.getBackgrounds(
@@ -319,6 +322,32 @@ function cellS_Has_SKU_Test() {
         }
         // item 1350003
         _ind135++;
+    }
+}
+
+function price_BackGrounds_Paint() {
+    // item 363
+    //TODO
+    // item 3640001
+    let row = 0;
+    while (true) {
+        // item 3640002
+        if (row < NS.array_SKUs_3D) {
+            
+        } else {
+            break;
+        }
+        // item 365
+        var array_SKUs = 
+        	string_Filter(
+        		row[column_SKUs],
+        		NS.sku_Regex);
+        // item 366
+        array_SKUs = 
+        	array_Trim(
+        		array_SKUs);
+        // item 3640003
+        row ++;
     }
 }
 
