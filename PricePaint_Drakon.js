@@ -83,6 +83,14 @@ function SKUs_History_Update() {
             var sku = _col94[_ind94];
             // item 163
             //TODO: продолжи
+            // item 173
+            if (SKU_In_History(
+	sku, 
+	SKUs_History)) {
+                
+            } else {
+                
+            }
             // item 940003
             _ind94++;
         }
@@ -231,6 +239,11 @@ function string_Filter(string, regex) {
 
 function string_Filter_Test() {
     
+}
+
+function table_Copy() {
+    // item 181
+    return table.map(row => [...row]);
 }
 
 
