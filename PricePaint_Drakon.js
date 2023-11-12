@@ -195,8 +195,8 @@ function ranges_2_NS() {
     
     NS.spread = SpreadsheetApp.getActive();
     
-    NS.sheet_Price_NDS_NO = spread.getSheetByName('Прайс без НДС');
-    NS.sheet_SKUs_History = spread.getSheetByName('Прайс без НДС Артикулы история');
+    NS.sheet_Price_NDS_NO = NS.spread.getSheetByName('Прайс без НДС');
+    NS.sheet_SKUs_History = NS.spread.getSheetByName('Прайс без НДС Артикулы история');
     
     NS.range_Prices = NS.sheet_Price_NDS_NO.getRange('C1:H');
     NS.array_Prices = NS.range_Prices.getValues();
