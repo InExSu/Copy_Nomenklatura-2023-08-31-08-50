@@ -6,6 +6,7 @@ function AATests_RUN() {
     // Чистые функции
     string_Filter_Test();
     table_Copy_Test();
+    table_Row_by_Column_Value_Test()l
     // item 169
     // Функции данных
     ranges_2_NS_Test();
@@ -45,25 +46,6 @@ function NS() {
     В JS функция это глобальная переменная
     
     */
-}
-
-function SKU_In_History(SKU, SKUs_History) {
-    
-}
-
-function SKU_In_History_Test() {
-    // item 204
-    table = [[1, 2], [3, 4]];
-    
-    result = SKU_In_History(3, table)
-    // item 205
-    if (result === 1) {
-        
-    } else {
-        // item 208
-        Logger.log(
-        	'ОШибка в SKU_In_History_Test');
-    }
 }
 
 function SKUs_History_Update() {
@@ -107,9 +89,11 @@ function SKUs_History_Update() {
             // item 163
             //TODO: продолжи
             // item 173
-            if (SKU_In_History(
-	SKU, 
-	NS.array_SKUs_History)) {
+            if (table_Row_by_Column_Value(
+	NS.array_SKUs_History,
+	1,
+	SKU
+	)) {
                 
             } else {
                 
@@ -288,6 +272,26 @@ JSON.stringify(table)) {
         // item 191
         Logger.Log(
         	'Ошибка в table_Copy_Test');
+    }
+}
+
+function table_Row_by_Column_Value(table, column_Number, needle) {
+    
+}
+
+function table_Row_by_Column_Value_Test() {
+    // item 204
+    table = [[1, 2], [3, 4]];
+    
+    result = table_Row_by_Column_Value(
+    		table, 1, 3);
+    // item 205
+    if (result === 1) {
+        
+    } else {
+        // item 208
+        Logger.log(
+        	'ОШибка в SKU_In_History_Test');
     }
 }
 
