@@ -294,7 +294,7 @@ function table_Row_by_Column_Value(table, column_Number, needle) {
     let row = 0;
     while (true) {
         // item 2150002
-        if (rpw < table.length) {
+        if (row < table.length) {
             
         } else {
             break;
