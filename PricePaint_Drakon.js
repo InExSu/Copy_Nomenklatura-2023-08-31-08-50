@@ -6,7 +6,7 @@ function AATests_RUN() {
     // Чистые функции
     string_Filter_Test();
     table_Copy_Test();
-    table_Row_by_Column_Value_Test()l
+    table_Row_by_Column_Value_Test();
     // item 169
     // Функции данных
     ranges_2_NS_Test();
