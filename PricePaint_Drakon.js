@@ -275,17 +275,27 @@ JSON.stringify(table_New)) {
 }
 
 function table_Row_by_Column_Value(table, column_Number, needle) {
-    // item 209
-    const row_Number = table.find(
-    	row => row[column_Number] === needle);
-    // item 210
-    if (row_Number) {
-        // item 213
-        return row_Number;
-    } else {
-        // item 214
-        return -1;
+    // item 2150001
+    let row = 0;
+    while (true) {
+        // item 2150002
+        if (rpw < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 210
+        if (table[row][column_Number] === needle;) {
+            // item 213
+            return row;
+        } else {
+            
+        }
+        // item 2150003
+        row++;
     }
+    // item 214
+    return -1;
 }
 
 function table_Row_by_Column_Value_Test() {
