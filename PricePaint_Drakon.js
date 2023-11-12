@@ -175,7 +175,7 @@ function cellS_Has_SKU_Test() {
         var row = _col135[_ind135];
         // item 137
         cell = sheet.getRange(row[0]);
-        result = cells_Has_SKU(cell);
+        result = cellS_Has_SKU(cell);
         // item 138
         if (result === row[1]) {
             
