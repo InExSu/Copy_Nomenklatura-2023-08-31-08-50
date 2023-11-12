@@ -284,7 +284,7 @@ function table_Row_by_Column_Value_Test() {
     table = [[1, 2], [3, 4]];
     
     result = table_Row_by_Column_Value(
-    		table, 1, 3);
+    		table, 0, 3);
     // item 205
     if (result === 1) {
         
