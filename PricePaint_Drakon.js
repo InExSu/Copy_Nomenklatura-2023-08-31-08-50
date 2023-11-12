@@ -135,14 +135,10 @@ function SKUs_Hystory_Row_Add(table, SKU, price) {
 function SKUs_Hystory_Row_Add_Test() {
     // item 234
       // Создаем временный массив для тестов
-      var testTable = [
+        table = [
         ["2023-11-12", "SKU1", 20.99, "user1@example.com"],
         ["2023-11-13", "SKU2", 30.99, "user2@example.com"],
-        // ... другие строки
       ];
-    
-      //  глобальный объект table)
-      table = testTable;
     
       // Задаем SKU и price для теста
       var testSKU = "TestSKU";
@@ -151,8 +147,7 @@ function SKUs_Hystory_Row_Add_Test() {
       // Вызываем функцию добавления строки
       SKUs_Hystory_Row_Add(table, testSKU, testPrice);
     // item 235
-    if (table.length === 
-testTable.length + 1) {
+    if (table.length === 3) {
         
     } else {
         // item 238
