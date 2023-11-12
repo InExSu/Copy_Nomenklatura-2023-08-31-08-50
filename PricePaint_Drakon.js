@@ -51,18 +51,14 @@ function SKUs_History_Update() {
     // item 97
     const column_SKUs = 1;
     // item 920001
-    var _ind92 = 0;
-    var _col92 = NS.array_SKUs_3D;
-    var _len92 = _col92.length;
+    let row = 0;
     while (true) {
         // item 920002
-        if (_ind92 < _len92) {
+        if (row < NS.array_SKUs_3D) {
             
         } else {
             break;
         }
-        // item 920004
-        var row = _col92[_ind92];
         // item 96
         var array_SKUs = 
         	string_Filter(
@@ -73,35 +69,37 @@ function SKUs_History_Update() {
         	array_Trim(
         		array_SKUs);
         // item 940001
-        var _ind94 = 0;
-        var _col94 = array_SKUs;
-        var _len94 = _col94.length;
+        let i = 0;
         while (true) {
             // item 940002
-            if (_ind94 < _len94) {
+            if (i < array_SKUs.length) {
                 
             } else {
                 break;
             }
-            // item 940004
-            var SKU = _col94[_ind94];
             // item 163
             //TODO: продолжи
+            // item 219
+            const row_SKU = table_Row_by_Column_Value(
+            		NS.array_SKUs_History,
+            		1,
+            		SKU);
             // item 173
-            if (table_Row_by_Column_Value(
-	NS.array_SKUs_History,
-	1,
-	SKU
-	)) {
-                
+            if (row_SKU > -1) {
+                // item 220
+                const column_Price = column_SKUs - 9;
+                // item 218
+                const price = NS.array_Prices[row][column_Price];
+                // item 217
+                SKUs_Hystory_Row_Add(table, price);
             } else {
                 
             }
             // item 940003
-            _ind94++;
+            i++;
         }
         // item 920003
-        _ind92++;
+        row ++;
     }
 }
 
@@ -114,6 +112,23 @@ function SKUs_History_Update_Test() {
     // item 160
     console.timeEnd(
     	'SKUs_History_Update');
+}
+
+function SKUs_Hystory_Row_Add(table, SKU, price) {
+    // item 227
+    // ДатаВремя	Артикул	Цена	Пользователь
+    
+    const row[1D] = [];
+    
+    row_1D[0] = new Date().toISOString().slice(0, 10);
+    
+    row_1D[1] = SKU;
+    
+    row_1D[2] = price;
+    
+    row_1D[3] = Session.getActiveUser().getEmail();
+    // item 228
+    table.push(row_1D);
 }
 
 function array_Trim(array) {
