@@ -47,6 +47,10 @@ function NS() {
     */
 }
 
+function SKU_In_History(SKU, SKUs_History) {
+    
+}
+
 function SKUs_History_Update() {
     // item 97
     column_SKUs = 1
@@ -84,13 +88,13 @@ function SKUs_History_Update() {
                 break;
             }
             // item 940004
-            var sku = _col94[_ind94];
+            var SKU = _col94[_ind94];
             // item 163
             //TODO: продолжи
             // item 173
             if (SKU_In_History(
-	sku, 
-	SKUs_History)) {
+	SKU, 
+	NS.array_SKUs_History)) {
                 
             } else {
                 
@@ -221,6 +225,7 @@ function ranges_2_NS() {
     NS.array_SKUs_3D = NS.range_SKUs_3D.getValues();
     
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
+    NS.array_SKUs_History = NS.range_SKUs_History.getValues();
 }
 
 function ranges_2_NS_Test() {
