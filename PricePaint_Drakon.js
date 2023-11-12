@@ -219,8 +219,7 @@ function ranges_2_NS_Test() {
 
 function string_Filter(string, regex) {
     // item 105
-    return 
-    	string
+    return string
     	.split(',')
     	.filter(
     		item => regex.test(item)
