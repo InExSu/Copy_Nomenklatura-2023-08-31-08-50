@@ -27,6 +27,13 @@ function AMain_Drakon(cell) {
     }
 }
 
+function ATests_RUN() {
+    // item 169
+    SKUs_History_Update_Test();
+    cellS_Has_SKU_Test();
+    string_Filter_Test();
+}
+
 function NS() {
     // item 37
     /**
@@ -97,7 +104,8 @@ function SKUs_History_Update_Test() {
 function array_Trim(array) {
     // item 116
     return array.map(
-    		item => item.toString().trim());
+    		item => item.toString().trim()
+    		);
 }
 
 function assert(condition) {
@@ -214,7 +222,8 @@ function string_Filter(string, regex) {
     	string
     	.split(',')
     	.filter(
-    		item => regex.test(item));
+    		item => regex.test(item)
+    		);
 }
 
 function string_Filter_Test() {
