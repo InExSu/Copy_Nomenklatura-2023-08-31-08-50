@@ -98,7 +98,7 @@ function SKUs_History_Update_Test() {
     // item 161
     SKUs_History_Update();
     // item 160
-    console.Endtime(
+    console.timeEnd(
     	'SKUs_History_Update');
 }
 
@@ -214,7 +214,7 @@ function ranges_2_NS_Test() {
     // item 153
     ranges_2_NS();
     // item 152
-    console.Endtime('range_2_NS');
+    console.timeEnd('range_2_NS');
 }
 
 function string_Filter(string, regex) {
