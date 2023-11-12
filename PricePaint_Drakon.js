@@ -49,7 +49,7 @@ function NS() {
 
 function SKUs_History_Update() {
     // item 97
-    column_SKUs = 1
+    const column_SKUs = 1;
     // item 920001
     var _ind92 = 0;
     var _col92 = NS.array_SKUs_3D;
@@ -64,7 +64,7 @@ function SKUs_History_Update() {
         // item 920004
         var row = _col92[_ind92];
         // item 96
-        array_SKUs = 
+        var array_SKUs = 
         	string_Filter(
         		row[column_SKUs],
         		NS.sku_Regex);
@@ -164,14 +164,14 @@ function cellS_Has_SKU(cell, regex) {
 
 function cellS_Has_SKU_Test() {
     // item 134
-    table_Decision = [ 
+    const table_Decision = [ 
     	['A1',    false],
     	['D8',    true],
     	['Q123', true]];
     // item 49
-    regex = /\d{3}-\d{3}-\d{4}/;
+    const regex = /\d{3}-\d{3}-\d{4}/;
     
-    sheet = SpreadsheetApp
+    const sheet = SpreadsheetApp
     	.getActiveSpreadsheet()
     	.getSheetByName('Прайс без НДС')
     // item 1350001
@@ -188,9 +188,9 @@ function cellS_Has_SKU_Test() {
         // item 1350004
         var row = _col135[_ind135];
         // item 137
-        cell = sheet.getRange(row[0]);
+        const cell = sheet.getRange(row[0]);
         
-        result = cellS_Has_SKU(
+        const result = cellS_Has_SKU(
         		cell,
         		regex);
         // item 138
@@ -256,13 +256,13 @@ function table_Copy(table) {
 function table_Copy_Test() {
     // item 187
       // Указываем тестовые данные
-      table = [[1, 2], [3, 4]];
+      const table = [[1, 2], [3, 4]];
     
       // Вызываем функцию копирования
-      table_Copy = table_Copy(table);
+      const table_Copy = table_Copy(table);
     
       // Ожидаемый результат
-      wanted = [[1, 2], [3, 4]];
+      const wanted = [[1, 2], [3, 4]];
     // item 188
     if (JSON.stringify(wanted) === 
 JSON.stringify(table)) {
@@ -276,7 +276,7 @@ JSON.stringify(table)) {
 
 function table_Row_by_Column_Value(table, column_Number, needle) {
     // item 209
-    row_Number = table.find(
+    const row_Number = table.find(
     	row => row[column_Number] === needle);
     // item 210
     if (row_Number) {
@@ -290,9 +290,9 @@ function table_Row_by_Column_Value(table, column_Number, needle) {
 
 function table_Row_by_Column_Value_Test() {
     // item 204
-    table = [[1, 2], [3, 4]];
+    const table = [[1, 2], [3, 4]];
     
-    result = table_Row_by_Column_Value(
+    const result = table_Row_by_Column_Value(
     		table, 0, 3);
     // item 205
     if (result === 1) {
@@ -300,7 +300,7 @@ function table_Row_by_Column_Value_Test() {
     } else {
         // item 208
         Logger.log(
-        	'ОШибка в SKU_In_History_Test');
+        	'ОШибка в table_Row_by_Column_Value_Test);
     }
 }
 
