@@ -8,6 +8,7 @@ function AATests_RUN() {
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
     SKUs_Hystory_Row_Add_Test();
+    SKUs_Hystory_Date_Update_If_Test();
     // item 169
     // Функции данных
     ranges_2_NS_Test();
