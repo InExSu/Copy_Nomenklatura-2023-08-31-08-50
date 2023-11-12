@@ -298,10 +298,11 @@ function table_Row_by_Column_Value_Test() {
     if (result === 1) {
         
     } else {
-        // item 208
-        Logger.log(
-        	'ОШибка в table_Row_by_Column_Value_Test);
+        
     }
+    // item 208
+    Logger.log(
+    	'ОШибка в table_Row_by_Column_Value_Test');
 }
 
 
