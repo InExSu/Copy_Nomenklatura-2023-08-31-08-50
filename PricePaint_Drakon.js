@@ -101,7 +101,7 @@ function SKUs_History_Update() {
             } else {
                 // item 240
                 SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
-                			   row, 
+                			   row_SKU, 
                 			   price);
             }
             // item 940003
@@ -227,26 +227,26 @@ function SKUs_Hystory_Row_Add_Test() {
 }
 
 function array_Trim(array) {
-    // item 116
+    // item 290
     return array.map(
     		item => item.toString().trim()
     		);
 }
 
 function arrays_Equal(left, right) {
-    // item 271
+    // item 356
     return  JSON.stringify(left) === 
     	JSON.stringify(right)
 }
 
 function assert(condition) {
-    // item 118
+    // item 346
     if (condition) {
-        // item 122
+        // item 350
         Logger.log(
         	'Test Passed!')
     } else {
-        // item 121
+        // item 349
         Logger.log(
         	'Test Failed!');
     }
@@ -352,7 +352,7 @@ function ranges_2_NS_Test() {
 }
 
 function string_Filter(string, regex) {
-    // item 105
+    // item 296
     return string
     	.split(',')
     	.filter(
@@ -370,12 +370,12 @@ function table_2_Range(a2, cell) {
 }
 
 function table_Copy(table) {
-    // item 181
+    // item 307
     return table.map(row => [...row]);
 }
 
 function table_Copy_Test() {
-    // item 187
+    // item 313
       // Указываем тестовые данные
       const table = [[1, 2], [3, 4]];
     
@@ -384,52 +384,52 @@ function table_Copy_Test() {
     
       // Ожидаемый результат
       const wanted = [[1, 2], [3, 4]];
-    // item 188
+    // item 314
     if (arrays_Equal(wanted,
 	   	table_New)) {
         
     } else {
-        // item 191
+        // item 317
         Logger.Log(
         	'Ошибка в table_Copy_Test');
     }
 }
 
 function table_Row_by_Column_Value(table, column_Number, needle) {
-    // item 2150001
+    // item 3290001
     let row = 0;
     while (true) {
-        // item 2150002
+        // item 3290002
         if (row < table.length) {
             
         } else {
             break;
         }
-        // item 210
+        // item 324
         if (table[row][column_Number] === needle) {
-            // item 213
+            // item 327
             return row;
         } else {
             
         }
-        // item 2150003
+        // item 3290003
         row++;
     }
-    // item 214
+    // item 328
     return -1;
 }
 
 function table_Row_by_Column_Value_Test() {
-    // item 204
+    // item 336
     const table = [[1, 2], [3, 4]];
     
     const result = table_Row_by_Column_Value(
     		table, 0, 3);
-    // item 205
+    // item 337
     if (result === 1) {
         
     } else {
-        // item 208
+        // item 340
         Logger.log(
           'Ошибка в ' +
           'table_Row_by_Column_Value_Test'
