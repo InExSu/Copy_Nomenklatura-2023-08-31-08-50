@@ -326,8 +326,6 @@ function cellS_Has_SKU_Test() {
 }
 
 function price_BackGrounds_Paint() {
-    // item 363
-    //TODO
     // item 3640001
     let row = 0;
     while (true) {
@@ -346,6 +344,8 @@ function price_BackGrounds_Paint() {
         array_SKUs = 
         	array_Trim(
         		array_SKUs);
+        // item 363
+        //TODO
         // item 3640003
         row ++;
     }
