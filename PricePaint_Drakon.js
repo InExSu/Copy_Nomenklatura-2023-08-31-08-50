@@ -236,7 +236,7 @@ function array_Trim(array) {
 function arrays_Equal(left, right) {
     // item 271
     return  JSON.stringify(left) === 
-    	JSON.stringify(rigth)
+    	JSON.stringify(right)
 }
 
 function assert(condition) {
