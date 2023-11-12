@@ -259,13 +259,13 @@ function table_Copy_Test() {
       const table = [[1, 2], [3, 4]];
     
       // Вызываем функцию копирования
-      const table_Copy = table_Copy(table);
+      const table_New = table_Copy(table);
     
       // Ожидаемый результат
       const wanted = [[1, 2], [3, 4]];
     // item 188
     if (JSON.stringify(wanted) === 
-JSON.stringify(table)) {
+JSON.stringify(table_New)) {
         
     } else {
         // item 191
