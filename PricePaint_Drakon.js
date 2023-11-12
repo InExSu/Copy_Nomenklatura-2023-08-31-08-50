@@ -52,6 +52,10 @@ function NS() {
 function SKUs_History_Update() {
     // item 97
     const column_SKUs = 1;
+    // item 265
+    const array_SKUs_History_Old = 
+    	table_Copy(
+    		NS.array_SKUs_History);
     // item 920001
     let row = 0;
     while (true) {
@@ -91,11 +95,12 @@ function SKUs_History_Update() {
             // item 173
             if (row_SKU > -1) {
                 // item 217
-                SKUs_Hystory_Row_Add(table, 
-                		     price);
+                SKUs_Hystory_Row_Add(
+                	NS.array_SKUs_History, 
+                	price);
             } else {
                 // item 240
-                SKUs_Hystory_Date_Update_If(table, 
+                SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
                 			   row, 
                 			   price);
             }
@@ -104,6 +109,21 @@ function SKUs_History_Update() {
         }
         // item 920003
         row ++;
+    }
+    // item 272
+    if (arrays_Equal(
+	NS.array_SKUs_History, 
+	array_SKUs_History_Old)) {
+        
+    } else {
+        // item 283
+        const cell = 
+        	NS.sheet_SKUs_History
+        	.getRnage('A1');
+        // item 282
+        table_2_range(
+        	NS.array_SKUs_History,
+        	cell);
     }
 }
 
@@ -211,6 +231,12 @@ function array_Trim(array) {
     return array.map(
     		item => item.toString().trim()
     		);
+}
+
+function arrays_Equal(left, right) {
+    // item 271
+    return  JSON.stringify(left) === 
+    	JSON.stringify(rigth)
 }
 
 function assert(condition) {
@@ -338,6 +364,11 @@ function string_Filter_Test() {
     
 }
 
+function table_2_Range(a2, cell) {
+    // item 281
+    cell.offset(0, 0, a2.length, a2[0].length).setValues(a2);
+}
+
 function table_Copy(table) {
     // item 181
     return table.map(row => [...row]);
@@ -354,8 +385,8 @@ function table_Copy_Test() {
       // Ожидаемый результат
       const wanted = [[1, 2], [3, 4]];
     // item 188
-    if (JSON.stringify(wanted) === 
-JSON.stringify(table_New)) {
+    if (arrays_Eual(wanted,
+	   	table_New)) {
         
     } else {
         // item 191
