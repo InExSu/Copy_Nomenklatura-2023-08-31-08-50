@@ -302,7 +302,8 @@ function table_Row_by_Column_Value_Test() {
     }
     // item 208
     Logger.log(
-    	'ОШибка в table_Row_by_Column_Value_Test');
+    	'ОШибка в 
+        table_Row_by_Column_Value_Test');
 }
 
 
