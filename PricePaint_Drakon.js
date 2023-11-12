@@ -51,6 +51,21 @@ function SKU_In_History(SKU, SKUs_History) {
     
 }
 
+function SKU_In_History_Test() {
+    // item 204
+    table = [[1, 2], [3, 4]];
+    
+    result = SKU_In_History(3, table)
+    // item 205
+    if (result === 1) {
+        
+    } else {
+        // item 208
+        Logger.log(
+        	'ОШибка в SKU_In_History_Test');
+    }
+}
+
 function SKUs_History_Update() {
     // item 97
     column_SKUs = 1
