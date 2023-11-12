@@ -7,6 +7,7 @@ function AATests_RUN() {
     string_Filter_Test();
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
+    SKUs_Hystory_Row_Add_Test();
     // item 169
     // Функции данных
     ranges_2_NS_Test();
@@ -129,6 +130,36 @@ function SKUs_Hystory_Row_Add(table, SKU, price) {
     row_1D[3] = Session.getActiveUser().getEmail();
     // item 228
     table.push(row_1D);
+}
+
+function SKUs_Hystory_Row_Add_Test() {
+    // item 234
+      // Создаем временный массив для тестов
+      var testTable = [
+        ["2023-11-12", "SKU1", 20.99, "user1@example.com"],
+        ["2023-11-13", "SKU2", 30.99, "user2@example.com"],
+        // ... другие строки
+      ];
+    
+      //  глобальный объект table)
+      table = testTable;
+    
+      // Задаем SKU и price для теста
+      var testSKU = "TestSKU";
+      var testPrice = 99.99;
+    
+      // Вызываем функцию добавления строки
+      SKUs_Hystory_Row_Add(table, testSKU, testPrice);
+    // item 235
+    if (table.length === 
+testTable.length + 1) {
+        
+    } else {
+        // item 238
+        Logger.log(
+        	'Ошибка в ' + 
+        	'SKUs_Hystory_Row_Add_Test');
+    }
 }
 
 function array_Trim(array) {
