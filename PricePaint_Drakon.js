@@ -78,23 +78,25 @@ function SKUs_History_Update() {
             } else {
                 break;
             }
-            // item 163
-            //TODO: продолжи
             // item 219
             const row_SKU = table_Row_by_Column_Value(
             		NS.array_SKUs_History,
             		1,
             		SKU);
+            // item 220
+            const column_Price = column_SKUs - 9;
+            
+            const price = NS.array_Prices[row][column_Price];
             // item 173
             if (row_SKU > -1) {
-                // item 220
-                const column_Price = column_SKUs - 9;
-                // item 218
-                const price = NS.array_Prices[row][column_Price];
                 // item 217
-                SKUs_Hystory_Row_Add(table, price);
+                SKUs_Hystory_Row_Add(table, 
+                		     price);
             } else {
-                
+                // item 240
+                SKUs_Hystory_Date_Update_If(table, 
+                			   row, 
+                			   price);
             }
             // item 940003
             i++;
@@ -113,6 +115,24 @@ function SKUs_History_Update_Test() {
     // item 160
     console.timeEnd(
     	'SKUs_History_Update');
+}
+
+function SKUs_Hystory_Date_Update_If(table, row, price_New) {
+    // item 251
+    const price_Old = table[row][2];
+    // item 248
+    if (price_Old !== price_New) {
+        // item 252
+        table[row][0] = new Date().toISOString().slice(0, 10);
+        
+        // артикул без изменений
+        
+        table[row][2] = price_New;
+        
+        table[row][3] = Session.getActiveUser().getEmail();
+    } else {
+        
+    }
 }
 
 function SKUs_Hystory_Row_Add(table, SKU, price) {
