@@ -300,7 +300,7 @@ function table_Row_by_Column_Value(table, column_Number, needle) {
             break;
         }
         // item 210
-        if (table[row][column_Number] === needle;) {
+        if (table[row][column_Number] === needle) {
             // item 213
             return row;
         } else {
