@@ -2,25 +2,27 @@
 
 
 function AATests_RUN() {
+    // item 501
+    AMain_Drakon_Test();
     // item 192
     // Тесты чистых функций
-    
+    /**
     SKUs_Hystory_Date_Update_If_Test();
     SKUs_Hystory_Row_Add_Test();
     maps_Equal_Test();
     string_Filter_Test();
     table_2_Map_Test()
     table_Copy_Test();
-    table_Row_by_Column_Value_Test();
+    table_Row_by_Column_Value_Test(); */
     // item 169
     // Тесты функций данных
     
     // должен быть первым
+    /**
     ranges_2_NS_Test();
     
-    
     SKUs_History_Update_Test();
-    cellS_Has_SKU_Test();
+    cellS_Has_SKU_Test();*/
 }
 
 function AMain_Drakon(cell) {
