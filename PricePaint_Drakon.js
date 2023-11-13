@@ -50,6 +50,7 @@ function AMain_Drakon_TestS() {
     // item 500
     // Тесты общие
     
+    /** 
       const spread = SpreadsheetApp.getActive()  	
       const sheet_Price = spread
     		.getSheetByName('Прайс без НДС');
@@ -62,12 +63,12 @@ function AMain_Drakon_TestS() {
       cell = sheet_Price.getRange('D8');
       console.time('Ячейка нужная');
       AMain_Drakon(cell);
-      console.timeEnd('Ячейка нужная');
+      console.timeEnd('Ячейка нужная');*/
     // item 554
     const SKU_HIstory_Row = 2;
     
     const SKU_Date_Origin = 
-    	SKU_DATE_Get(
+    	SKU_Date_Get(
     		SKU_HIstory_Row);
     
     const date_New = 
