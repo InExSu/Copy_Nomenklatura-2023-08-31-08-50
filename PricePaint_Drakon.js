@@ -3,17 +3,21 @@
 
 function AATests_RUN() {
     // item 192
-    // Чистые функции
+    // Тесты чистых функций
+    
+    SKUs_Hystory_Date_Update_If_Test();
+    SKUs_Hystory_Row_Add_Test();
+    maps_Equal_Test();
     string_Filter_Test();
+    table_2_Map_Test()
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
-    SKUs_Hystory_Row_Add_Test();
-    SKUs_Hystory_Date_Update_If_Test();
     // item 169
-    // Функции данных
-    ranges_2_NS_Test();
+    // Тесты функций данных
+    
     SKUs_History_Update_Test();
     cellS_Has_SKU_Test();
+    ranges_2_NS_Test();
 }
 
 function AMain_Drakon(cell) {
