@@ -487,7 +487,7 @@ function cell_Price_BackGround_Get(row) {
         
         const color = sheet_Price
         	.getRange(row, col)
-        	.getBackGround();
+        	.getBackground();
         // item 594
         return color
     } else {
