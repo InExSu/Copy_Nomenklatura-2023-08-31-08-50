@@ -79,6 +79,16 @@ function AMain_Drakon_TestS() {
     SKU_Date_Set(
     	SKU_HIstory_Row,
     	date_New);
+    // item 597
+    Logger.log(
+    	'Запуск AMain_Drakon ...');
+    // item 596
+    const cell_Price = 
+    	SpreadsheetApp.getActive()
+    	.getSheetByName('Прайс без НДС')
+    	.getRange('D8');
+    
+    AMain_Drakon(cell_Price);
     // item 561
     cell_Price_BackGround =
     	cell_Price_BackGround_Get(
@@ -102,6 +112,11 @@ function AMain_Drakon_TestS() {
     
     SKU_Date_Set(
     	SKU_Date_New);
+    // item 598
+    Logger.log(
+    	'Запуск AMain_Drakon ...');
+    
+    AMain_Drakon(cell_Price);
     // item 562
     cell_Price_BackGround =
     	cell_Price_BackGround_Get(
