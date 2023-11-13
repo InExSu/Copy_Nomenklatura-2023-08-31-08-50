@@ -15,9 +15,12 @@ function AATests_RUN() {
     // item 169
     // Тесты функций данных
     
+    // должен быть первым
+    ranges_2_NS_Test();
+    
+    
     SKUs_History_Update_Test();
     cellS_Has_SKU_Test();
-    ranges_2_NS_Test();
 }
 
 function AMain_Drakon(cell) {
