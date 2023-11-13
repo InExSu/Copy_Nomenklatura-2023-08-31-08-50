@@ -472,7 +472,7 @@ function cell_Price_BackGround_Get(row) {
     	.getRange('C1:H')
     	.getValues();
     // item 587
-    const find = table_Find(table, sku)
+    const find = table_Find(table, SKU)
     // item 588
     if (find[row] > -1) {
         // item 593
