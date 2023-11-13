@@ -383,10 +383,16 @@ map_2.size) {
         let key = entry[0];
         let value = entry[1];
         // item 477
-        if ((map_2.has(key)) || (map_2.get(key) === value)) {
-            
+        if (map_2.has(key)) {
+            // item 480
+            if (map_2.get(key) === value) {
+                
+            } else {
+                // item 483
+                return false
+            }
         } else {
-            // item 483
+            // item 486
             return false
         }
         // item 4750003
