@@ -125,6 +125,22 @@ function NS() {
     
 }
 
+function SKU_Date_Get(row) {
+    // item 573
+    return SpreadsheetApp.getActive()
+    	.getSheetByName('Прайс без НДС Артикулы история')
+    	.getRange('A' + row)
+    	.getValue();
+}
+
+function SKU_Date_Set(row, date) {
+    // item 579
+    return SpreadsheetApp.getActive()
+    	.getSheetByName('Прайс без НДС Артикулы история')
+    	.getRange('A' + row)
+    	.setValue(date);
+}
+
 function SKUs_Date_Newest(SKUs_History, SKUs) {
     // item 439
     const column_Key = 1;
@@ -438,6 +454,42 @@ function cellS_Has_SKU_Test() {
         }
         // item 1350003
         _ind135++;
+    }
+}
+
+function cell_Price_BackGround_Get(row) {
+    // item 585
+    const SKU = SpreadsheetApp.getActive()
+    	.getSheetByName(
+    	'Прайс без НДС Артикулы история')
+    	.getRange('A' + row)
+    	.getValue();
+    // item 586
+    const table =
+    	SpreadsheetApp.getActive()
+    	.getSheetByName('Прайс без НДС')
+    	.getRange('C1:H')
+    	.getValues();
+    // item 587
+    const find = table_Find(table, sku)
+    // item 588
+    if (find[row] > -1) {
+        // item 593
+        const row = find[row] + 1;
+        const col = find[column] + 1;
+        
+        const color = sheet_Price
+        	.getRange(row, col)
+        	.getBackGround();
+        // item 594
+        return color
+    } else {
+        // item 591
+        Logger.log(
+        	'Ошибка в ' +
+        	'cellS_Has_SKU_Test');
+        // item 592
+        return '';
     }
 }
 
