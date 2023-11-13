@@ -41,6 +41,34 @@ function NS() {
     
 }
 
+function SKUs_Date_Newest(SKUs_History, SKUs) {
+    // item 439
+    const column_Key = 1;
+    const column_Item = 0;
+    // item 438
+    const map_SKUs_Dates = 
+    	table_2_Map(
+    		SKUs_History,
+    		column_Key,
+    		column_Item);
+    // item 4350001
+    var _ind435 = 0;
+    var _col435 = SKUs;
+    var _len435 = _col435.length;
+    while (true) {
+        // item 4350002
+        if (_ind435 < _len435) {
+            
+        } else {
+            break;
+        }
+        // item 4350004
+        var sku = _col435[_ind435];
+        // item 4350003
+        _ind435++;
+    }
+}
+
 function SKUs_History_Update() {
     // item 265
     const array_SKUs_History_Old = 
@@ -82,26 +110,26 @@ function SKUs_History_Update() {
                 } else {
                     break;
                 }
+                // item 220
+                const column_Price = col - 9;
+                
+                const price = NS.array_Prices[row][column_Price];
                 // item 219
                 const row_SKU = table_Row_by_Column_Value(
                 		NS.array_SKUs_History,
                 		1,
                 		SKU);
-                // item 220
-                const column_Price = col - 9;
-                
-                const price = NS.array_Prices[row][column_Price];
                 // item 173
                 if (row_SKU > -1) {
-                    // item 217
-                    SKUs_Hystory_Row_Add(
-                    	NS.array_SKUs_History, 
-                    	price);
-                } else {
                     // item 240
                     SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
                     			   row_SKU, 
                     			   price);
+                } else {
+                    // item 217
+                    SKUs_Hystory_Row_Add(
+                    	NS.array_SKUs_History, 
+                    	price);
                 }
                 // item 940003
                 i++;
@@ -458,6 +486,10 @@ function string_Filter_Test() {
         Logger.log(
         	'Ошибка в string_Filter_Test');
     }
+}
+
+function table_2_Map(table, column_Key, column_Item) {
+    
 }
 
 function table_2_Range(a2, cell) {
