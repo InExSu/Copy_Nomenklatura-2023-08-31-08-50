@@ -1,42 +1,48 @@
-
-function table_2_Map_Test() {
-    // Тестовый массив
-    var testTable = [
-      { id: 1, value: 'apple' },
-      { id: 2, value: 'banana' },
-      { id: 3, value: 'orange' },
-      { id: 4, value: 'grape' }
-    ];
-  
-    // Вызываем функцию преобразования в Map
-    var resultMap = table_2_Map(testTable, 'id', 'value');
-  
-    // Ожидаемый результат
-    var expectedMap = new Map([
+function maps_Equal_Test() {
+    // Тестовые Map
+    var map_1 = new Map([
       [1, 'apple'],
       [2, 'banana'],
-      [3, 'orange'],
-      [4, 'grape']
+      [3, 'orange']
     ]);
   
-    // Проверка результата
-    assert(
-      maps_Equal(resultMap, expectedMap),
-      'Тест не пройден: результат не соответствует ожидаемому.'
-    );
-  }
+    var map_2 = new Map([
+      [1, 'apple'],
+      [2, 'banana'],
+      [3, 'orange']
+    ]);
   
-  // Вспомогательная функция для проверки равенства двух Map
-  function maps_Equal(map_1, map_2) {
-    if (map_1.size !== map_2.size) {
-      return false;
-    }
-    for (let [key, value] of map_1) {
-      if (!map_2.has(key) || map_2.get(key) !== value) {
-        return false;
-      }
-    }
-    return true;
+    var map_3 = new Map([
+      [1, 'apple'],
+      [2, 'banana'],
+      [3, 'grape'] // изменено значение
+    ]);
+  
+    var map_4 = new Map([
+      [1, 'apple'],
+      [2, 'banana'],
+      [4, 'orange'] // изменен ключ
+    ]);
+  
+    // Проверка равенства двух одинаковых Map
+    assert(
+      maps_Equal(map_1, map_2),
+      'Тест не пройден: Map1 и Map2 должны быть равны.'
+    );
+  
+    // Проверка неравенства Map с разными значениями
+    assert(
+      !maps_Equal(map_1, map_3),
+      'Тест не пройден: Map1 и Map3 должны быть неравны из-за разных значений.'
+    );
+  
+    // Проверка неравенства Map с разными ключами
+    assert(
+      !maps_Equal(map_1, map_4),
+      'Тест не пройден: Map1 и Map4 должны быть неравны из-за разных ключей.'
+    );
+  
+    console.log('Все тесты завершены.');
   }
   
   // Вспомогательная функция для проверки условия и вывода сообщения об ошибке
@@ -47,4 +53,7 @@ function table_2_Map_Test() {
       console.log('Тест пройден!');
     }
   }
+  
+  // Запуск теста
+  maps_Equal_Test();
   

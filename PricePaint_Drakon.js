@@ -402,6 +402,51 @@ map_2.size) {
     return true
 }
 
+function maps_Equal_Test() {
+    // item 492
+        var map_1 = new Map([
+          [1, 'apple'],
+          [2, 'banana'],
+          [3, 'orange']
+        ]);
+      
+        var map_2 = new Map([
+          [1, 'apple'],
+          [2, 'banana'],
+          [3, 'orange']
+        ]);
+      
+        var map_3 = new Map([
+          [1, 'apple'],
+          [2, 'banana'],
+          [3, 'grape'] // изменено значение
+        ]);
+      
+        var map_4 = new Map([
+          [1, 'apple'],
+          [2, 'banana'],
+          [4, 'orange'] // изменен ключ
+        ]);
+    // item 493
+        // Проверка равенства двух одинаковых Map
+        assert(
+          maps_Equal(map_1, map_2),
+          'Тест не пройден: Map1 и Map2 должны быть равны.'
+        );
+      
+        // Проверка неравенства Map с разными значениями
+        assert(
+          !maps_Equal(map_1, map_3),
+          'Тест не пройден: Map1 и Map3 должны быть неравны из-за разных значений.'
+        );
+      
+        // Проверка неравенства Map с разными ключами
+        assert(
+          !maps_Equal(map_1, map_4),
+          'Тест не пройден: Map1 и Map4 должны быть неравны из-за разных ключей.'
+        );
+}
+
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
