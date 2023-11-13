@@ -474,10 +474,10 @@ function cell_Price_BackGround_Get(row) {
     // item 587
     const find = table_Find(table, SKU)
     // item 588
-    if (find[row] > -1) {
+    if (find.row > -1) {
         // item 593
-        const row = find[row] + 1;
-        const col = find[column] + 1 - 9;
+        const row = find.row + 1;
+        const col = find.column + 1 - 9;
         
         const color = sheet_Price
         	.getRange(row, col)
