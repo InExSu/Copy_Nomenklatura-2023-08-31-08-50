@@ -45,12 +45,17 @@ function SKUs_Date_Newest(SKUs_History, SKUs) {
     // item 439
     const column_Key = 1;
     const column_Item = 0;
-    // item 438
-    const map_SKUs_Dates = 
-    	table_2_Map(
-    		SKUs_History,
-    		column_Key,
-    		column_Item);
+    // item 445
+    if (NS.map_SKUs_Dates === undefined) {
+        // item 438
+        NS.map_SKUs_Dates = 
+        	table_2_Map(
+        		SKUs_History,
+        		column_Key,
+        		column_Item);
+    } else {
+        
+    }
     // item 4350001
     var _ind435 = 0;
     var _col435 = SKUs;
