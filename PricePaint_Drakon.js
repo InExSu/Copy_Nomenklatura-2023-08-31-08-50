@@ -3,7 +3,7 @@
 
 function AATests_RUN() {
     // item 501
-    AMain_Drakon_Test();
+    AMain_Drakon_TestS();
     // item 192
     // Тесты чистых функций
     /**
@@ -46,33 +46,79 @@ function AMain_Drakon(cell) {
     }
 }
 
-function AMain_Drakon_Test() {
+function AMain_Drakon_TestS() {
     // item 500
+    // Тесты общие
+    
       const spread = SpreadsheetApp.getActive()  	
-      const sheet = spread
+      const sheet_Price = spread
     		.getSheetByName('Прайс без НДС');
       
-      let cell = sheet.getRange('A1');
+      let cell = sheet_Price.getRange('A1');
       console.time('Ячейка НЕ нужная');
       AMain_Drakon(cell);
       console.timeEnd('Ячейка НЕ нужная');
     
-      cell = sheet.getRange('D8');
+      cell = sheet_Price.getRange('D8');
       console.time('Ячейка нужная');
       AMain_Drakon(cell);
       console.timeEnd('Ячейка нужная');
-    // item 544
-    sheet_SKUs = spread.
-    		getSheetByName(
-    			'Прайс без НДС Артикулы история');
-    const table = sheet_SKUs.getDataRange();
-    const find = table_Find(table, SKU);
-    // item 545
-    if ((find[row] === undefined) || (find[row] > -1)) {
+    // item 554
+    const SKU_HIstory_Row = 2;
+    
+    const SKU_Date_Origin = 
+    	SKU_DATE_Get(
+    		SKU_HIstory_Row);
+    
+    const date_New = 
+    	new Date()
+    	.toISOString()
+    	.slice(0, 10);
+    
+    SKU_Date_Set(
+    	SKU_HIstory_Row,
+    	date_New);
+    // item 561
+    cell_Price_BackGround =
+    	cell_Price_BackGround_Get(
+    		SKU_HIstory_Row);
+    // item 555
+    if (cell_Price_BackGround ===
+	'yellow') {
         
     } else {
-        
+        // item 558
+        Logger.log(
+        	'Ошибка в ' +
+        	'AMain_Drakon_TestS ' +
+        	'ячейка не стала жёлтой');
     }
+    // item 560
+    const SKU_Date_New = 
+    	new Date()
+    	.toISOString()
+    	.slice(0, 10);
+    
+    SKU_Date_Set(
+    	SKU_Date_New);
+    // item 562
+    cell_Price_BackGround =
+    	cell_Price_BackGround_Get(
+    		SKU_HIstory_Row);
+    // item 563
+    if (cell_Price_BackGround ===
+	'white') {
+        
+    } else {
+        // item 566
+        Logger.log(
+        	'Ошибка в ' +
+        	'AMain_Drakon_TestS ' +
+        	'ячейка не стала белой');
+    }
+    // item 567
+    SKU_Date_Set(
+    	SKU_Date_Origin);
 }
 
 function NS() {
@@ -436,13 +482,15 @@ function maps_Equal_Test() {
         // Проверка неравенства Map с разными значениями
         assert(
           !maps_Equal(map_1, map_3),
-          'Тест не пройден: Map1 и Map3 должны быть неравны из-за разных значений.'
+          'Тест не пройден: Map1 и Map3 должны быть неравны' +
+    	'из-за разных значений.'
         );
       
         // Проверка неравенства Map с разными ключами
         assert(
           !maps_Equal(map_1, map_4),
-          'Тест не пройден: Map1 и Map4 должны быть неравны из-за разных ключей.'
+          'Тест не пройден: Map1 и Map4 должны быть неравны' +
+    	'из-за разных ключей.'
         );
 }
 
