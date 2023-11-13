@@ -452,11 +452,11 @@ function string_Filter_Test() {
     // item 397
     if (arrays_Equal(wanted, 
 		      filtered)) {
+        
+    } else {
         // item 400
         Logger.log(
-        	'Ошибка в table_Copy_Test');
-    } else {
-        
+        	'Ошибка в string_Filter_Test');
     }
 }
 
