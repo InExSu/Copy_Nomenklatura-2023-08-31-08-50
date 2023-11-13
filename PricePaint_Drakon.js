@@ -463,7 +463,7 @@ function cell_Price_BackGround_Get(row) {
     const SKU = SpreadsheetApp.getActive()
     	.getSheetByName(
     	'Прайс без НДС Артикулы история')
-    	.getRange('A' + row)
+    	.getRange('B' + row)
     	.getValue();
     // item 586
     const table =
