@@ -35,13 +35,29 @@ function AMain_Drakon(cell) {
         // item 373
         NS.date_Paint_Start =   
         	new Date(
-        		currentTime - 
+        		new Date().getTime() - 
         		30 * 24 * 60 * 60 * 1000);
         // item 357
         price_BackGrounds_Paint();
     } else {
         
     }
+}
+
+function AMain_Drakon_Test() {
+    // item 500
+      const sheet = SpreadsheetApp.getActive()
+    		.getSheetByName('Прайс без НДС');
+      
+      let cell = sheet.getRange('A1');
+      console.time('Ячейка НЕ нужная');
+      AMain_Drakon(cell);
+      console.timeEnd('Ячейка НЕ нужная');
+    
+      cell = sheet.getRange('D8');
+      console.time('Ячейка нужная');
+      AMain_Drakon(cell);
+      console.timeEnd('Ячейка нужная');
 }
 
 function NS() {
@@ -285,7 +301,7 @@ function assert(condition) {
     // item 346
     if (condition) {
         // item 350
-        Logger.log(
+        // Logger.log(
         	'Test Passed!')
     } else {
         // item 349
