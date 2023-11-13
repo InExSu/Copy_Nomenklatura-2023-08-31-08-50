@@ -48,7 +48,8 @@ function AMain_Drakon(cell) {
 
 function AMain_Drakon_Test() {
     // item 500
-      const sheet = SpreadsheetApp.getActive()
+      const spread = SpreadsheetApp.getActive()  	
+      const sheet = spread
     		.getSheetByName('Прайс без НДС');
       
       let cell = sheet.getRange('A1');
@@ -60,6 +61,18 @@ function AMain_Drakon_Test() {
       console.time('Ячейка нужная');
       AMain_Drakon(cell);
       console.timeEnd('Ячейка нужная');
+    // item 544
+    sheet_SKUs = spread.
+    		getSheetByName(
+    			'Прайс без НДС Артикулы история');
+    const table = sheet_SKUs.getDataRange();
+    const find = table_Find(table, SKU);
+    // item 545
+    if ((find[row] === undefined) || (find[row] > -1)) {
+        
+    } else {
+        
+    }
 }
 
 function NS() {
@@ -687,13 +700,13 @@ function table_Find_Test() {
     // item 518
     if (result1.row === undefined) {
         // item 521
-        Logger.Log(
+        Logger.log(
         	'ОШибка в table_Find_Test');
     } else {
         // item 509
         if (result1.row === -1) {
             // item 512
-            Logger.Log(
+            Logger.log(
             	'ОШибка в table_Find_Test');
         } else {
             
@@ -704,7 +717,7 @@ function table_Find_Test() {
     // item 526
     if (result2.row === undefined) {
         // item 529
-        Logger.Log(
+        Logger.log(
         	'ОШибка в table_Find_Test');
     } else {
         // item 522
@@ -712,7 +725,7 @@ function table_Find_Test() {
             
         } else {
             // item 525
-            Logger.Log(
+            Logger.log(
             	'ОШибка в table_Find_Test');
         }
     }
