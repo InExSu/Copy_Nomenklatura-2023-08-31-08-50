@@ -633,6 +633,91 @@ function table_Copy_Test() {
     }
 }
 
+function table_Find(table, needle) {
+    // item 5350001
+    var row = 0;
+    while (true) {
+        // item 5350002
+        if (row < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 5370001
+        var col = 0;
+        while (true) {
+            // item 5370002
+            if (col < table[row].length) {
+                
+            } else {
+                break;
+            }
+            // item 539
+            if (table[row][col]
+	.toString()
+	.indexOf(needle) > -1) {
+                // item 542
+                return { 
+                	row: row, 
+                	column: col };
+            } else {
+                
+            }
+            // item 5370003
+            col++;
+        }
+        // item 5350003
+        row++;
+    }
+    // item 543
+    return { 
+    	row: -1, 
+    	column: -1 };
+}
+
+function table_Find_Test() {
+    // item 507
+      var table = [
+        ['apple', 'banana', 'cherry'],
+        ['date', 'fig', 'grape'],
+        ['kiwi', 'lemon', 'melon']
+      ];
+    // item 508
+    var result1 = table_Find(table, 'lemon');
+    // item 518
+    if (result1.row === undefined) {
+        // item 521
+        Logger.Log(
+        	'ОШибка в table_Find_Test');
+    } else {
+        // item 509
+        if (result1.row === -1) {
+            // item 512
+            Logger.Log(
+            	'ОШибка в table_Find_Test');
+        } else {
+            
+        }
+    }
+    // item 513
+    var result2 = table_Find(table, 'orange');
+    // item 526
+    if (result2.row === undefined) {
+        // item 529
+        Logger.Log(
+        	'ОШибка в table_Find_Test');
+    } else {
+        // item 522
+        if (result1.row === -1) {
+            
+        } else {
+            // item 525
+            Logger.Log(
+            	'ОШибка в table_Find_Test');
+        }
+    }
+}
+
 function table_Row_by_Column_Value(table, column_Number, needle) {
     // item 3290001
     let row = 0;
