@@ -444,14 +444,14 @@ function string_Filter_Test() {
     
       var testRegex = /^(a|b)/;
     
-      var filteredArray = string_Filter(
-    				testString, 
-    				testRegex);
+      var filtered = string_Filter(
+    			testString, 
+    			testRegex);
     
       var wanted = ["apple", "banana"];
     // item 397
     if (arrays_Equal(wanted, 
-		filtered)) {
+		      filtered)) {
         // item 400
         Logger.Log(
         	'Ошибка в table_Copy_Test');
