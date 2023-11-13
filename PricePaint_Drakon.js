@@ -453,7 +453,7 @@ function string_Filter_Test() {
     if (arrays_Equal(wanted, 
 		      filtered)) {
         // item 400
-        Logger.Log(
+        Logger.log(
         	'Ошибка в table_Copy_Test');
     } else {
         
@@ -486,7 +486,7 @@ function table_Copy_Test() {
         
     } else {
         // item 317
-        Logger.Log(
+        Logger.log(
         	'Ошибка в table_Copy_Test');
     }
 }
