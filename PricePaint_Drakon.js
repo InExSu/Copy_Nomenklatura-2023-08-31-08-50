@@ -136,7 +136,7 @@ function SKU_Date_Get(row) {
 
 function SKU_Date_Set(row, date) {
     // item 579
-    return SpreadsheetApp.getActive()
+    SpreadsheetApp.getActive()
     	.getSheetByName('Прайс без НДС Артикулы история')
     	.getRange('A' + row)
     	.setValue(date);
@@ -469,7 +469,7 @@ function cell_Price_BackGround_Get(row) {
     const table =
     	SpreadsheetApp.getActive()
     	.getSheetByName('Прайс без НДС')
-    	.getRange('C1:H')
+    	.getRange('L1:Q')
     	.getValues();
     // item 587
     const find = table_Find(table, SKU)
@@ -477,7 +477,7 @@ function cell_Price_BackGround_Get(row) {
     if (find[row] > -1) {
         // item 593
         const row = find[row] + 1;
-        const col = find[column] + 1;
+        const col = find[column] + 1 - 9;
         
         const color = sheet_Price
         	.getRange(row, col)
@@ -488,7 +488,8 @@ function cell_Price_BackGround_Get(row) {
         // item 591
         Logger.log(
         	'Ошибка в ' +
-        	'cellS_Has_SKU_Test');
+        	'cellS_Has_SKU_Test. ' + 
+        	'Артикул не найден');
         // item 592
         return '';
     }
