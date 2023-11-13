@@ -28,6 +28,10 @@ function AMain_Drakon(cell) {
         ranges_2_NS();
         // item 23
         SKUs_History_Update();
+        // item 373
+        NS.date_Paint_Start =   
+        	new Date(
+        		currentTime - 30 * 24 * 60 * 60 * 1000);
         // item 357
         price_BackGrounds_Paint();
         // item 123
@@ -68,47 +72,59 @@ function SKUs_History_Update() {
         } else {
             break;
         }
-        // item 96
-        var array_SKUs = 
-        	string_Filter(
-        		row[column_SKUs],
-        		NS.sku_Regex);
-        // item 99
-        array_SKUs = 
-        	array_Trim(
-        		array_SKUs);
-        // item 940001
-        let i = 0;
+        // item 3790001
+        let col = 0;
         while (true) {
-            // item 940002
-            if (i < array_SKUs.length) {
+            // item 3790002
+            if (col < NS.array_SKUs_3D[0]) {
                 
             } else {
                 break;
             }
-            // item 219
-            const row_SKU = table_Row_by_Column_Value(
-            		NS.array_SKUs_History,
-            		1,
-            		SKU);
-            // item 220
-            const column_Price = column_SKUs - 9;
-            
-            const price = NS.array_Prices[row][column_Price];
-            // item 173
-            if (row_SKU > -1) {
-                // item 217
-                SKUs_Hystory_Row_Add(
-                	NS.array_SKUs_History, 
-                	price);
-            } else {
-                // item 240
-                SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
-                			   row_SKU, 
-                			   price);
+            // item 96
+            var array_SKUs = 
+            	string_Filter(
+            		row[col],
+            		NS.sku_Regex);
+            // item 99
+            array_SKUs = 
+            	array_Trim(
+            		array_SKUs);
+            // item 940001
+            let i = 0;
+            while (true) {
+                // item 940002
+                if (i < array_SKUs.length) {
+                    
+                } else {
+                    break;
+                }
+                // item 219
+                const row_SKU = table_Row_by_Column_Value(
+                		NS.array_SKUs_History,
+                		1,
+                		SKU);
+                // item 220
+                const column_Price = column_SKUs - 9;
+                
+                const price = NS.array_Prices[row][column_Price];
+                // item 173
+                if (row_SKU > -1) {
+                    // item 217
+                    SKUs_Hystory_Row_Add(
+                    	NS.array_SKUs_History, 
+                    	price);
+                } else {
+                    // item 240
+                    SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
+                    			   row_SKU, 
+                    			   price);
+                }
+                // item 940003
+                i++;
             }
-            // item 940003
-            i++;
+            // item 3790003
+            col ++;
         }
         // item 920003
         row ++;
@@ -346,6 +362,23 @@ function price_BackGrounds_Paint() {
         		array_SKUs);
         // item 363
         //TODO
+        // item 370
+        if (array_SKUs.length === 0) {
+            
+        } else {
+            // item 374
+            const date_Newest = 
+            	SKUs_Date_Newest(
+            		NS.array_SKUs_History,
+            		array_SKUs);
+            // item 375
+            if (date_Newest >= 
+NS.date_Paint) {
+                
+            } else {
+                
+            }
+        }
         // item 3640003
         row ++;
     }
