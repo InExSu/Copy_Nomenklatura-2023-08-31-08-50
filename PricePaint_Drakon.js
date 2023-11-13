@@ -366,8 +366,8 @@ function cellS_Has_SKU_Test() {
 
 function maps_Equal(map_1, map_2) {
     // item 494
-    return JSON.stringify([...map1]) === 
-    	JSON.stringify([...map2]);
+    return JSON.stringify([...map_1]) === 
+    	JSON.stringify([...map_2]);
 }
 
 function maps_Equal_Test() {
