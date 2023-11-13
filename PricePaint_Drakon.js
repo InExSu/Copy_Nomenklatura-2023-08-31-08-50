@@ -17,13 +17,10 @@ function AATests_RUN() {
 }
 
 function AMain_Drakon(cell) {
-    var _sw150000_ = 0;
-    // item 150000
-    _sw150000_ = cellS_Has_SKU(
-    	cell, 
-    	/\d{3}-\d{3}-\d{4}/);
-    // item 150001
-    if (_sw150000_ === true) {
+    // item 391
+    if (cellS_Has_SKU(
+	cell, 
+	/\d{3}-\d{3}-\d{4}/)) {
         // item 144
         ranges_2_NS();
         // item 23
@@ -31,29 +28,17 @@ function AMain_Drakon(cell) {
         // item 373
         NS.date_Paint_Start =   
         	new Date(
-        		currentTime - 30 * 24 * 60 * 60 * 1000);
+        		currentTime - 
+        		30 * 24 * 60 * 60 * 1000);
         // item 357
         price_BackGrounds_Paint();
-        // item 123
-        NS.range_Prices
-        	.getBackgrounds(
-        		NS.array_Prices_BackGrounds);
     } else {
-        // item 150002
-        if (_sw150000_ === false) {
-            
-        } else {
-            // item 150003
-            throw "Unexpected switch value: " + _sw150000_;
-        }
+        
     }
 }
 
 function NS() {
-    // item 37
-    /**
-    В JS функция это глобальная переменная
-    */
+    
 }
 
 function SKUs_History_Update() {
@@ -278,7 +263,7 @@ function cellS_Has_SKU(cell, regex) {
         // item 124
         if (regex.test(
 	cell.getValue())) {
-            // item 127
+            // item 394
             return true
         } else {
             // item 128
@@ -340,45 +325,77 @@ function cellS_Has_SKU_Test() {
 }
 
 function price_BackGrounds_Paint() {
+    // item 384
+    const price_BackGrounds_Old = 
+    	table_Copy(
+    		NS.array_Prices_BackGrounds);
+    // item 389
+    const rows_Max = NS.array_SKUs_3D;
+    const cols_Max = NS.array_SKUs_3D[0];
     // item 3640001
     let row = 0;
     while (true) {
         // item 3640002
-        if (row < NS.array_SKUs_3D) {
+        if (row < rows_Max) {
             
         } else {
             break;
         }
-        // item 365
-        var array_SKUs = 
-        	string_Filter(
-        		row[column_SKUs],
-        		NS.sku_Regex);
-        // item 366
-        array_SKUs = 
-        	array_Trim(
-        		array_SKUs);
-        // item 363
-        //TODO
-        // item 370
-        if (array_SKUs.length === 0) {
-            
-        } else {
-            // item 374
-            const date_Newest = 
-            	SKUs_Date_Newest(
-            		NS.array_SKUs_History,
-            		array_SKUs);
-            // item 375
-            if (date_Newest >= 
-NS.date_Paint) {
+        // item 3820001
+        let col = 0;
+        while (true) {
+            // item 3820002
+            if (col < cols_Max) {
                 
             } else {
-                
+                break;
             }
+            // item 365
+            var array_SKUs = 
+            	string_Filter(
+            		row[col],
+            		NS.sku_Regex);
+            // item 366
+            array_SKUs = 
+            	array_Trim(
+            		array_SKUs);
+            // item 370
+            if (array_SKUs.length === 0) {
+                
+            } else {
+                // item 374
+                const date_Newest = 
+                	SKUs_Date_Newest(
+                		NS.array_SKUs_History,
+                		array_SKUs);
+                // item 375
+                if (date_Newest >= 
+NS.date_Paint) {
+                    // item 378
+                    NS.array_Prices_BackGrounds[row][col - 9] =
+                    'white';
+                } else {
+                    // item 383
+                    NS.array_Prices_BackGrounds[row][col - 9] =
+                    'yellow';
+                }
+            }
+            // item 3820003
+            col ++;
         }
         // item 3640003
         row ++;
+    }
+    // item 385
+    if (arrays_Equal(
+	price_BackGrounds_Old, 
+	NS.array_Prices_BackGrounds)) {
+        
+    } else {
+        // item 388
+        NS.range_Prices
+        	.getBackgrounds(
+        		NS.array_Prices_BackGrounds);
     }
 }
 
@@ -421,7 +438,26 @@ function string_Filter(string, regex) {
 }
 
 function string_Filter_Test() {
+    // item 396
+      var testString = 
+    	"apple,banana,cherry,orange,grape";
     
+      var testRegex = /^(a|b)/;
+    
+      var filteredArray = string_Filter(
+    				testString, 
+    				testRegex);
+    
+      var wanted = ["apple", "banana"];
+    // item 397
+    if (arrays_Equal(wanted, 
+		filtered)) {
+        // item 400
+        Logger.Log(
+        	'Ошибка в table_Copy_Test');
+    } else {
+        
+    }
 }
 
 function table_2_Range(a2, cell) {
