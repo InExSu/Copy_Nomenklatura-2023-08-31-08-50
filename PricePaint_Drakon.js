@@ -357,6 +357,45 @@ function cellS_Has_SKU_Test() {
     }
 }
 
+function maps_Equal(map_1, map_2) {
+    // item 471
+    if (map_1.size === 
+map_2.size) {
+        
+    } else {
+        // item 474
+        return false
+    }
+    // item 4750001
+    var _ind475 = 0;
+    var _col475 = map_1;
+    var _len475 = _col475.length;
+    while (true) {
+        // item 4750002
+        if (_ind475 < _len475) {
+            
+        } else {
+            break;
+        }
+        // item 4750004
+        var entry = _col475[_ind475];
+        // item 485
+        let key = entry[0];
+        let value = entry[1];
+        // item 477
+        if ((map_2.has(key)) || (map_2.get(key) === value)) {
+            
+        } else {
+            // item 483
+            return false
+        }
+        // item 4750003
+        _ind475++;
+    }
+    // item 484
+    return true
+}
+
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
@@ -494,6 +533,35 @@ function string_Filter_Test() {
 }
 
 function table_2_Map(table, column_Key, column_Item) {
+    // item 448
+    var map = new Map();
+    // item 4490001
+    var i = 0;
+    while (true) {
+        // item 4490002
+        if (i < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 454
+        var key = table[i][column_Key];
+        var item = table[i][column_Item];
+        // item 451
+        if ((key === undefined) || (item === undefined)) {
+            
+        } else {
+            // item 458
+            map.set(key, item);
+        }
+        // item 4490003
+        i++;
+    }
+    // item 459
+    return map;
+}
+
+function table_2_Map_Test() {
     
 }
 
