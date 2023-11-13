@@ -302,7 +302,7 @@ function assert(condition) {
     if (condition) {
         // item 350
         // Logger.log(
-        	'Test Passed!')
+        //	'Test Passed!')
     } else {
         // item 349
         Logger.log(
