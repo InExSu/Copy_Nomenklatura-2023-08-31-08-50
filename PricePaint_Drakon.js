@@ -57,8 +57,6 @@ function NS() {
 }
 
 function SKUs_History_Update() {
-    // item 97
-    const column_SKUs = 1;
     // item 265
     const array_SKUs_History_Old = 
     	table_Copy(
@@ -105,7 +103,7 @@ function SKUs_History_Update() {
                 		1,
                 		SKU);
                 // item 220
-                const column_Price = column_SKUs - 9;
+                const column_Price = col - 9;
                 
                 const price = NS.array_Prices[row][column_Price];
                 // item 173
@@ -138,7 +136,7 @@ function SKUs_History_Update() {
         // item 283
         const cell = 
         	NS.sheet_SKUs_History
-        	.getRnage('A1');
+        	.getRage('A1');
         // item 282
         table_2_range(
         	NS.array_SKUs_History,
