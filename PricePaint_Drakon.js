@@ -279,7 +279,7 @@ function SKUs_History_Update() {
         	NS.sheet_SKUs_History
         	.getRange('A1');
         // item 282
-        table_2_range(
+        table_2_Range(
         	NS.array_SKUs_History,
         	cell);
     }
