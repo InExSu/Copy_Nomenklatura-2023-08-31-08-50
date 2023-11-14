@@ -615,6 +615,8 @@ function price_BackGrounds_Paint() {
             if (array_SKUs.length === 0) {
                 
             } else {
+                // item 600
+                debugger;
                 // item 374
                 const date_Newest = 
                 	SKUs_Date_Newest(
