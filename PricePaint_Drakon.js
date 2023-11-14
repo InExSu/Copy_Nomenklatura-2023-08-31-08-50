@@ -582,8 +582,8 @@ function price_BackGrounds_Paint() {
     	table_Copy(
     		NS.array_Prices_BackGrounds);
     // item 389
-    const rows_Max = NS.array_SKUs_3D;
-    const cols_Max = NS.array_SKUs_3D[0];
+    const rows_Max = NS.array_SKUs_3D.length;
+    const cols_Max = NS.array_SKUs_3D[0].length;
     // item 3640001
     let row = 0;
     while (true) {
