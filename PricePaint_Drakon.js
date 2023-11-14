@@ -197,11 +197,14 @@ function SKUs_History_Update() {
     const array_SKUs_History_Old = 
     	table_Copy(
     		NS.array_SKUs_History);
+    // item 599
+    const rows_Max = NS.array_SKUs_3D.length;
+    const cols_Max = NS.array_SKUs_3D[0].length;
     // item 920001
     let row = 0;
     while (true) {
         // item 920002
-        if (row < NS.array_SKUs_3D) {
+        if (row < rows_Max) {
             
         } else {
             break;
@@ -210,7 +213,7 @@ function SKUs_History_Update() {
         let col = 0;
         while (true) {
             // item 3790002
-            if (col < NS.array_SKUs_3D[0]) {
+            if (col < cols_Max) {
                 
             } else {
                 break;
