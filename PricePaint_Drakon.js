@@ -388,7 +388,7 @@ function arrays_Equal(left, right) {
     	JSON.stringify(right)
 }
 
-function assert(condition) {
+function assert(condition, logger_log = 'assert fail') {
     // item 346
     if (condition) {
         // item 350
@@ -397,7 +397,7 @@ function assert(condition) {
     } else {
         // item 349
         Logger.log(
-        	'Test Failed!');
+        	logger_log);
     }
 }
 
@@ -905,6 +905,58 @@ function table_Rows_Filter(table, needles, column_Number) {
     	row => 
     	needles.includes(
     		row[column_Number]));
+}
+
+function table_Rows_Filter_Test() {
+    // item 614
+      var testCases = [
+        {
+          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
+          needles: ['red'],
+          column_Number: 1,
+          expected: [['apple', 'red', 5], ['cherry', 'red', 8]]
+        },
+        {
+          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
+          needles: ['red', 'yellow'],
+          column_Number: 1,
+          expected: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8]]
+        },
+        {
+          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
+          needles: ['blue'],
+          column_Number: 1,
+          expected: []
+        }
+      ];
+    // item 6150001
+    var i = 0;
+    while (true) {
+        // item 6150002
+        if (i < testCases.length) {
+            
+        } else {
+            break;
+        }
+        // item 617
+        var testCase = testCases[i];
+        
+        var result = 
+        	table_Rows_Filter(
+        		testCase.table, 
+        		testCase.needles, 
+        		testCase.column_Number);
+        // item 618
+        assert(
+              arrays_Equal(result, testCase.expected),
+              `Тест ${i + 1} не пройден. Получено: 
+        ${JSON.stringify(result)}, 
+        Ожидалось: 
+        ${JSON.stringify(testCase.expected)}`
+            );
+        // item 6150003
+        i++;
+    }
 }
 
 
