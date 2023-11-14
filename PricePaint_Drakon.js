@@ -900,6 +900,11 @@ function table_Rows_Filter(table, needles, column_Number) {
     // item 607
     // В столбце таблицы (массив из диапазона)
     // искать значения вернуть строки
+    // item 608
+    return table.filter(
+    	row => 
+    	needles.includes(
+    		row[column_Number]));
 }
 
 
