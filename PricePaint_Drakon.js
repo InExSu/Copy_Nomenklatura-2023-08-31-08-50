@@ -240,6 +240,8 @@ function SKUs_History_Update() {
                 const column_Price = col - 9;
                 
                 const price = NS.array_Prices[row][column_Price];
+                
+                const SKU = array_SKUs[i];
                 // item 219
                 const row_SKU = table_Row_by_Column_Value(
                 		NS.array_SKUs_History,
