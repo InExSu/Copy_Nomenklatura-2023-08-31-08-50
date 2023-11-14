@@ -217,8 +217,8 @@ function SKUs_Date_Newest_Test() {
         
     } else {
         // item 637
-        Logger.log('
-        	Ошибка в SKUs_Date_Newest_Test');
+        Logger.log(
+        	'Ошибка в SKUs_Date_Newest_Test');
     }
 }
 
