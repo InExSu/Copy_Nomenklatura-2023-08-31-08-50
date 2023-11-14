@@ -511,7 +511,7 @@ function cell_Price_BackGround_Get(row) {
         // item 591
         Logger.log(
         	'Ошибка в ' +
-        	'cellS_Has_SKU_Test. ' + 
+        	'cell_Price_BackGround_Get: ' + 
         	'Артикул не найден');
         // item 592
         return '';
