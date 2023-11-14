@@ -616,13 +616,13 @@ function price_BackGrounds_Paint() {
                 // item 375
                 if (date_Newest >= 
 NS.date_Paint) {
-                    // item 378
-                    NS.array_Prices_BackGrounds[row][col - 9] =
-                    'white';
-                } else {
                     // item 383
                     NS.array_Prices_BackGrounds[row][col - 9] =
                     'yellow';
+                } else {
+                    // item 378
+                    NS.array_Prices_BackGrounds[row][col - 9] =
+                    'white';
                 }
             }
             // item 3820003
@@ -639,7 +639,7 @@ NS.date_Paint) {
     } else {
         // item 388
         NS.range_Prices
-        	.getBackgrounds(
+        	.setBackgrounds(
         		NS.array_Prices_BackGrounds);
     }
 }
