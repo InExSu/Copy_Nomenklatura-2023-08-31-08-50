@@ -221,7 +221,7 @@ function SKUs_History_Update() {
             // item 96
             var array_SKUs = 
             	string_Filter(
-            		row[col],
+            		NS.array_SKUs_3D[row][col],
             		NS.sku_Regex);
             // item 99
             array_SKUs = 
@@ -603,7 +603,7 @@ function price_BackGrounds_Paint() {
             // item 365
             var array_SKUs = 
             	string_Filter(
-            		row[col],
+            		NS.array_SKUs_3D[row][col],
             		NS.sku_Regex);
             // item 366
             array_SKUs = 
