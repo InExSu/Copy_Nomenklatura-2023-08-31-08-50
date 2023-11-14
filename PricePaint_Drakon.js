@@ -174,22 +174,13 @@ function SKUs_Date_Newest(SKUs_History, SKUs) {
     } else {
         
     }
-    // item 4350001
-    var _ind435 = 0;
-    var _col435 = SKUs;
-    var _len435 = _col435.length;
-    while (true) {
-        // item 4350002
-        if (_ind435 < _len435) {
-            
-        } else {
-            break;
-        }
-        // item 4350004
-        var sku = _col435[_ind435];
-        // item 4350003
-        _ind435++;
-    }
+    // item 601
+    const SKUs_Filtered = 
+    	table_Rows_Filter(
+    		SKUs_History,
+    		SKUs,
+    		1);
+    // TODO
 }
 
 function SKUs_History_Update() {
@@ -903,6 +894,10 @@ function table_Row_by_Column_Value_Test() {
           'table_Row_by_Column_Value_Test'
         );
     }
+}
+
+function table_Rows_Filter(table, needles) {
+    
 }
 
 
