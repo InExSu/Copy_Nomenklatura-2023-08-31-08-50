@@ -6,14 +6,15 @@ function AATests_RUN() {
     AMain_Drakon_TestS();
     // item 192
     // Тесты чистых функций
-    /**
+    
     SKUs_Hystory_Date_Update_If_Test();
     SKUs_Hystory_Row_Add_Test();
     maps_Equal_Test();
     string_Filter_Test();
     table_2_Map_Test()
     table_Copy_Test();
-    table_Row_by_Column_Value_Test(); */
+    table_Row_by_Column_Value_Test();
+    table_Rows_Filter_Test
     // item 169
     // Тесты функций данных
     
