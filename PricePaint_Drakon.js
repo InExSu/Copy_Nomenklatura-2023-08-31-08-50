@@ -65,11 +65,11 @@ function AMain_Drakon_TestS() {
       AMain_Drakon(cell);
       console.timeEnd('Ячейка нужная');*/
     // item 554
-    const SKU_HIstory_Row = 2;
+    const SKU_HIstory_Row_2 = 2;
     
     const SKU_Date_Origin = 
     	SKU_Date_Get(
-    		SKU_HIstory_Row);
+    		SKU_HIstory_Row_2);
     
     const date_New = 
     	new Date()
@@ -77,7 +77,7 @@ function AMain_Drakon_TestS() {
     	.slice(0, 10);
     
     SKU_Date_Set(
-    	SKU_HIstory_Row,
+    	SKU_HIstory_Row_2,
     	date_New);
     // item 597
     Logger.log(
@@ -92,7 +92,7 @@ function AMain_Drakon_TestS() {
     // item 561
     cell_Price_BackGround =
     	cell_Price_BackGround_Get(
-    		SKU_HIstory_Row);
+    		SKU_HIstory_Row_2);
     // item 555
     if (cell_Price_BackGround ===
 	'yellow') {
@@ -111,6 +111,7 @@ function AMain_Drakon_TestS() {
     	.slice(0, 10);
     
     SKU_Date_Set(
+    	SKU_HIstory_Row_2,
     	SKU_Date_New);
     // item 598
     Logger.log(
@@ -120,7 +121,7 @@ function AMain_Drakon_TestS() {
     // item 562
     cell_Price_BackGround =
     	cell_Price_BackGround_Get(
-    		SKU_HIstory_Row);
+    		SKU_HIstory_Row_2);
     // item 563
     if (cell_Price_BackGround ===
 	'white') {
@@ -134,6 +135,7 @@ function AMain_Drakon_TestS() {
     }
     // item 567
     SKU_Date_Set(
+    	SKU_HIstory_Row_2,
     	SKU_Date_Origin);
 }
 
