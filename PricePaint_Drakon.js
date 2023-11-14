@@ -160,28 +160,65 @@ function SKU_Date_Set(row, date) {
     	.setValue(date);
 }
 
-function SKUs_Date_Newest(SKUs_History, SKUs) {
-    // item 439
-    const column_Key = 1;
-    const column_Item = 0;
-    // item 445
-    if (NS.map_SKUs_Dates === undefined) {
-        // item 438
-        NS.map_SKUs_Dates = 
-        	table_2_Map(
-        		SKUs_History,
-        		column_Key,
-        		column_Item);
+function SKUs_Date_Newest(SKUs_History, SKUs, column_Date = 0, column_SKUs = 1) {
+    // item 638
+    /**
+    Вернуть самую свежую дату для артикулов из SKUs
+    */
+    // item 619
+    const rows_Filtered = 
+    	SKUs_History.filter(
+    		row => SKUs.includes(
+    			row[column_SKUs]));
+    // item 620
+    if (rows_Filtered.length > 0) {
+        // item 623
+        const dates = 
+        	rows_Filtered.map(
+        		row => new Date(row[column_Date]));
+        
+        const newestDate = 
+        	new Date(
+        		Math.max.apply(null, dates));
+        // item 625
+        return newestDate
+        		.toISOString()
+        		.slice(0, 10);
     } else {
         
     }
-    // item 601
-    const SKUs_Filtered = 
-    	table_Rows_Filter(
-    		SKUs_History,
-    		SKUs,
-    		1);
-    // TODO
+    // item 624
+    return false
+}
+
+function SKUs_Date_Newest_Test() {
+    // item 631
+      const mySKUs_History = [
+        ['2023-11-14', '102-132-0002'],
+        ['2023-11-14', '102-131-0004'],
+        ['2023-11-14', '102-131-0005'],
+        ['2023-11-13', '102-132-0002'],
+        ['2023-11-13', '102-131-0004']
+      ];
+    // item 632
+      const myColumnDate = 0;
+      const myColumnSKUs = 1;
+      const mySKUs = ['102-132-0002', '102-131-0005'];
+    // item 633
+    const newestDate = 
+    	SKUs_Date_Newest(
+    		mySKUs_History, 
+    		mySKUs, 
+    		myColumnDate, 
+    		myColumnSKUs);
+    // item 634
+    if (newestDate === '2023-11-14') {
+        
+    } else {
+        // item 637
+        Logger.log('
+        	Ошибка в SKUs_Date_Newest_Test');
+    }
 }
 
 function SKUs_History_Update() {

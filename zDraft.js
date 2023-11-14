@@ -1,33 +1,26 @@
-function table_Rows_Filter_Test() {
-  // Тестовая таблица
-  var table = [
-    ['apple', 'red', 5],
-    ['banana', 'yellow', 3],
-    ['cherry', 'red', 8],
-    ['orange', 'orange', 4]
-  ];
+function SKUs_Date_Newest(SKUs_History, column, SKUs) {
+  const filteredRows = SKUs_History.filter(row => SKUs.includes(row[column]));
 
-  // Фильтрация по одному значению
-  var result1 = table_Rows_Filter(table, ['red'], 1);
-  assert(
-    result1.length === 2 && result1[0][1] === 'red' && result1[1][1] === 'red',
-    'Тест не пройден: Неверный результат для фильтрации по одному значению.'
-  );
+  if (filteredRows.length > 0) {
+    const dates = filteredRows.map(row => new Date(row[0]));
+    const newestDate = new Date(Math.max.apply(null, dates));
+    return newestDate.toISOString().slice(0, 10);
+  }
 
-  // Фильтрация по нескольким значениям
-  var result2 = table_Rows_Filter(table, ['red', 'yellow'], 1);
-  assert(
-    result2.length === 3 &&
-    result2[0][1] === 'red' &&
-    result2[1][1] === 'yellow' &&
-    result2[2][1] === 'red',
-    'Тест не пройден: Неверный результат для фильтрации по нескольким значениям.'
-  );
-
-  // Фильтрация без найденных значений
-  var result3 = table_Rows_Filter(table, ['blue'], 1);
-  assert(
-    result3.length === 0,
-    'Тест не пройден: Неверный результат для фильтрации без найденных значений.'
-  );
+  return null;
 }
+
+// Пример использования
+const mySKUs_History = [
+  ['2023-11-14', '102-132-0002'],
+  ['2023-11-14', '102-131-0004'],
+  ['2023-11-14', '102-131-0005'],
+  ['2023-11-13', '102-132-0002'],
+  ['2023-11-13', '102-131-0004']
+];
+
+const myColumn = 0;
+const mySKUs = ['102-132-0002', '102-131-0005'];
+
+const newestDate = SKUs_Date_Newest(mySKUs_History, myColumn, mySKUs);
+console.log('Самая свежая дата для указанных SKU:', newestDate);
