@@ -69,7 +69,7 @@ sheet_Name_Exists(
             // лишних сохранений на лист
             const array_SKUs_History_Copy =
             	 NS.table_SKUs_History
-            	.map(row => [...row]);
+            	.map(row_Story => [...row_Story]);
             // item 6780001
             // проход по массиву
             // артикулов прайса
