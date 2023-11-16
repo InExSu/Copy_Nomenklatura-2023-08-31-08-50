@@ -117,7 +117,7 @@ sheet_Name_Exists(
                         if (row_History > -1) {
                             // item 721
                             SKUs_History_Row_Update(
-                            	row, price);
+                            	row_History, price);
                         } else {
                             // item 696
                             // ДатаВремя Артикул Цена Пользователь
