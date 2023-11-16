@@ -114,8 +114,8 @@ sheet_Name_Exists(
                         // item 751
                         const row_History = SKU_History_Row(SKU);
                         // item 693
-                        if (row_History > -1) {
-                            // item 721
+                        if (row_History === undefined) {
+                            // item 765
                             SKUs_History_Row_Update(
                             	row_History, price);
                         } else {
@@ -202,7 +202,7 @@ sheet_Name_Exists(
                         // item 752
                         const date_History = SKU_History_Date(SKU);
                         // item 742
-                        if (date_History === '') {
+                        if (date_History === undefined) {
                             
                         } else {
                             // item 745
@@ -350,13 +350,21 @@ function SKU_Date_Set(row, date) {
     	.setValue(date);
 }
 
+function SKU_History_Date(SKU) {
+    // item 772
+    return table_Find_Shift(
+    	table_SKUs_History,
+    	1, 0);
+}
+
 function SKU_History_Row(SKU) {
-    // item 739
-    if () {
-        
-    } else {
-        
-    }
+    // item 766
+    /**
+    вернуть номер строки или
+    undefined */
+    // item 780
+    return NS.table_SKUs_History
+    	.findIndex(row => row[column] === needle);
 }
 
 function SKU_In_History(SKU) {
@@ -1043,6 +1051,17 @@ function table_2_Range(a2, cell) {
     cell.offset(0, 0, a2.length, a2[0].length).setValues(a2);
 }
 
+function table_Column_Search(table, column, needle) {
+    // item 778
+    /**
+     искать в столбце	
+     вернуть номер строки или 
+     undefined */
+    // item 779
+    return table
+    	.findIndex(row => row[column] === needle);
+}
+
 function table_Copy(table) {
     // item 307
     return table.map(row => [...row]);
@@ -1109,6 +1128,17 @@ function table_Find(table, needle) {
     return { 
     	row: -1, 
     	column: -1 };
+}
+
+function table_Find_Shift(table, needle, column_Needle, column_Return) {
+    // item 764
+    /**
+    Искать в столбце column_Needle,
+    вернуть из column_Return или
+    undefined */
+    // item 761
+    return table.find(
+            element => element[column_Needle] === needle);
 }
 
 function table_Find_Test() {
