@@ -112,9 +112,9 @@ sheet_Name_Exists(
                         // item 6890004
                         var SKU = _col689[_ind689];
                         // item 751
-                        const row = SKU_History_Row(SKU);
+                        const row_History = SKU_History_Row(SKU);
                         // item 693
-                        if (row > -1) {
+                        if (row_History > -1) {
                             // item 721
                             SKUs_History_Row_Update(
                             	row, price);
