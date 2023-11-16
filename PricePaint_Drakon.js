@@ -671,7 +671,7 @@ function cell_Price_BackGround_Get(row) {
     }
 }
 
-function log_Toast_SendEmail(message) {
+function log_Toast_SendEmail(message, to = 'mihail.popov@zelinskygroup.com') {
     // item 676
       Logger.log(message);
       SpreadsheetApp.getActive().toast(message);
