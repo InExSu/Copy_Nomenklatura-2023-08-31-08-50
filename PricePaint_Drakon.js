@@ -164,7 +164,7 @@ sheet_Name_Exists(
             // item 7240001
             // проход по массиву
             // артикулов прайса
-            let row = 0;
+            row = 0;
             while (true) {
                 // item 7240002
                 if (row < NS.table_SKUs_3D) {
