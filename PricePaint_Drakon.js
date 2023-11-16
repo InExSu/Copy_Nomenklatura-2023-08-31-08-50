@@ -153,7 +153,7 @@ sheet_Name_Exists(
 	NS.table_SKUs_History)) {
                 
             } else {
-                // item 703
+                // item 781
                 NS.sheet_SKUs_History
                 	.getCell(1,1)
                 	.offset(0, 0, 
@@ -186,6 +186,9 @@ sheet_Name_Exists(
                     	NS.table_SKUs_3D[row][col]
                     	replace(/\s/g, "")
                     	.split(',');
+                    // item 782
+                    /** проход по 
+                     артикулам ячейки */
                     // item 7270001
                     var _ind727 = 0;
                     var _col727 = SKUs_1D;
