@@ -52,11 +52,9 @@ function AMain_Drakon(cell) {
 
 function AMain_Drakon_All(cell) {
     // item 656
-    if ((// Адрес ячейки в 
-// диапазоне цен
-cell_In_Range(cell,'C8:H')) || (// Адрес ячейки в 
-// диапазоне артикулов
-cell_In_Range(cell,'L8:H'))) {
+    if (// ячейка артикули или
+// арткул есть в offset
+cellS_Has_SKU(cell)) {
         
     } else {
         // item 665
