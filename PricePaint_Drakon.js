@@ -6,8 +6,8 @@ function AATests_RUN() {
     // Тесты чистых функций
     
     SKUs_Date_Newest_Test();
-    SKUs_Hystory_Date_Update_If_Test();
-    SKUs_Hystory_Row_Add_Test();
+    SKUs_History_Date_Update_If_Test();
+    SKUs_History_Row_Add_Test();
     maps_Equal_Test();
     string_Filter_Test();
     table_2_Map_Test()
@@ -111,9 +111,13 @@ sheet_Name_Exists(
                         }
                         // item 6890004
                         var SKU = _col689[_ind689];
+                        // item 709
+                        const row = SKU_In_History(SKU);
                         // item 693
-                        if (SKU_in_Hystory(SKU)) {
-                            
+                        if (row > -1) {
+                            // item 721
+                            SKUs_History_Row_Update(
+                            	row, price);
                         } else {
                             // item 696
                             // ДатаВремя Артикул Цена Пользователь
@@ -156,6 +160,53 @@ sheet_Name_Exists(
                 	a2.length, 
                 	a2[0].length)
                 	.setValues(a2);
+            }
+            // item 7240001
+            // проход по массиву
+            // артикулов прайса
+            let row = 0;
+            while (true) {
+                // item 7240002
+                if (row < NS.array_SKUs_3D) {
+                    
+                } else {
+                    break;
+                }
+                // item 7220001
+                let col = 0;
+                while (true) {
+                    // item 7220002
+                    if (col < NS.array_SKUs_3D[0]) {
+                        
+                    } else {
+                        break;
+                    }
+                    // item 726
+                    const SKUs_1D = 
+                    	NS.array_SKUs_3D[row][col]
+                    	replace(/\s/g, "")
+                    	.split(',');
+                    // item 7270001
+                    var _ind727 = 0;
+                    var _col727 = SKUs_1D;
+                    var _len727 = _col727.length;
+                    while (true) {
+                        // item 7270002
+                        if (_ind727 < _len727) {
+                            
+                        } else {
+                            break;
+                        }
+                        // item 7270004
+                        var SKU = _col727[_ind727];
+                        // item 7270003
+                        _ind727++;
+                    }
+                    // item 7220003
+                    col++;
+                }
+                // item 7240003
+                row++;
             }
         } else {
             // item 677
@@ -279,6 +330,10 @@ function SKU_Date_Set(row, date) {
     	.setValue(date);
 }
 
+function SKU_In_History(SKU) {
+    
+}
+
 function SKUs_Date_Newest(SKUs_History, SKUs, column_Date = 0, column_SKUs = 1) {
     // item 638
     /**
@@ -340,6 +395,121 @@ function SKUs_Date_Newest_Test() {
     }
 }
 
+function SKUs_History_Date_Update_If(table, row, price_New) {
+    // item 251
+    const price_Old = table[row][2];
+    // item 248
+    if (price_Old !== price_New) {
+        // item 252
+        table[row][0] = new Date().toISOString().slice(0, 10);
+        
+        // артикул без изменений
+        
+        table[row][2] = price_New;
+        
+        table[row][3] = Session.getActiveUser().getEmail();
+    } else {
+        
+    }
+}
+
+function SKUs_History_Date_Update_If_Test() {
+    // item 258
+      var table = [
+        ["2023-11-12", "SKU1", 20.99, "user1@ex.com"],
+        ["2023-11-13", "SKU2", 30.99, "user2@ex.com"],
+        // ... другие строки
+      ];
+    
+      var row = 1;
+      var price = 40.99; // новая цена
+    
+      // Получаем старую цену для сравнения
+      var price_Old = table[row][2];
+    
+      SKUs_History_Date_Update_If(table, row, price);
+    // item 259
+    const price_New = table[row][2];
+    // item 260
+    if (price_New === price_Old) {
+        // item 264
+        Logger.log(
+        	'Ошибка в ' + 
+        	'SKUs_History_Date_Update_If_Test');
+    } else {
+        
+    }
+}
+
+function SKUs_History_Row_Add(table, SKU, price) {
+    // item 227
+    // ДатаВремя	Артикул	Цена	Пользователь
+    
+    const row_1D = [];
+    
+    row_1D[0] = new Date().toISOString().slice(0, 10);
+    
+    row_1D[1] = SKU;
+    
+    row_1D[2] = price;
+    
+    row_1D[3] = Session.getActiveUser().getEmail();
+    // item 228
+    table.push(row_1D);
+}
+
+function SKUs_History_Row_Add_Test() {
+    // item 234
+      // Создаем временный массив для тестов
+        table = [
+        ["2023-11-12", "SKU1", 20.99, "user1@example.com"],
+        ["2023-11-13", "SKU2", 30.99, "user2@example.com"],
+      ];
+    
+      // Задаем SKU и price для теста
+      var testSKU = "TestSKU";
+      var testPrice = 99.99;
+    
+      // Вызываем функцию добавления строки
+      SKUs_History_Row_Add(table, testSKU, testPrice);
+    // item 235
+    if (table.length === 3) {
+        
+    } else {
+        // item 238
+        Logger.log(
+        	'Ошибка в ' + 
+        	'SKUs_History_Row_Add_Test');
+    }
+}
+
+function SKUs_History_Row_Update(row, price_New) {
+    // item 720
+    // Обновить, если цены разные
+    // item 718
+    const price_Old = 
+    	NS.array_SKUs_History[row][2];
+    // item 715
+    if (price_New === price_Old) {
+        
+    } else {
+        // item 719
+        NS.array_SKUs_History[row]
+        
+        NS.array_SKUs_History[row][0] = 
+        	new Date()
+        	.toISOString()
+        	.slice(0, 10);
+        
+        // артикул без изменений
+        
+        NS.array_SKUs_History[row][2] = price_New;
+        
+        NS.array_SKUs_History[row][3] = 
+        	Session.getActiveUser().getEmail();
+    }
+}
+
 function SKUs_History_Update() {
     // item 265
     const array_SKUs_History_Old = 
@@ -398,12 +568,12 @@ function SKUs_History_Update() {
                 // item 173
                 if (row_SKU > -1) {
                     // item 240
-                    SKUs_Hystory_Date_Update_If(NS.array_SKUs_History, 
+                    SKUs_History_Date_Update_If(NS.array_SKUs_History, 
                     			   row_SKU, 
                     			   price);
                 } else {
                     // item 217
-                    SKUs_Hystory_Row_Add(
+                    SKUs_History_Row_Add(
                     	NS.array_SKUs_History, 
                     	price);
                 }
@@ -442,94 +612,6 @@ function SKUs_History_Update_Test() {
     // item 160
     console.timeEnd(
     	'SKUs_History_Update');
-}
-
-function SKUs_Hystory_Date_Update_If(table, row, price_New) {
-    // item 251
-    const price_Old = table[row][2];
-    // item 248
-    if (price_Old !== price_New) {
-        // item 252
-        table[row][0] = new Date().toISOString().slice(0, 10);
-        
-        // артикул без изменений
-        
-        table[row][2] = price_New;
-        
-        table[row][3] = Session.getActiveUser().getEmail();
-    } else {
-        
-    }
-}
-
-function SKUs_Hystory_Date_Update_If_Test() {
-    // item 258
-      var table = [
-        ["2023-11-12", "SKU1", 20.99, "user1@ex.com"],
-        ["2023-11-13", "SKU2", 30.99, "user2@ex.com"],
-        // ... другие строки
-      ];
-    
-      var row = 1;
-      var price = 40.99; // новая цена
-    
-      // Получаем старую цену для сравнения
-      var price_Old = table[row][2];
-    
-      SKUs_Hystory_Date_Update_If(table, row, price);
-    // item 259
-    const price_New = table[row][2];
-    // item 260
-    if (price_New === price_Old) {
-        // item 264
-        Logger.log(
-        	'Ошибка в ' + 
-        	'SKUs_Hystory_Date_Update_If_Test');
-    } else {
-        
-    }
-}
-
-function SKUs_Hystory_Row_Add(table, SKU, price) {
-    // item 227
-    // ДатаВремя	Артикул	Цена	Пользователь
-    
-    const row_1D = [];
-    
-    row_1D[0] = new Date().toISOString().slice(0, 10);
-    
-    row_1D[1] = SKU;
-    
-    row_1D[2] = price;
-    
-    row_1D[3] = Session.getActiveUser().getEmail();
-    // item 228
-    table.push(row_1D);
-}
-
-function SKUs_Hystory_Row_Add_Test() {
-    // item 234
-      // Создаем временный массив для тестов
-        table = [
-        ["2023-11-12", "SKU1", 20.99, "user1@example.com"],
-        ["2023-11-13", "SKU2", 30.99, "user2@example.com"],
-      ];
-    
-      // Задаем SKU и price для теста
-      var testSKU = "TestSKU";
-      var testPrice = 99.99;
-    
-      // Вызываем функцию добавления строки
-      SKUs_Hystory_Row_Add(table, testSKU, testPrice);
-    // item 235
-    if (table.length === 3) {
-        
-    } else {
-        // item 238
-        Logger.log(
-        	'Ошибка в ' + 
-        	'SKUs_Hystory_Row_Add_Test');
-    }
 }
 
 function array_Trim(array) {
