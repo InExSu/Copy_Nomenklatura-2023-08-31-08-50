@@ -68,7 +68,7 @@ sheet_Name_Exists(
             // копию массива, чтобы не делать
             // лишних сохранений на лист
             const array_SKUs_History_Copy =
-            	 NS.array_SKUs_History
+            	 NS.table_SKUs_History
             	.map(row => [...row]);
             // item 6780001
             // проход по массиву
@@ -76,7 +76,7 @@ sheet_Name_Exists(
             let row = 0;
             while (true) {
                 // item 6780002
-                if (row < NS.array_SKUs_3D) {
+                if (row < NS.table_SKUs_3D) {
                     
                 } else {
                     break;
@@ -85,19 +85,19 @@ sheet_Name_Exists(
                 let col = 0;
                 while (true) {
                     // item 6800002
-                    if (col < NS.array_SKUs_3D[0]) {
+                    if (col < NS.table_SKUs_3D[0]) {
                         
                     } else {
                         break;
                     }
                     // item 692
                     const SKUs_1D = 
-                    	NS.array_SKUs_3D[row][col]
+                    	NS.table_SKUs_3D[row][col]
                     	replace(/\s/g, "")
                     	.split(',');
                     // item 691
                     const price = 
-                    	NS.array_SKUs_3D[row][col - 9];
+                    	NS.table_SKUs_3D[row][col - 9];
                     // item 6890001
                     var _ind689 = 0;
                     var _col689 = SKUs_1D;
@@ -111,8 +111,8 @@ sheet_Name_Exists(
                         }
                         // item 6890004
                         var SKU = _col689[_ind689];
-                        // item 709
-                        const row = SKU_In_History(SKU);
+                        // item 751
+                        const row = SKU_History_Row(SKU);
                         // item 693
                         if (row > -1) {
                             // item 721
@@ -135,7 +135,7 @@ sheet_Name_Exists(
                             row_1D[3] = Session.getActiveUser()
                             		.getEmail();
                             // item 697
-                            NS.array_SKUs_History
+                            NS.table_SKUs_History
                             	.push(row_1D);
                         }
                         // item 6890003
@@ -150,7 +150,7 @@ sheet_Name_Exists(
             // item 699
             if (arrays_Equal(
 	array_SKUs_History_Copy,
-	NS.array_SKUs_History)) {
+	NS.table_SKUs_History)) {
                 
             } else {
                 // item 703
@@ -167,7 +167,7 @@ sheet_Name_Exists(
             let row = 0;
             while (true) {
                 // item 7240002
-                if (row < NS.array_SKUs_3D) {
+                if (row < NS.table_SKUs_3D) {
                     
                 } else {
                     break;
@@ -176,14 +176,14 @@ sheet_Name_Exists(
                 let col = 0;
                 while (true) {
                     // item 7220002
-                    if (col < NS.array_SKUs_3D[0]) {
+                    if (col < NS.table_SKUs_3D[0]) {
                         
                     } else {
                         break;
                     }
                     // item 726
                     const SKUs_1D = 
-                    	NS.array_SKUs_3D[row][col]
+                    	NS.table_SKUs_3D[row][col]
                     	replace(/\s/g, "")
                     	.split(',');
                     // item 7270001
@@ -199,6 +199,23 @@ sheet_Name_Exists(
                         }
                         // item 7270004
                         var SKU = _col727[_ind727];
+                        // item 752
+                        const date_History = SKU_History_Date(SKU);
+                        // item 742
+                        if (date_History === '') {
+                            
+                        } else {
+                            // item 745
+                            if (date_History >= NS.date_Paint_Start) {
+                                // item 749
+                                NS.table_Prices_BackGround[row][col] =
+                                	'white';
+                            } else {
+                                // item 748
+                                NS.table_Prices_BackGround[row][col] =
+                                	'yellow';
+                            }
+                        }
                         // item 7270003
                         _ind727++;
                     }
@@ -208,6 +225,9 @@ sheet_Name_Exists(
                 // item 7240003
                 row++;
             }
+            // item 750
+            NS.range_Prices.setBackground(
+            	NS.table_Prices_BackGround);
         } else {
             // item 677
             log_Toast_SendEmail(
@@ -330,8 +350,25 @@ function SKU_Date_Set(row, date) {
     	.setValue(date);
 }
 
+function SKU_History_Row(SKU) {
+    // item 739
+    if () {
+        
+    } else {
+        
+    }
+}
+
 function SKU_In_History(SKU) {
-    
+    // item 729
+    if (Ns.SKUs_History_Map === 
+	undefined) {
+        
+    } else {
+        // item 732
+        NS.SKUs_History_Map = 
+        	table_2_Map(NS.table_SKUs_History);
+    }
 }
 
 function SKUs_Date_Newest(SKUs_History, SKUs, column_Date = 0, column_SKUs = 1) {
@@ -488,24 +525,24 @@ function SKUs_History_Row_Update(row, price_New) {
     // Обновить, если цены разные
     // item 718
     const price_Old = 
-    	NS.array_SKUs_History[row][2];
+    	NS.table_SKUs_History[row][2];
     // item 715
     if (price_New === price_Old) {
         
     } else {
         // item 719
-        NS.array_SKUs_History[row]
+        NS.table_SKUs_History[row]
         
-        NS.array_SKUs_History[row][0] = 
+        NS.table_SKUs_History[row][0] = 
         	new Date()
         	.toISOString()
         	.slice(0, 10);
         
         // артикул без изменений
         
-        NS.array_SKUs_History[row][2] = price_New;
+        NS.table_SKUs_History[row][2] = price_New;
         
-        NS.array_SKUs_History[row][3] = 
+        NS.table_SKUs_History[row][3] = 
         	Session.getActiveUser().getEmail();
     }
 }
@@ -514,10 +551,10 @@ function SKUs_History_Update() {
     // item 265
     const array_SKUs_History_Old = 
     	table_Copy(
-    		NS.array_SKUs_History);
+    		NS.table_SKUs_History);
     // item 599
-    const rows_Max = NS.array_SKUs_3D.length;
-    const cols_Max = NS.array_SKUs_3D[0].length;
+    const rows_Max = NS.table_SKUs_3D.length;
+    const cols_Max = NS.table_SKUs_3D[0].length;
     // item 920001
     let row = 0;
     while (true) {
@@ -539,7 +576,7 @@ function SKUs_History_Update() {
             // item 96
             var array_SKUs = 
             	string_Filter(
-            		NS.array_SKUs_3D[row][col],
+            		NS.table_SKUs_3D[row][col],
             		NS.sku_Regex);
             // item 99
             array_SKUs = 
@@ -557,24 +594,24 @@ function SKUs_History_Update() {
                 // item 220
                 const column_Price = col - 9;
                 
-                const price = NS.array_Prices[row][column_Price];
+                const price = NS.table_Prices[row][column_Price];
                 
                 const SKU = array_SKUs[i];
                 // item 219
                 const row_SKU = table_Row_by_Column_Value(
-                		NS.array_SKUs_History,
+                		NS.table_SKUs_History,
                 		1,
                 		SKU);
                 // item 173
                 if (row_SKU > -1) {
                     // item 240
-                    SKUs_History_Date_Update_If(NS.array_SKUs_History, 
+                    SKUs_History_Date_Update_If(NS.table_SKUs_History, 
                     			   row_SKU, 
                     			   price);
                 } else {
                     // item 217
                     SKUs_History_Row_Add(
-                    	NS.array_SKUs_History, 
+                    	NS.table_SKUs_History, 
                     	price);
                 }
                 // item 940003
@@ -588,7 +625,7 @@ function SKUs_History_Update() {
     }
     // item 272
     if (arrays_Equal(
-	NS.array_SKUs_History, 
+	NS.table_SKUs_History, 
 	array_SKUs_History_Old)) {
         
     } else {
@@ -598,7 +635,7 @@ function SKUs_History_Update() {
         	.getRange('A1');
         // item 282
         table_2_Range(
-        	NS.array_SKUs_History,
+        	NS.table_SKUs_History,
         	cell);
     }
 }
@@ -821,10 +858,10 @@ function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
     	table_Copy(
-    		NS.array_Prices_BackGrounds);
+    		NS.table_Prices_BackGrounds);
     // item 389
-    const rows_Max = NS.array_SKUs_3D.length;
-    const cols_Max = NS.array_SKUs_3D[0].length;
+    const rows_Max = NS.table_SKUs_3D.length;
+    const cols_Max = NS.table_SKUs_3D[0].length;
     // item 3640001
     let row = 0;
     while (true) {
@@ -846,7 +883,7 @@ function price_BackGrounds_Paint() {
             // item 365
             var array_SKUs = 
             	string_Filter(
-            		NS.array_SKUs_3D[row][col],
+            		NS.table_SKUs_3D[row][col],
             		NS.sku_Regex);
             // item 366
             array_SKUs = 
@@ -861,17 +898,17 @@ function price_BackGrounds_Paint() {
                 // item 374
                 const date_Newest = 
                 	SKUs_Date_Newest(
-                		NS.array_SKUs_History,
+                		NS.table_SKUs_History,
                 		array_SKUs);
                 // item 375
                 if (date_Newest >= 
 NS.date_Paint) {
                     // item 383
-                    NS.array_Prices_BackGrounds[row][col - 9] =
+                    NS.table_Prices_BackGrounds[row][col - 9] =
                     'yellow';
                 } else {
                     // item 378
-                    NS.array_Prices_BackGrounds[row][col - 9] =
+                    NS.table_Prices_BackGrounds[row][col - 9] =
                     'white';
                 }
             }
@@ -884,18 +921,23 @@ NS.date_Paint) {
     // item 385
     if (arrays_Equal(
 	price_BackGrounds_Old, 
-	NS.array_Prices_BackGrounds)) {
+	NS.table_Prices_BackGrounds)) {
         
     } else {
         // item 388
         NS.range_Prices
         	.setBackgrounds(
-        		NS.array_Prices_BackGrounds);
+        		NS.table_Prices_BackGrounds);
     }
 }
 
 function ranges_2_NS() {
     // item 83
+    NS.date_Paint_Start =   
+    	new Date(
+    		new Date().getTime() - 
+    		30 * 24 * 60 * 60 * 1000);
+    
     NS.sku_Regex = /\d{3}-\d{3}-\d{4}/;
     
     NS.spread = SpreadsheetApp.getActive();
@@ -904,14 +946,14 @@ function ranges_2_NS() {
     NS.sheet_SKUs_History = NS.spread.getSheetByName('Прайс без НДС Артикулы история');
     
     NS.range_Prices = NS.sheet_Price_NDS_NO.getRange('C1:H');
-    NS.array_Prices = NS.range_Prices.getValues();
-    NS.array_Prices_BackGrounds = NS.range_Prices.getBackgrounds();
+    NS.table_Prices = NS.range_Prices.getValues();
+    NS.table_Prices_BackGrounds = NS.range_Prices.getBackgrounds();
     
     NS.range_SKUs_3D = NS.sheet_Price_NDS_NO.getRange('L1:Q');
-    NS.array_SKUs_3D = NS.range_SKUs_3D.getValues();
+    NS.table_SKUs_3D = NS.range_SKUs_3D.getValues();
     
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
-    NS.array_SKUs_History = NS.range_SKUs_History.getValues();
+    NS.table_SKUs_History = NS.range_SKUs_History.getValues();
 }
 
 function ranges_2_NS_Test() {
