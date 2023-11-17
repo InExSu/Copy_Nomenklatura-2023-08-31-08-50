@@ -408,6 +408,11 @@ function SKU_History_Row(SKU) {
 
 function SKU_History_Row_Test() {
     // item 810
+    NS.spread = SpreadsheetApp.getActive();
+    
+    NS.sheet_SKUs_History = 
+    NS.spread.getSheetByName('Прайс без НДС Артикулы история');
+    
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
     NS.table_SKUs_History = NS.range_SKUs_History.getValues();
     // item 811
