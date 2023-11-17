@@ -334,7 +334,7 @@ function AOnEdit_Check(event) {
     // item 800
     // Ячейка имеет артикул?
     // item 790
-    if () {
+    if (true) {
         // item 799
         Loggger.log();
         // item 793
@@ -344,7 +344,7 @@ function AOnEdit_Check(event) {
         // item 801
         // Ячейка сама цена?
         // item 795
-        if () {
+        if (true) {
             // item 798
             Loggger.log();
             // item 794
