@@ -167,6 +167,12 @@ function AMain_Drakon_All() {
 	NS.table_SKUs_History)) {
             
         } else {
+            // item 863
+            // Удалить строки с 3 по последнюю
+             NS.sheet_SKUs_History
+            	.deleteRows(3, 
+            		NS.sheet_SKUs_History
+            		.getLastRow() - 2);
             // item 803
             const a2 = table_Copy(
             	NS.table_SKUs_History);
