@@ -201,9 +201,9 @@ function AMain_Drakon_All() {
                         break;
                     }
                     // item 7270004
-                    var SKU = _col727[_ind727];
+                    var SKU_i = _col727[_ind727];
                     // item 752
-                    const date_History = SKU_History_Date(SKU);
+                    const date_History = SKU_History_Date(SKU_i);
                     // item 742
                     if (date_History === undefined) {
                         
