@@ -335,7 +335,7 @@ function AOnEdit_Check(event) {
     // Ячейка имеет артикул?
     // item 790
     if (true) {
-        // item 799
+        // item 799 
         Loggger.log();
         // item 793
         // Историю артикулов обновить
