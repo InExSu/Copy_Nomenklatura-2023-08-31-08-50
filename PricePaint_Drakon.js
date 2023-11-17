@@ -220,6 +220,8 @@ function AMain_Drakon_All() {
                     var SKU_i = _col727[_ind727];
                     // item 752
                     const date_History = SKU_History_Date(SKU_i);
+                    // item 860
+                    debugger;
                     // item 742
                     if (date_History === undefined) {
                         
@@ -244,9 +246,14 @@ function AMain_Drakon_All() {
             // item 7240003
             row++;
         }
+        // item 859
+        const backGrounds =
+        	NS.table_Prices_BackGrounds;
+        debugger;
         // item 750
-        NS.range_Prices.setBackgrounds(
-        	NS.table_Prices_BackGrounds);
+        NS.range_Prices
+        	.setBackgrounds(
+        		backGrounds);
     } else {
         // item 677
         log_Toast_SendEmail(
