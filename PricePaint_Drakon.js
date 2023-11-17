@@ -1215,7 +1215,7 @@ function table_Find_Shift(table, needle, column_Needle, column_Return) {
     вернуть из column_Return или
     undefined */
     // item 8310001
-    le i = 0;
+    let i = 0;
     while (true) {
         // item 8310002
         if (i < table.length) {
@@ -1231,7 +1231,7 @@ function table_Find_Shift(table, needle, column_Needle, column_Return) {
             
         }
         // item 8310003
-        I++;
+        i++;
     }
     // item 837
     return undefined;
