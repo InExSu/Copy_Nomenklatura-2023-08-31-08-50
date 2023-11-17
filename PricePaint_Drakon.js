@@ -70,7 +70,7 @@ function AMain_Drakon_All() {
         let row = 0;
         while (true) {
             // item 6780002
-            if (row < NS.table_SKUs_3D) {
+            if (row < NS.table_SKUs_3D.length) {
                 
             } else {
                 break;
@@ -79,7 +79,7 @@ function AMain_Drakon_All() {
             let col = 0;
             while (true) {
                 // item 6800002
-                if (col < NS.table_SKUs_3D[0]) {
+                if (col < NS.table_SKUs_3D[0].length) {
                     
                 } else {
                     break;
@@ -161,7 +161,7 @@ function AMain_Drakon_All() {
         row = 0;
         while (true) {
             // item 7240002
-            if (row < NS.table_SKUs_3D) {
+            if (row < NS.table_SKUs_3D.length) {
                 
             } else {
                 break;
@@ -170,7 +170,7 @@ function AMain_Drakon_All() {
             let col = 0;
             while (true) {
                 // item 7220002
-                if (col < NS.table_SKUs_3D[0]) {
+                if (col < NS.table_SKUs_3D[0].length) {
                     
                 } else {
                     break;
