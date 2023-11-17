@@ -49,10 +49,12 @@ function AMain_Drakon(cell) {
 }
 
 function AMain_Drakon_All() {
+    // item 802
+    // Лист истории артикулов есть?
     // item 665
-    if (// Лист истории артикулов 
-// есть?
-sheet_Name_Exists(
+    if (SpreadsheetApp
+	.getActive()
+	.getSheetByName(
 	'Прайс без НДС Артикулы история')) {
         // item 670
         ranges_2_NS();
