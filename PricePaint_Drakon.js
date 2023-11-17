@@ -618,8 +618,6 @@ function SKUs_History_Row_Update(row, price_New) {
         
     } else {
         // item 719
-        NS.table_SKUs_History[row]
-        
         NS.table_SKUs_History[row][0] = 
         	new Date()
         	.toISOString()
