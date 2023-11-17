@@ -435,7 +435,8 @@ function SKU_History_Row_Test() {
         // item 820
         Logger.log(
         	'Ошибка в SKU_History_Row_Test ' +
-        	'для пусто ожидалось -1');
+        	'для пусто ожидалось -1 \n' + 
+        	'получено: ' + result;
     }
 }
 
