@@ -1024,6 +1024,10 @@ function ranges_2_NS() {
     		new Date().getTime() - 
     		30 * 24 * 60 * 60 * 1000);
     
+    Logger.log(NS.date_Paint_Start
+    	.toISOString()
+    	.slice(0, 10););
+    
     NS.sku_Regex = /\d{3}-\d{3}-\d{4}/;
     
     NS.spread = SpreadsheetApp.getActive();
@@ -1383,6 +1387,47 @@ function table_Rows_Filter_Test() {
         // item 6150003
         i++;
     }
+}
+
+function time_Measure() {
+    // item 848
+    /**
+    Одна функция для запуска останова таймера */
+    // item 846
+    /**
+    При инициации
+    let timer = time_Measure();
+    создаcться startTune */
+    // item 844
+    let startTime = new Date().getTime();
+    // item 847
+    /**
+    Чтобы узнать прошедшее время
+    нужно вызвать
+    let elapsedTime = timer(); */
+    // item 845
+    return () => {
+        let endTime = new Date().getTime();
+        let elapsedTime = endTime - startTime;
+        return elapsedTime;
+      };
+}
+
+function time_Measure_Test() {
+    // item 854
+      let timer = time_Measure();
+    
+      Utilities.sleep(2000); // Пауза на 2 секунды
+    
+      let elapsedTime = timer();
+      console.log(`Elapsed time: ${elapsedTime} milliseconds`);
+    
+      timer = time_Measure();
+    
+      Utilities.sleep(2000); // Пауза на 2 секунды
+    
+      elapsedTime = timer();
+      console.log(`Elapsed time: ${elapsedTime} milliseconds`);
 }
 
 
