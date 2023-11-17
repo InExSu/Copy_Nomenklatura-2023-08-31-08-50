@@ -120,6 +120,8 @@ function AMain_Drakon_All() {
                         // item 696
                         // ДатаВремя Артикул Цена Пользователь
                         
+                        debugger;
+                        
                         const row_1D = [];
                         
                         row_1D[0] = new Date()
@@ -334,7 +336,7 @@ function AMain_Drakon_TestS() {
 }
 
 function AOnEdit_Check(event) {
-    // item 788 
+    // item 788
     const cell = event.range;
     // item 789
     //TODO
