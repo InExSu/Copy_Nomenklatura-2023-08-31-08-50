@@ -114,7 +114,9 @@ function AMain_Drakon_All() {
                   .filter(element => NS.sku_Regex.test(element));
                 // item 691
                 const price = 
-                	NS.table_Prices[row][col];
+                	parseFloat(
+                	NS.table_Prices[row][col]
+                	.replace(' ',''));
                 // item 6890001
                 var _ind689 = 0;
                 var _col689 = SKUs_1D;
@@ -648,7 +650,9 @@ function SKUs_History_Row_Update(row, price_New) {
     // Обновить, если цены разные
     // item 718
     const price_Old = 
-    	NS.table_SKUs_History[row][2];
+    	parseFloat(
+    		NS.table_SKUs_History[row][2]
+    		.replace(' ',''));
     // item 864
     debugger;
     // item 715
