@@ -52,7 +52,7 @@ function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
     /* global debugger, Logger, 
-    MailApp, SpreadsheetApp, Session */
+    MailApp, SpreadsheetApp, Session, Utilities */
     // item 802
     // Лист истории артикулов есть?
     // item 665
