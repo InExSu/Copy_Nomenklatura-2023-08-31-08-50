@@ -406,6 +406,34 @@ function SKU_History_Row(SKU) {
     	.findIndex(row => row[1] === SKU);
 }
 
+function SKU_History_Row_Test() {
+    // item 810
+    NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
+    NS.table_SKUs_History = NS.range_SKUs_History.getValues();
+    // item 811
+    let result = SKU_History_Row('102-132-0002');
+    // item 812
+    if (result > 0) {
+        
+    } else {
+        // item 815
+        Logger.log(
+        	'Ошибка в SKU_History_Row_Test' +
+        	'Артикул не найден');
+    }
+    // item 816
+    result = SKU_History_Row('');
+    // item 817
+    if (result === -1) {
+        
+    } else {
+        // item 820
+        Logger.log(
+        	'Ошибка в SKU_History_Row_Test ' +
+        	'для пусто ожидалось -1');
+    }
+}
+
 function SKUs_Date_Newest(SKUs_History, SKUs, column_Date = 0, column_SKUs = 1) {
     // item 638
     /**
