@@ -152,7 +152,7 @@ function AMain_Drakon_All() {
             	NS.table_SKUs_History);
             // item 781
             NS.sheet_SKUs_History
-            	.getCell(1,1)
+            	.getRange('A1')
             	.offset(0, 0, 
             	a2.length, 
             	a2[0].length)
@@ -510,7 +510,7 @@ function SKUs_History_Date_Update_If_Test() {
     // item 260
     if (price_New === price_Old) {
         // item 264
-        Logger.log( 
+        Logger.log(
         	'Ошибка в ' + 
         	'SKUs_History_Date_Update_If_Test');
     } else {
