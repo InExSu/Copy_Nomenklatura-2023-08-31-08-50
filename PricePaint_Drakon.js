@@ -234,7 +234,7 @@ function AMain_Drakon_All() {
         }
         // item 750
         NS.range_Prices.setBackgrounds(
-        	NS.table_Prices_BackGround);
+        	NS.table_Prices_BackGrounds);
     } else {
         // item 677
         log_Toast_SendEmail(
