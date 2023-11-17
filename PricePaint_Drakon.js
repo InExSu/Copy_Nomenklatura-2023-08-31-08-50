@@ -309,7 +309,7 @@ function AMain_Drakon_TestS() {
     
     AMain_Drakon(cell_Price);
     // item 562
-    const cell_Price_BackGround =
+    cell_Price_BackGround =
     	cell_Price_BackGround_Get(
     		SKU_HIstory_Row_2);
     // item 563
