@@ -51,7 +51,7 @@ function AMain_Drakon(cell) {
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
-    /* global Logger, SpreadsheetApp, Session */
+    /* global Logger, MailApp, SpreadsheetApp, Session */
     // item 802
     // Лист истории артикулов есть?
     // item 665
@@ -283,7 +283,7 @@ function AMain_Drakon_TestS() {
     
     AMain_Drakon(cell_Price);
     // item 561
-    const cell_Price_BackGround =
+    let cell_Price_BackGround =
     	cell_Price_BackGround_Get(
     		SKU_HIstory_Row_2);
     // item 555
