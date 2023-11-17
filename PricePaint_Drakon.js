@@ -114,10 +114,6 @@ function AMain_Drakon_All() {
                     const row_History = SKU_History_Row(SKU);
                     // item 693
                     if (row_History === undefined) {
-                        // item 697
-                        NS.table_SKUs_History
-                        	.push(row_1D);
-                    } else {
                         // item 696
                         // ДатаВремя Артикул Цена Пользователь
                         
@@ -133,6 +129,10 @@ function AMain_Drakon_All() {
                         
                         row_1D[3] = Session.getActiveUser()
                         		.getEmail();
+                        // item 697
+                        NS.table_SKUs_History
+                        	.push(row_1D);
+                    } else {
                         // item 765
                         SKUs_History_Row_Update(
                         	row_History, price);
