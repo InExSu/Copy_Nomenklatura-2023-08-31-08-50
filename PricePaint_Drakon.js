@@ -1361,7 +1361,7 @@ function table_Rows_Filter_Test() {
         Ожидалось: 
         ${JSON.stringify(testCase.expected)}`
         );
-Ôa        // item 6150003
+        // item 6150003
         i++;
     }
 }
