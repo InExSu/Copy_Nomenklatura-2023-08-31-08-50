@@ -128,6 +128,7 @@ function AMain_Drakon_All() {
 
                         row_1D[2] = price;
 
+                        // eslint-disable-next-line no-undef
                         row_1D[3] = Session.getActiveUser()
                             .getEmail();
                         // item 697
