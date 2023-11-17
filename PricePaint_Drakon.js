@@ -331,7 +331,7 @@ function AOnEdit_Check(event) {
     const cell = event.range;
     // item 789
     //TODO
-    // item 800
+    // item 800 
     // Ячейка имеет артикул?
     // item 790
     if (true) {
