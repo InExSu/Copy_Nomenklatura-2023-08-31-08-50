@@ -402,18 +402,6 @@ function SKU_History_Row(SKU) {
     	.findIndex(row => row[1] === SKU);
 }
 
-function SKU_In_History(SKU) {
-    // item 729
-    if (NS.SKUs_History_Map === 
-	undefined) {
-        
-    } else {
-        // item 732
-        NS.SKUs_History_Map = 
-        	table_2_Map(NS.table_SKUs_History);
-    }
-}
-
 function SKUs_Date_Newest(SKUs_History, SKUs, column_Date = 0, column_SKUs = 1) {
     // item 638
     /**
