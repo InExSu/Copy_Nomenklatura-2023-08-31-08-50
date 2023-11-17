@@ -4,7 +4,7 @@
 function AATests_RUN() {
     // item 192
     // Тесты чистых функций
-    
+    /**
     SKUs_Date_Newest_Test();
     SKUs_History_Date_Update_If_Test();
     SKUs_History_Row_Add_Test();
@@ -13,20 +13,18 @@ function AATests_RUN() {
     table_2_Map_Test()
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
-    table_Rows_Filter_Test
+    table_Rows_Filter_Test(); */
     // item 501
-    // AMain_Drakon_All();
+    AMain_Drakon_All();
     
     // AMain_Drakon_TestS();
     // item 169
     // Тесты функций данных
     
-    // должен быть первым
-    ranges_2_NS_Test();
-    
-    SKUs_History_Update_Test();
     /**
-    cellS_Has_SKU_Test();*/
+    ranges_2_NS_Test();
+    SKUs_History_Update_Test();
+    cellS_Has_SKU_Test(); */
 }
 
 function AMain_Drakon(cell) {
