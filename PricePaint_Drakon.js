@@ -385,7 +385,7 @@ function SKU_History_Date(SKU) {
     // item 772
     return table_Find_Shift(
     	table_SKUs_History,
-    	SKU
+    	SKU,
     	1, 0);
 }
 
