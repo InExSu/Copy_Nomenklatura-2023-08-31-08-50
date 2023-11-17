@@ -51,7 +51,6 @@ function AMain_Drakon(cell) {
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     /* global debugger, Logger, 
     MailApp, SpreadsheetApp, Session */
     // item 802
@@ -72,7 +71,7 @@ function AMain_Drakon_All() {
         // item 6780001
         // проход по массиву
         // артикулов прайса
-        let row = 0; 
+        let row = 0;
         while (true) {
             // item 6780002
             if (row < NS.table_SKUs_3D.length) {
@@ -115,9 +114,9 @@ function AMain_Drakon_All() {
                     const row_History = SKU_History_Row(SKU);
                     // item 693
                     if (row_History === undefined) {
-                        // item 765
-                        SKUs_History_Row_Update(
-                        	row_History, price);
+                        // item 697
+                        NS.table_SKUs_History
+                        	.push(row_1D);
                     } else {
                         // item 696
                         // ДатаВремя Артикул Цена Пользователь
@@ -134,9 +133,9 @@ function AMain_Drakon_All() {
                         
                         row_1D[3] = Session.getActiveUser()
                         		.getEmail();
-                        // item 697
-                        NS.table_SKUs_History
-                        	.push(row_1D);
+                        // item 765
+                        SKUs_History_Row_Update(
+                        	row_History, price);
                     }
                     // item 6890003
                     _ind689++;
