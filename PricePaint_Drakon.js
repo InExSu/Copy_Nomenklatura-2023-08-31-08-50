@@ -130,10 +130,10 @@ function AMain_Drakon_All() {
                     var SKU = _col689[_ind689];
                     // item 864
                     if (SKU === '') {
-                        
-                    } else {
                         // item 867
                         debugger;
+                    } else {
+                        
                     }
                     // item 751
                     const row_History = SKU_History_Row(SKU);
