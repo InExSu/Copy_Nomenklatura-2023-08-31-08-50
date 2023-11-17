@@ -334,7 +334,7 @@ function AMain_Drakon_TestS() {
 }
 
 function AOnEdit_Check(event) {
-    // item 788
+    // item 788 
     const cell = event.range;
     // item 789
     //TODO
