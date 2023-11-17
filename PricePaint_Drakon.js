@@ -510,7 +510,7 @@ function SKUs_History_Date_Update_If_Test() {
     // item 260
     if (price_New === price_Old) {
         // item 264
-        Logger.log(
+        Logger.log( 
         	'Ошибка в ' + 
         	'SKUs_History_Date_Update_If_Test');
     } else {
