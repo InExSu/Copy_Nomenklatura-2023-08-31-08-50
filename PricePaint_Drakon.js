@@ -651,22 +651,41 @@ function SKUs_History_Row_Update(row, price_New) {
     	NS.table_SKUs_History[row][2];
     // item 864
     debugger;
-    // item 715
-    if (price_New === price_Old) {
-        
+    // item 885
+    if ((isNumeric(price_Old)) && (isNumeric(price_New))) {
+        // item 891
+        const price_Old_Number = 
+        	price_Old
+        	.toString()	
+        	.replace(' ','')
+        	.replace(',','.');
+        // item 892
+        const price_New_Number = 
+        	price_New
+        	.toString()	
+        	.replace(' ','')
+        	.replace(',','.');
+        // item 893
+        if (price_Old_Number == 
+	price_New_Number) {
+            // item 719
+            NS.table_SKUs_History[row][0] = 
+            	new Date()
+            	.toISOString()
+            	.slice(0, 10);
+            
+            // артикул без изменений
+            
+            NS.table_SKUs_History[row][2] = price_New;
+            
+            NS.table_SKUs_History[row][3] = 
+            	Session.getActiveUser().getEmail();
+        } else {
+            // item 896
+            // обновление НЕ нужно
+        }
     } else {
-        // item 719
-        NS.table_SKUs_History[row][0] = 
-        	new Date()
-        	.toISOString()
-        	.slice(0, 10);
         
-        // артикул без изменений
-        
-        NS.table_SKUs_History[row][2] = price_New;
-        
-        NS.table_SKUs_History[row][3] = 
-        	Session.getActiveUser().getEmail();
     }
 }
 
