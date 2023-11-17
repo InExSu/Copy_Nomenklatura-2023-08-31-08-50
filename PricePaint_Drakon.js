@@ -68,6 +68,8 @@ function AMain_Drakon_All() {
         const array_SKUs_History_Copy =
         	 NS.table_SKUs_History
         	.map(row_Story => [...row_Story]);
+        // item 830
+        const col_Max = NS.table_SKUs_3D[0].length;
         // item 6780001
         // проход по массиву
         // артикулов прайса
@@ -83,7 +85,7 @@ function AMain_Drakon_All() {
             let col = NS.SKUs_3D_col_Start;
             while (true) {
                 // item 6800002
-                if (col < NS.table_SKUs_3D[0].length) {
+                if (col < col_Max) {
                     
                 } else {
                     break;
@@ -178,7 +180,7 @@ function AMain_Drakon_All() {
             let col = NS.range_SKUs_3D;
             while (true) {
                 // item 7220002
-                if (col < NS.table_SKUs_3D[0].length) {
+                if (col < col_Max) {
                     
                 } else {
                     break;
