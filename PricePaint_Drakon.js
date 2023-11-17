@@ -1026,7 +1026,7 @@ function ranges_2_NS() {
     
     Logger.log(NS.date_Paint_Start
     	.toISOString()
-    	.slice(0, 10););
+    	.slice(0, 10));
     
     NS.sku_Regex = /\d{3}-\d{3}-\d{4}/;
     
