@@ -87,7 +87,7 @@ function AMain_Drakon_All() {
                 // item 692
                 const SKUs_1D = 
                 	NS.table_SKUs_3D[row][col]
-                	replace(/\s/g, "")
+                	.replace(/\s/g, "")
                 	.split(',');
                 // item 691
                 const price = 
@@ -178,7 +178,7 @@ function AMain_Drakon_All() {
                 // item 726
                 const SKUs_1D = 
                 	NS.table_SKUs_3D[row][col]
-                	replace(/\s/g, "")
+                	.replace(/\s/g, "")
                 	.split(',');
                 // item 782
                 /** проход по 
