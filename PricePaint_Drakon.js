@@ -70,6 +70,14 @@ function AMain_Drakon_All() {
         	'${timer()} миллисек`);
         // item 857
         timer = time_Measure();
+        // item 862
+        const date_New = new Date()
+        		.toISOString()
+        		.slice(0, 10);
+        
+        const user_Email = 
+        	Session.getActiveUser()
+        		.getEmail();
         // item 698
         // копию массива, чтобы не делать
         // лишних сохранений на лист
@@ -129,16 +137,13 @@ function AMain_Drakon_All() {
                         
                         const row_1D = [];
                         
-                        row_1D[0] = new Date()
-                        		.toISOString()
-                        		.slice(0, 10);
+                        row_1D[0] = date_New;
                         
                         row_1D[1] = SKU;
                         
                         row_1D[2] = price;
                         
-                        row_1D[3] = Session.getActiveUser()
-                        		.getEmail();
+                        row_1D[3] = user_Email;
                         // item 697
                         NS.table_SKUs_History
                         	.push(row_1D);
@@ -175,7 +180,7 @@ function AMain_Drakon_All() {
         }
         // item 858
         console.log(
-        	`Историю обновить: ' +
+        	`История обновилась: ' +
         	'${timer()} миллисек`);
         // item 861
         const date_Paint = 
