@@ -60,8 +60,16 @@ function AMain_Drakon_All() {
 	.getActive()
 	.getSheetByName(
 	'Прайс без НДС Артикулы история')) {
+        // item 855
+        let timer = time_Measure();
         // item 670
         ranges_2_NS();
+        // item 856
+        console.log(
+        	`range_2_NS: ' +
+        	'${timer()} миллисек`);
+        // item 857
+        timer = time_Measure();
         // item 698
         // копию массива, чтобы не делать
         // лишних сохранений на лист
@@ -165,6 +173,10 @@ function AMain_Drakon_All() {
             	a2[0].length)
             	.setValues(a2);
         }
+        // item 858
+        console.log(
+        	`Историю обновить: ' +
+        	'${timer()} миллисек`);
         // item 7240001
         // проход по массиву
         // артикулов прайса
