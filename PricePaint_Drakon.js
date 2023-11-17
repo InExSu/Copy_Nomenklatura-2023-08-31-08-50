@@ -116,6 +116,7 @@ function AMain_Drakon_All() {
                 const price = 
                 	parseFloat(
                 	NS.table_Prices[row][col]
+                	.toString()
                 	.replace(' ',''));
                 // item 6890001
                 var _ind689 = 0;
@@ -652,6 +653,7 @@ function SKUs_History_Row_Update(row, price_New) {
     const price_Old = 
     	parseFloat(
     		NS.table_SKUs_History[row][2]
+    		.toString()
     		.replace(' ',''));
     // item 864
     debugger;
