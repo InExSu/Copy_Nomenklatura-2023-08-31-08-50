@@ -51,7 +51,7 @@ function AMain_Drakon(cell) {
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
-    /* global Logger, SpreadsheetApp */
+    /* global Logger, SpreadsheetApp, Session */
     // item 802
     // Лист истории артикулов есть?
     // item 665
@@ -342,7 +342,7 @@ function AOnEdit_Check(event) {
     // item 790
     if (true) {
         // item 799
-        Loggger.log();
+        Logger.log();
         // item 793
         // Историю артикулов обновить
         // с датой ранее окраски
@@ -352,7 +352,7 @@ function AOnEdit_Check(event) {
         // item 795
         if (true) {
             // item 798
-            Loggger.log();
+            Logger.log();
             // item 794
             // История артикулов обновить
             // ценой и датой
