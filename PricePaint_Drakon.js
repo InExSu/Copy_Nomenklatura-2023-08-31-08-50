@@ -150,7 +150,7 @@ function AMain_Drakon_All() {
                     } else {
                         // item 765
                         SKUs_History_Row_Update(
-                        	row_History, price);
+                        	row_History, price, date_New, user_Email);
                     }
                     // item 6890003
                     _ind689++;
@@ -643,49 +643,52 @@ function SKUs_History_Row_Add_Test() {
     }
 }
 
-function SKUs_History_Row_Update(row, price_New) {
+function SKUs_History_Row_Update(row, price_New, date_New, user_Email) {
     // item 720
     // Обновить, если цены разные
     // item 718
     const price_Old = 
     	NS.table_SKUs_History[row][2];
+    // item 902
+    let price_Old_Compare = price_Old;
+    let price_New_Compare = price_New;
     // item 864
     debugger;
     // item 885
     if ((isNumeric(price_Old)) && (isNumeric(price_New))) {
         // item 891
-        const price_Old_Number = 
-        	price_Old
-        	.toString()	
-        	.replace(' ','')
-        	.replace(',','.');
-        // item 892
-        const price_New_Number = 
-        	price_New
-        	.toString()	
-        	.replace(' ','')
-        	.replace(',','.');
-        // item 893
-        if (price_Old_Number == 
-	price_New_Number) {
-            // item 719
-            NS.table_SKUs_History[row][0] = 
-            	new Date()
-            	.toISOString()
-            	.slice(0, 10);
-            
-            // артикул без изменений
-            
-            NS.table_SKUs_History[row][2] = price_New;
-            
-            NS.table_SKUs_History[row][3] = 
-            	Session.getActiveUser().getEmail();
-        } else {
-            // item 896
-            // обновление НЕ нужно
-        }
-    } else {
+        price_Old_Compare = 
+        	toNumber(price_Old);
         
+        price_New_Compare = 
+        	toNumber(price_New);
+    } else {
+        // item 903
+        price_Old_Compare = price_Old
+        		.toString()
+        		.trim();
+        
+        price_New_Compare = price_New
+        		.toString()
+        		.trim();
+    }
+    // item 911
+    if (price_Old_Compare ==
+	price_New_Compare) {
+        // item 914
+        // Обновление НЕ нужно
+    } else {
+        // item 719
+        NS.table_SKUs_History[row][0] = 
+        	date_New;
+        
+        // артикул без изменений
+        
+        NS.table_SKUs_History[row][2] = 
+        	price_New_Compare;
+        
+        NS.table_SKUs_History[row][3] = 
+        	user_Email;
     }
 }
 
@@ -1544,6 +1547,17 @@ function time_Measure_Test() {
     
       elapsedTime = timer();
       console.log(`Elapsed time: ${elapsedTime} milliseconds`);
+}
+
+function toNumber(string) {
+    // item 910
+    // почти число превратить
+    // в число
+    // item 909
+    return string
+    	.toString()	
+    	.replace(' ','')
+    	.replace(',','.');
 }
 
 
