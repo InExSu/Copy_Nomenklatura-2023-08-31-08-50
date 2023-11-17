@@ -51,7 +51,8 @@ function AMain_Drakon(cell) {
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
-    /* global Logger, MailApp, SpreadsheetApp, Session */
+    /* global debugger, Logger, 
+    MailApp, SpreadsheetApp, Session */
     // item 802
     // Лист истории артикулов есть?
     // item 665
