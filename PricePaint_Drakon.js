@@ -649,6 +649,8 @@ function SKUs_History_Row_Update(row, price_New) {
     // item 718
     const price_Old = 
     	NS.table_SKUs_History[row][2];
+    // item 864
+    debugger;
     // item 715
     if (price_New === price_Old) {
         
