@@ -98,7 +98,7 @@ function AMain_Drakon_All() {
                   .filter(element => NS.sku_Regex.test(element));
                 // item 691
                 const price = 
-                	NS.table_SKUs_3D[row][col - 9];
+                	NS.table_Prices[row][col];
                 // item 6890001
                 var _ind689 = 0;
                 var _col689 = SKUs_1D;
