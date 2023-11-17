@@ -1297,7 +1297,7 @@ function table_Rows_Filter_Test() {
         if (i < testCases.length) {
             
         } else {
-            break; 
+            break;
         }
         // item 617
         var testCase = testCases[i];
