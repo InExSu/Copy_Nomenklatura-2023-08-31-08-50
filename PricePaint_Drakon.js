@@ -233,7 +233,7 @@ function AMain_Drakon_All() {
             row++;
         }
         // item 750
-        NS.range_Prices.setBackground(
+        NS.range_Prices.setBackgrounds(
         	NS.table_Prices_BackGround);
     } else {
         // item 677
