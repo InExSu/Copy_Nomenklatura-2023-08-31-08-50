@@ -51,6 +51,7 @@ function AMain_Drakon(cell) {
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     /* global debugger, Logger, 
     MailApp, SpreadsheetApp, Session */
     // item 802
@@ -71,7 +72,7 @@ function AMain_Drakon_All() {
         // item 6780001
         // проход по массиву
         // артикулов прайса
-        let row = 0;
+        let row = 0; 
         while (true) {
             // item 6780002
             if (row < NS.table_SKUs_3D.length) {
