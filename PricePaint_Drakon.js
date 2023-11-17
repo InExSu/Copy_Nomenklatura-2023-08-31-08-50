@@ -392,7 +392,7 @@ function SKU_History_Row(SKU) {
     undefined */
     // item 780
     return NS.table_SKUs_History
-    	.findIndex(row => row[column] === needle);
+    	.findIndex(row => row[1] === needle);
 }
 
 function SKU_In_History(SKU) {
