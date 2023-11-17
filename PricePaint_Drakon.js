@@ -92,11 +92,10 @@ function AMain_Drakon_All() {
                     break;
                 }
                 // item 692
-                const SKUs_1D = 
-                	NS.table_SKUs_3D[row][col]
-                	.replace(/\s/g, "")
-                	.split(',')
-                	.filter(item => item !== "");
+                const SKUs_1D = NS.table_SKUs_3D[row][col]
+                  .replace(/\s/g, "")
+                  .split(',')
+                  .filter(element => NS.sku_Regex.test(element));
                 // item 691
                 const price = 
                 	NS.table_SKUs_3D[row][col - 9];
@@ -187,10 +186,10 @@ function AMain_Drakon_All() {
                     break;
                 }
                 // item 726
-                const SKUs_1D = 
-                	NS.table_SKUs_3D[row][col]
-                	.replace(/\s/g, "")
-                	.split(',');
+                const SKUs_1D = NS.table_SKUs_3D[row][col]
+                  .replace(/\s/g, "")
+                  .split(',')
+                  .filter(element => NS.sku_Regex.test(element));
                 // item 782
                 /** проход по 
                  артикулам ячейки */
