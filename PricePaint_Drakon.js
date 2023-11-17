@@ -1034,7 +1034,7 @@ function ranges_2_NS() {
     
     NS.range_SKUs_3D = NS.sheet_Price_NDS_NO.getRange('L1:Q');
     NS.table_SKUs_3D = NS.range_SKUs_3D.getValues();
-    NS.SKUs_3D_col_Start = NS.range_SKUs_3D.getColumn - 1
+    NS.SKUs_3D_col_Start = NS.range_SKUs_3D.getColumn() - 1;
     
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
     NS.table_SKUs_History = NS.range_SKUs_History.getValues();
