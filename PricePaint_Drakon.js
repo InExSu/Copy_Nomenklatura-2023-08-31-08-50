@@ -131,7 +131,7 @@ function AMain_Drakon_All() {
                     // item 751
                     const row_History = SKU_History_Row(SKU);
                     // item 693
-                    if (row_History === undefined) {
+                    if (row_History === -1) {
                         // item 696
                         // ДатаВремя Артикул Цена Пользователь
                         
