@@ -179,7 +179,9 @@ function AMain_Drakon_All() {
         	'${timer()} миллисек`);
         // item 861
         const date_Paint = 
-        	NS.date_Paint_Start;
+        	NS.date_Paint_Start
+            	.toISOString()
+            	.slice(0, 10);
         // item 7240001
         // проход по массиву
         // артикулов прайса
