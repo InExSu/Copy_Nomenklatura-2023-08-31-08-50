@@ -53,6 +53,7 @@ function AMain_Drakon_All() {
     // item 802
     // Лист истории артикулов есть?
     // item 665
+    // eslint-disable-next-line no-undef
     if (SpreadsheetApp
         .getActive()
         .getSheetByName(
