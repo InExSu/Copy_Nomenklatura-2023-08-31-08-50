@@ -401,9 +401,15 @@ function SKU_History_Row(SKU) {
     /**
     вернуть номер строки или
     undefined */
-    // item 780
-    return NS.table_SKUs_History
-    	.findIndex(row => row[1] === SKU);
+    // item 821
+    if (SKU === '') {
+        // item 824
+        return -1;
+    } else {
+        // item 780
+        return NS.table_SKUs_History
+        	.findIndex(row => row[1] === SKU);
+    }
 }
 
 function SKU_History_Row_Test() {
@@ -437,6 +443,18 @@ function SKU_History_Row_Test() {
         	'Ошибка в SKU_History_Row_Test ' +
         	'для пусто ожидалось -1 \n' + 
         	'получено: ' + result);
+    }
+    // item 825
+    result = SKU_History_Row('102');
+    // item 826
+    if (result == -1) {
+        
+    } else {
+        // item 829
+        Logger.log(
+        	'Ошибка в SKU_History_Row_Test' +
+        	'для 102 ожидалось -1 \n' +
+        	'вернулось ' + result);
     }
 }
 
