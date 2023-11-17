@@ -212,11 +212,11 @@ function AMain_Drakon_All() {
                         // item 745
                         if (date_History >= NS.date_Paint_Start) {
                             // item 749
-                            NS.table_Prices_BackGround[row][col] =
+                            NS.table_Prices_BackGrounds[row][col] =
                             	'white';
                         } else {
                             // item 748
-                            NS.table_Prices_BackGround[row][col] =
+                            NS.table_Prices_BackGrounds[row][col] =
                             	'yellow';
                         }
                     }
