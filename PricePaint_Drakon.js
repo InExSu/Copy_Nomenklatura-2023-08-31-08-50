@@ -97,8 +97,6 @@ function AMain_Drakon_All() {
                 // item 691
                 const price = 
                 	NS.table_SKUs_3D[row][col - 9];
-                // item 830
-                debugger;
                 // item 6890001
                 var _ind689 = 0;
                 var _col689 = SKUs_1D;
@@ -195,8 +193,6 @@ function AMain_Drakon_All() {
                 // item 782
                 /** проход по 
                  артикулам ячейки */
-                // item 831
-                debugger;
                 // item 7270001
                 var _ind727 = 0;
                 var _col727 = SKUs_1D;
