@@ -128,6 +128,13 @@ function AMain_Drakon_All() {
                     }
                     // item 6890004
                     var SKU = _col689[_ind689];
+                    // item 864
+                    if (SKU === '') {
+                        
+                    } else {
+                        // item 867
+                        debugger;
+                    }
                     // item 751
                     const row_History = SKU_History_Row(SKU);
                     // item 693
