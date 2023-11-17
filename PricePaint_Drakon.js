@@ -79,12 +79,8 @@ function AMain_Drakon_All() {
             } else {
                 break;
             }
-            // item 830
-            let col_Start = 
-            	NS.range_SKUs_3D
-            	.getColumn() - 1;
             // item 6800001
-            let col = col_Start;
+            let col = NS.SKUs_3D_col_Start;
             while (true) {
                 // item 6800002
                 if (col < NS.table_SKUs_3D[0].length) {
@@ -178,12 +174,8 @@ function AMain_Drakon_All() {
             } else {
                 break;
             }
-            // item 831
-            col_Start = 
-            	NS.range_SKUs_3D
-            	.getColumn() - 1;
             // item 7220001
-            let col = col_Start;
+            let col = NS.range_SKUs_3D;
             while (true) {
                 // item 7220002
                 if (col < NS.table_SKUs_3D[0].length) {
@@ -1042,6 +1034,7 @@ function ranges_2_NS() {
     
     NS.range_SKUs_3D = NS.sheet_Price_NDS_NO.getRange('L1:Q');
     NS.table_SKUs_3D = NS.range_SKUs_3D.getValues();
+    NS.SKUs_3D_col_Start = NS.range_SKUs_3D.getColumn - 1
     
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
     NS.table_SKUs_History = NS.range_SKUs_History.getValues();
