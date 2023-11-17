@@ -128,13 +128,6 @@ function AMain_Drakon_All() {
                     }
                     // item 6890004
                     var SKU = _col689[_ind689];
-                    // item 864
-                    if (SKU === '') {
-                        // item 867
-                        debugger;
-                    } else {
-                        
-                    }
                     // item 751
                     const row_History = SKU_History_Row(SKU);
                     // item 693
@@ -243,8 +236,6 @@ function AMain_Drakon_All() {
                     var SKU_i = _col727[_ind727];
                     // item 752
                     const date_History = SKU_History_Date(SKU_i);
-                    // item 860
-                    debugger;
                     // item 742
                     if (date_History === undefined) {
                         
