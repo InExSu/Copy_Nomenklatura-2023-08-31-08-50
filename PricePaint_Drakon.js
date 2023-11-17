@@ -92,7 +92,8 @@ function AMain_Drakon_All() {
                 const SKUs_1D = 
                 	NS.table_SKUs_3D[row][col]
                 	.replace(/\s/g, "")
-                	.split(',');
+                	.split(',')
+                	.filter(item => item !== "");
                 // item 691
                 const price = 
                 	NS.table_SKUs_3D[row][col - 9];
