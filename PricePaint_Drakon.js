@@ -331,16 +331,20 @@ function AOnEdit_Check(event) {
     const cell = event.range;
     // item 789
     //TODO
+    // item 800
+    // Ячейка имеет артикул?
     // item 790
-    if (// Ячейка имеет артикул?) {
+    if () {
         // item 799
         Loggger.log();
         // item 793
         // Историю артикулов обновить
         // с датой ранее окраски
     } else {
+        // item 801
+        // Ячейка сама цена?
         // item 795
-        if (// Ячейка сама цена?) {
+        if () {
             // item 798
             Loggger.log();
             // item 794
