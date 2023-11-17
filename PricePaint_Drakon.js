@@ -50,193 +50,186 @@ function AMain_Drakon(cell) {
     }
 }
 
-function AMain_Drakon_All(cell) {
-    // item 656
-    if (// ячейка артикули или
-// арткул есть в offset
-cellS_Has_SKU(cell)) {
-        
-    } else {
-        // item 665
-        if (// Лист истории артикулов 
+function AMain_Drakon_All() {
+    // item 665
+    if (// Лист истории артикулов 
 // есть?
 sheet_Name_Exists(
 	'Прайс без НДС Артикулы история')) {
-            // item 670
-            ranges_2_NS();
-            // item 698
-            // копию массива, чтобы не делать
-            // лишних сохранений на лист
-            const array_SKUs_History_Copy =
-            	 NS.table_SKUs_History
-            	.map(row_Story => [...row_Story]);
-            // item 6780001
-            // проход по массиву
-            // артикулов прайса
-            let row = 0;
-            while (true) {
-                // item 6780002
-                if (row < NS.table_SKUs_3D) {
-                    
-                } else {
-                    break;
-                }
-                // item 6800001
-                let col = 0;
-                while (true) {
-                    // item 6800002
-                    if (col < NS.table_SKUs_3D[0]) {
-                        
-                    } else {
-                        break;
-                    }
-                    // item 692
-                    const SKUs_1D = 
-                    	NS.table_SKUs_3D[row][col]
-                    	replace(/\s/g, "")
-                    	.split(',');
-                    // item 691
-                    const price = 
-                    	NS.table_SKUs_3D[row][col - 9];
-                    // item 6890001
-                    var _ind689 = 0;
-                    var _col689 = SKUs_1D;
-                    var _len689 = _col689.length;
-                    while (true) {
-                        // item 6890002
-                        if (_ind689 < _len689) {
-                            
-                        } else {
-                            break;
-                        }
-                        // item 6890004
-                        var SKU = _col689[_ind689];
-                        // item 751
-                        const row_History = SKU_History_Row(SKU);
-                        // item 693
-                        if (row_History === undefined) {
-                            // item 765
-                            SKUs_History_Row_Update(
-                            	row_History, price);
-                        } else {
-                            // item 696
-                            // ДатаВремя Артикул Цена Пользователь
-                            
-                            const row_1D = [];
-                            
-                            row_1D[0] = new Date()
-                            		.toISOString()
-                            		.slice(0, 10);
-                            
-                            row_1D[1] = SKU;
-                            
-                            row_1D[2] = price;
-                            
-                            row_1D[3] = Session.getActiveUser()
-                            		.getEmail();
-                            // item 697
-                            NS.table_SKUs_History
-                            	.push(row_1D);
-                        }
-                        // item 6890003
-                        _ind689++;
-                    }
-                    // item 6800003
-                    col++;
-                }
-                // item 6780003
-                row++;
-            }
-            // item 699
-            if (arrays_Equal(
-	array_SKUs_History_Copy,
-	NS.table_SKUs_History)) {
+        // item 670
+        ranges_2_NS();
+        // item 698
+        // копию массива, чтобы не делать
+        // лишних сохранений на лист
+        const array_SKUs_History_Copy =
+        	 NS.table_SKUs_History
+        	.map(row_Story => [...row_Story]);
+        // item 6780001
+        // проход по массиву
+        // артикулов прайса
+        let row = 0;
+        while (true) {
+            // item 6780002
+            if (row < NS.table_SKUs_3D) {
                 
             } else {
-                // item 781
-                NS.sheet_SKUs_History
-                	.getCell(1,1)
-                	.offset(0, 0, 
-                	a2.length, 
-                	a2[0].length)
-                	.setValues(a2);
+                break;
             }
-            // item 7240001
-            // проход по массиву
-            // артикулов прайса
-            row = 0;
+            // item 6800001
+            let col = 0;
             while (true) {
-                // item 7240002
-                if (row < NS.table_SKUs_3D) {
+                // item 6800002
+                if (col < NS.table_SKUs_3D[0]) {
                     
                 } else {
                     break;
                 }
-                // item 7220001
-                let col = 0;
+                // item 692
+                const SKUs_1D = 
+                	NS.table_SKUs_3D[row][col]
+                	replace(/\s/g, "")
+                	.split(',');
+                // item 691
+                const price = 
+                	NS.table_SKUs_3D[row][col - 9];
+                // item 6890001
+                var _ind689 = 0;
+                var _col689 = SKUs_1D;
+                var _len689 = _col689.length;
                 while (true) {
-                    // item 7220002
-                    if (col < NS.table_SKUs_3D[0]) {
+                    // item 6890002
+                    if (_ind689 < _len689) {
                         
                     } else {
                         break;
                     }
-                    // item 726
-                    const SKUs_1D = 
-                    	NS.table_SKUs_3D[row][col]
-                    	replace(/\s/g, "")
-                    	.split(',');
-                    // item 782
-                    /** проход по 
-                     артикулам ячейки */
-                    // item 7270001
-                    var _ind727 = 0;
-                    var _col727 = SKUs_1D;
-                    var _len727 = _col727.length;
-                    while (true) {
-                        // item 7270002
-                        if (_ind727 < _len727) {
-                            
-                        } else {
-                            break;
-                        }
-                        // item 7270004
-                        var SKU = _col727[_ind727];
-                        // item 752
-                        const date_History = SKU_History_Date(SKU);
-                        // item 742
-                        if (date_History === undefined) {
-                            
-                        } else {
-                            // item 745
-                            if (date_History >= NS.date_Paint_Start) {
-                                // item 749
-                                NS.table_Prices_BackGround[row][col] =
-                                	'white';
-                            } else {
-                                // item 748
-                                NS.table_Prices_BackGround[row][col] =
-                                	'yellow';
-                            }
-                        }
-                        // item 7270003
-                        _ind727++;
+                    // item 6890004
+                    var SKU = _col689[_ind689];
+                    // item 751
+                    const row_History = SKU_History_Row(SKU);
+                    // item 693
+                    if (row_History === undefined) {
+                        // item 765
+                        SKUs_History_Row_Update(
+                        	row_History, price);
+                    } else {
+                        // item 696
+                        // ДатаВремя Артикул Цена Пользователь
+                        
+                        const row_1D = [];
+                        
+                        row_1D[0] = new Date()
+                        		.toISOString()
+                        		.slice(0, 10);
+                        
+                        row_1D[1] = SKU;
+                        
+                        row_1D[2] = price;
+                        
+                        row_1D[3] = Session.getActiveUser()
+                        		.getEmail();
+                        // item 697
+                        NS.table_SKUs_History
+                        	.push(row_1D);
                     }
-                    // item 7220003
-                    col++;
+                    // item 6890003
+                    _ind689++;
                 }
-                // item 7240003
-                row++;
+                // item 6800003
+                col++;
             }
-            // item 750
-            NS.range_Prices.setBackground(
-            	NS.table_Prices_BackGround);
-        } else {
-            // item 677
-            log_Toast_SendEmail(
-            	'НЕ найден лист ' + 
-            	'истории артикулов');
+            // item 6780003
+            row++;
         }
+        // item 699
+        if (arrays_Equal(
+	array_SKUs_History_Copy,
+	NS.table_SKUs_History)) {
+            
+        } else {
+            // item 781
+            NS.sheet_SKUs_History
+            	.getCell(1,1)
+            	.offset(0, 0, 
+            	a2.length, 
+            	a2[0].length)
+            	.setValues(a2);
+        }
+        // item 7240001
+        // проход по массиву
+        // артикулов прайса
+        row = 0;
+        while (true) {
+            // item 7240002
+            if (row < NS.table_SKUs_3D) {
+                
+            } else {
+                break;
+            }
+            // item 7220001
+            let col = 0;
+            while (true) {
+                // item 7220002
+                if (col < NS.table_SKUs_3D[0]) {
+                    
+                } else {
+                    break;
+                }
+                // item 726
+                const SKUs_1D = 
+                	NS.table_SKUs_3D[row][col]
+                	replace(/\s/g, "")
+                	.split(',');
+                // item 782
+                /** проход по 
+                 артикулам ячейки */
+                // item 7270001
+                var _ind727 = 0;
+                var _col727 = SKUs_1D;
+                var _len727 = _col727.length;
+                while (true) {
+                    // item 7270002
+                    if (_ind727 < _len727) {
+                        
+                    } else {
+                        break;
+                    }
+                    // item 7270004
+                    var SKU = _col727[_ind727];
+                    // item 752
+                    const date_History = SKU_History_Date(SKU);
+                    // item 742
+                    if (date_History === undefined) {
+                        
+                    } else {
+                        // item 745
+                        if (date_History >= NS.date_Paint_Start) {
+                            // item 749
+                            NS.table_Prices_BackGround[row][col] =
+                            	'white';
+                        } else {
+                            // item 748
+                            NS.table_Prices_BackGround[row][col] =
+                            	'yellow';
+                        }
+                    }
+                    // item 7270003
+                    _ind727++;
+                }
+                // item 7220003
+                col++;
+            }
+            // item 7240003
+            row++;
+        }
+        // item 750
+        NS.range_Prices.setBackground(
+        	NS.table_Prices_BackGround);
+    } else {
+        // item 677
+        log_Toast_SendEmail(
+        	'НЕ найден лист ' + 
+        	'истории артикулов');
     }
 }
 
@@ -331,6 +324,13 @@ function AMain_Drakon_TestS() {
     SKU_Date_Set(
     	SKU_HIstory_Row_2,
     	SKU_Date_Origin);
+}
+
+function AOnEdit_Check(event) {
+    // item 788
+    const cell = event.range;
+    // item 789
+    //TODO
 }
 
 function NS() {
