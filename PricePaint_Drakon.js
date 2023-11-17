@@ -114,10 +114,7 @@ function AMain_Drakon_All() {
                   .filter(element => NS.sku_Regex.test(element));
                 // item 691
                 const price = 
-                	parseFloat(
-                	NS.table_Prices[row][col]
-                	.toString()
-                	.replace(' ',''));
+                	NS.table_Prices[row][col];
                 // item 6890001
                 var _ind689 = 0;
                 var _col689 = SKUs_1D;
@@ -651,10 +648,7 @@ function SKUs_History_Row_Update(row, price_New) {
     // Обновить, если цены разные
     // item 718
     const price_Old = 
-    	parseFloat(
-    		NS.table_SKUs_History[row][2]
-    		.toString()
-    		.replace(' ',''));
+    	NS.table_SKUs_History[row][2];
     // item 864
     debugger;
     // item 715
@@ -916,6 +910,68 @@ function cell_Price_BackGround_Get(row) {
         	'Артикул не найден');
         // item 592
         return '';
+    }
+}
+
+function isNumeric(num) {
+    // item 871
+    // является ли num числом
+    // item 870
+      try {
+    
+        num = num
+    	.toString()
+    	.replace(' ', '')
+    	.replace(',', '.');
+        return !isNaN(num);
+    
+      } catch (error) {
+    
+        return false;
+    
+      }
+}
+
+function isNumeric_Test() {
+    // item 877
+      const tests = [
+        ['3200,00',true],
+        [42, true],
+        ["42", true],
+        ["abc", false],
+        [true, false],
+        [false, false],
+        [null, false],
+        [undefined, false],
+        [[], true],
+        [{}, false],
+        ["10.5", true],
+        [NaN, false]
+      ];
+    // item 8780001
+    let i = 0;
+    while (true) {
+        // item 8780002
+        if (i < tests.length) {
+            
+        } else {
+            break;
+        }
+        // item 880
+            const [input, expected] = tests[i];
+            const result = isNumeric(input);
+            // ✅
+        // item 881
+        if (expected === result) {
+            
+        } else {
+            // item 884
+            Logger.log(
+            `❌ для i = ${i}, ${tests[i][0]}` + 
+            ` Ожидалось ${expected}, пришло ${result}`)
+        }
+        // item 8780003
+        i++;
     }
 }
 
