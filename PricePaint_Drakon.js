@@ -79,8 +79,12 @@ function AMain_Drakon_All() {
             } else {
                 break;
             }
+            // item 830
+            let col_Start = 
+            	NS.range_SKUs_3D
+            	.getColumn() - 1;
             // item 6800001
-            let col = 0;
+            let col = col_Start;
             while (true) {
                 // item 6800002
                 if (col < NS.table_SKUs_3D[0].length) {
@@ -174,8 +178,12 @@ function AMain_Drakon_All() {
             } else {
                 break;
             }
+            // item 831
+            col_Start = 
+            	NS.range_SKUs_3D
+            	.getColumn() - 1;
             // item 7220001
-            let col = 0;
+            let col = col_Start;
             while (true) {
                 // item 7220002
                 if (col < NS.table_SKUs_3D[0].length) {
