@@ -436,7 +436,7 @@ function SKU_History_Row_Test() {
         Logger.log(
         	'Ошибка в SKU_History_Row_Test ' +
         	'для пусто ожидалось -1 \n' + 
-        	'получено: ' + result;
+        	'получено: ' + result);
     }
 }
 
