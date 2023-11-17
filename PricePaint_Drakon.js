@@ -389,6 +389,9 @@ function SKU_Date_Set(row, date) {
 }
 
 function SKU_History_Date(SKU) {
+    // item 838
+    /** 
+    Искать артикул, вернуть дату */
     // item 772
     return table_Find_Shift(
     	NS.table_SKUs_History,
@@ -1211,9 +1214,27 @@ function table_Find_Shift(table, needle, column_Needle, column_Return) {
     Искать в столбце column_Needle,
     вернуть из column_Return или
     undefined */
-    // item 761
-    return table.find(
-            element => element[column_Needle] === needle);
+    // item 8310001
+    le i = 0;
+    while (true) {
+        // item 8310002
+        if (i < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 833
+        if (table[i][column_Needle] === needle) {
+            // item 836
+            return table[i][column_Return]
+        } else {
+            
+        }
+        // item 8310003
+        I++;
+    }
+    // item 837
+    return undefined;
 }
 
 function table_Find_Test() {
