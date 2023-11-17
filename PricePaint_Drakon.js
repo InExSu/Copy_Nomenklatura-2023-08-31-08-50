@@ -177,6 +177,9 @@ function AMain_Drakon_All() {
         console.log(
         	`Историю обновить: ' +
         	'${timer()} миллисек`);
+        // item 861
+        const date_Paint = 
+        	NS.date_Paint_Start;
         // item 7240001
         // проход по массиву
         // артикулов прайса
@@ -227,7 +230,7 @@ function AMain_Drakon_All() {
                         
                     } else {
                         // item 745
-                        if (date_History >= NS.date_Paint_Start) {
+                        if (date_History >= date_Paint) {
                             // item 748
                             NS.table_Prices_BackGrounds[row][col] =
                             	'yellow';
