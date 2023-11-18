@@ -295,11 +295,11 @@ function AMain_Drakon_TestS() {
       AMain_Drakon(cell);
       console.timeEnd('Ячейка нужная');*/
     // item 554
-    const SKU_HIstory_Row_2 = 2;
+    const SKU_History_Row_2 = 2;
     
     const SKU_Date_Origin = 
     	SKU_Date_Get(
-    		SKU_HIstory_Row_2);
+    		SKU_History_Row_2);
     
     const date_New = 
     	new Date()
@@ -307,7 +307,7 @@ function AMain_Drakon_TestS() {
     	.slice(0, 10);
     
     SKU_Date_Set(
-    	SKU_HIstory_Row_2,
+    	SKU_History_Row_2,
     	date_New);
     // item 597
     Logger.log(
@@ -318,11 +318,11 @@ function AMain_Drakon_TestS() {
     	.getSheetByName('Прайс без НДС')
     	.getRange('D8');
     
-    AMain_Drakon(cell_Price);
+    AMain_Drako_All;
     // item 561
     let cell_Price_BackGround =
     	cell_Price_BackGround_Get(
-    		SKU_HIstory_Row_2);
+    		SKU_History_Row_2);
     // item 555
     if (cell_Price_BackGround ===
 	'yellow') {
@@ -341,17 +341,17 @@ function AMain_Drakon_TestS() {
     	.slice(0, 10);
     
     SKU_Date_Set(
-    	SKU_HIstory_Row_2,
+    	SKU_History_Row_2,
     	SKU_Date_New);
     // item 598
     Logger.log(
-    	'Запуск AMain_Drakon ...');
+    	'Запуск AMain_Drakon_TestS 2 ...');
     
-    AMain_Drakon(cell_Price);
+    AMain_Drakon_All;
     // item 562
     cell_Price_BackGround =
     	cell_Price_BackGround_Get(
-    		SKU_HIstory_Row_2);
+    		SKU_History_Row_2);
     // item 563
     if (cell_Price_BackGround ===
 	'white') {
@@ -365,7 +365,7 @@ function AMain_Drakon_TestS() {
     }
     // item 567
     SKU_Date_Set(
-    	SKU_HIstory_Row_2,
+    	SKU_History_Row_2,
     	SKU_Date_Origin);
 }
 
@@ -652,8 +652,6 @@ function SKUs_History_Row_Update(row, price_New, date_New, user_Email) {
     // item 902
     let price_Old_Compare = price_Old;
     let price_New_Compare = price_New;
-    // item 864
-    debugger;
     // item 885
     if ((isNumeric(price_Old)) && (isNumeric(price_New))) {
         // item 891
