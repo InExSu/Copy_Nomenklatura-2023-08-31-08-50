@@ -535,7 +535,7 @@ function SKU_Random_Get() {
     // item 1055
     const cells = 
     	table.length *
-    	table[0]length;
+    	table[0].length;
     // item 10560001
     let i = 0;
     while (true) {
