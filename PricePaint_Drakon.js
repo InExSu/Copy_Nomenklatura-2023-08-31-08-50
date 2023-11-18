@@ -1061,28 +1061,28 @@ function maps_Equal_Test() {
 
 function numbers_Strings_Compare(left_, right) {
     // item 935
-    // сранивать числа, строки, строки как числа
+    // сранивать числа, строки,
+    // строки как числа
     // item 922
     if ((isNumeric(left_)) && (isNumeric(right))) {
         // item 928
-        left__Compare = 
+        left_ = 
         	toNumber(left_);
         
-        right_Compare = 
+        right = 
         	toNumber(right);
     } else {
         // item 931
-        left__Compare = left_
+        left_ = left_
         		.toString()
         		.trim();
         
-        right_Compare = right
+        right = right
         		.toString()
         		.trim();
     }
     // item 934
-    return left__Compare ==
-           right_Compare;
+    return left_ == right;
 }
 
 function price_BackGrounds_Paint() {
