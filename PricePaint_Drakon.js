@@ -15,9 +15,9 @@ function AATests_RUN() {
     table_Row_by_Column_Value_Test();
     table_Rows_Filter_Test(); */
     // item 501
-    AMain_Drakon_All();
+    // AMain_Drakon_All();
     
-    // AMain_Drakon_TestS();
+    AMain_Drakon_TestS();
     // item 169
     // Тесты функций данных
     
@@ -336,7 +336,7 @@ function AMain_Drakon_TestS() {
             случайно младше
             даты окраски */
             // item 1016
-            /** ячейке цены 
+            /** ячейке цены
             фон жёлтый */
             // item 1021
             AMain_Drakon_All();
