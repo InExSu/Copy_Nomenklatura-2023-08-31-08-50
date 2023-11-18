@@ -1274,7 +1274,7 @@ function price_Cell_price_Get(SKU) {
             break;
         }
         // item 10800001
-        col = 0;
+        let col = 0;
         while (true) {
             // item 10800002
             if (col < NS.table_Prices[0].length) {
