@@ -663,7 +663,7 @@ function SKUs_History_Row_Update(row, price_New, date_New, user_Email) {
         // артикул без изменений
         
         NS.table_SKUs_History[row][2] = 
-        	price_New_Compare;
+        	price_New;
         
         NS.table_SKUs_History[row][3] = 
         	user_Email;
