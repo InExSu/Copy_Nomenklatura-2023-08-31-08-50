@@ -1085,6 +1085,16 @@ function numbers_Strings_Compare(left_, right) {
     return left_ == right;
 }
 
+function numbers_Strings_Compare_Test() {
+    // item 941
+        const table = [
+            [0, 0, true],
+            ['0', 0, true],
+            [0, '1', false],
+            ['1 000,00', 1000, true],
+        ];
+}
+
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
