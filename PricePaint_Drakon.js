@@ -1333,7 +1333,8 @@ function price_Cell_Price_Get(SKU) {
             }
             // item 1083
             const string =
-            	 NS.table_Prices[row][col];
+            	NS.table_Prices[row][col]
+            	.toString();
             // item 1084
             if (string.includes(SKU)) {
                 // item 1087
