@@ -336,7 +336,7 @@ function AMain_Drakon_TestS() {
             случайно младше
             даты окраски */
             // item 1016
-            /** ячейке цены
+            /** ячейке цены 
             фон жёлтый */
             // item 1021
             AMain_Drakon_All();
