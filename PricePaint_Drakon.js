@@ -297,7 +297,7 @@ function AMain_Drakon_TestS() {
         /** лист Прайс 
         найди Артикул */
         
-        const price_Cell_price =
+        var price_Cell_price =
         	price_Cell_price_Get(
         	SKU_Random);
         // item 998
@@ -323,7 +323,10 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1004
-            if (/** фон ячейки ЖЁЛТЫЙ */) {
+            if (/** фон ячейки ЖЁЛТЫЙ */
+price_Cell_price
+	.getBackground =
+	'yellow';) {
                 
             } else {
                 // item 1006
