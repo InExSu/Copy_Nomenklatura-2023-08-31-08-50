@@ -1309,7 +1309,7 @@ NS.date_Paint) {
     }
 }
 
-function price_Cell_price_Get(SKU) {
+function price_Cell_Price_Get(SKU) {
     // item 1082
     /** вернуть ячейку цены 
     для артикула или undefined */
