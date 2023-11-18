@@ -315,13 +315,17 @@ function AMain_Drakon_TestS() {
             	price_Cell_Price
             	.getBackground();
             // item 1002
-            /** артикулу в историю
+            /** артикулу истории
             поставь дату
-            случайно старше
-            даты окраски */
+            старше даты окраски */
+            
+            SKU_History_Date_Set(SKU, 1);
             // item 1001
-            /** ячейке цены
-            фон БЕЛЫЙ */
+            /** ячейке цены фон БЕЛЫЙ */
+            
+            price_Cell_Price
+            	.setBackground(
+            	'white');
             // item 1003
             AMain_Drakon_All();
             // item 1004
@@ -336,12 +340,17 @@ function AMain_Drakon_TestS() {
                 НЕ жёлтый`;
             }
             // item 1020
-            /** артикулу поставь дату
-            случайно младше
-            даты окраски */
+            /** артикулу истории 
+            поставь дату
+            младше даты окраски */
+            
+            SKU_History_Date_Set(SKU, -1);
             // item 1016
-            /** ячейке цены
-            фон жёлтый */
+            /** ячейке цены фон жёлтый */
+            
+            price_Cell_Price
+            	.setBackground(
+            	'yellow');
             // item 1021
             AMain_Drakon_All();
             // item 1022
@@ -355,13 +364,18 @@ function AMain_Drakon_TestS() {
                 `❌ Фон ячейки прайса
                 НЕ белый`;
             }
-            // item 1027
-            /** артикулу поставь дату
-            случайно младше
-            даты окраски */
-            // item 1017
-            /** ячейке цены
-            фон БЕЛЫЙ */
+            // item 1113
+            /** артикулу истории 
+            поставь дату
+            младше даты окраски */
+            
+            SKU_History_Date_Set(SKU, -1);
+            // item 1115
+            /** ячейке цены фон БЕЛЫЙ */
+            
+            price_Cell_Price
+            	.setBackground(
+            	'white');
             // item 1028
             AMain_Drakon_All();
             // item 1029
@@ -375,13 +389,18 @@ function AMain_Drakon_TestS() {
                 `❌ Фон ячейки прайса
                 НЕ белый`;
             }
-            // item 1034
-            /** артикулу поставь дату
-            случайно старше
-            даты окраски */
-            // item 1033
-            /** ячейке цены
-            фон жёлтый */
+            // item 1114
+            /** артикулу истории
+            поставь дату
+            старше даты окраски */
+            
+            SKU_History_Date_Set(SKU, 1);
+            // item 1116
+            /** ячейке цены фон жёлтый */
+            
+            price_Cell_Price
+            	.setBackground(
+            	'yellow');
             // item 1035
             AMain_Drakon_All();
             // item 1036
@@ -476,6 +495,21 @@ function SKU_History_Date(SKU) {
     	NS.table_SKUs_History,
     	SKU,
     	1, 0);
+}
+
+function SKU_History_Date_Set(SKU, day) {
+    // item 1111
+    const date_New =
+    	new Date(
+    		NS.date_Paint_Start);
+    
+    date_New
+    .setDate(
+    	date_New.getDate() + day);
+    
+    date_New = date_New
+        	.toISOString()
+        	.slice(0, 10);
 }
 
 function SKU_History_Row(SKU) {
