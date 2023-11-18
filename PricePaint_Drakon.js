@@ -529,6 +529,40 @@ function SKU_History_Row_Test() {
     }
 }
 
+function SKU_In_History(SKU) {
+    // item 1094
+    /** true, если SKU в истории */
+    // item 1093
+    const col = 1;
+    // item 1098
+    const table = 
+    	table_Copy(
+    	NS.table_SKUs_History);
+    // item 10990001
+    let row = 0;
+    while (true) {
+        // item 10990002
+        if (row < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 1101
+        if (table[row][col]
+	.toString()
+	.includes(SKU)) {
+            // item 1104
+            return true;
+        } else {
+            
+        }
+        // item 10990003
+        row++;
+    }
+    // item 1105
+    return false;
+}
+
 function SKU_Random_Get() {
     // item 1053
     /** получить артикул случайный
