@@ -287,7 +287,7 @@ function AMain_Drakon_TestS() {
     const SKU_Random = 
     	SKU_Random_Get();
     // item 996
-    if (SKU_Random === undefined;) {
+    if (SKU_Random === undefined) {
         // item 999
         state = 
         `❌ Артикул на листе История 
