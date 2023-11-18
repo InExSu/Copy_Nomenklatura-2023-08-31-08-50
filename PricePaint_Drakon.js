@@ -325,7 +325,7 @@ function AMain_Drakon_TestS() {
             // item 1004
             if (price_Cell_price
 	.getBackground() ===
-	'yellow';) {
+	'yellow') {
                 
             } else {
                 // item 1006
@@ -345,7 +345,7 @@ function AMain_Drakon_TestS() {
             // item 1022
             if (price_Cell_price
 	.getBackground() ===
-	'white';) {
+	'white') {
                 
             } else {
                 // item 1023
@@ -365,7 +365,7 @@ function AMain_Drakon_TestS() {
             // item 1029
             if (price_Cell_price
 	.getBackground() ===
-	'white';) {
+	'white') {
                 
             } else {
                 // item 1030
@@ -383,7 +383,9 @@ function AMain_Drakon_TestS() {
             // item 1035
             AMain_Drakon_All();
             // item 1036
-            if (/** фон ячейки ЖЁЛТЫЙ */) {
+            if (price_Cell_price
+	.getBackground() ===
+	'yellow') {
                 
             } else {
                 // item 1037
