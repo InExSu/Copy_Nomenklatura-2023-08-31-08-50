@@ -1059,6 +1059,32 @@ function maps_Equal_Test() {
         );
 }
 
+function numbers_Strings_Compare(left_, right) {
+    // item 935
+    // сранивать числа, строки, строки как числа
+    // item 922
+    if ((isNumeric(left_)) && (isNumeric(right))) {
+        // item 928
+        left__Compare = 
+        	toNumber(left_);
+        
+        right_Compare = 
+        	toNumber(right);
+    } else {
+        // item 931
+        left__Compare = left_
+        		.toString()
+        		.trim();
+        
+        right_Compare = right
+        		.toString()
+        		.trim();
+    }
+    // item 934
+    return left__Compare ==
+           right_Compare;
+}
+
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
