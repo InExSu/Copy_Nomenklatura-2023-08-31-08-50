@@ -323,9 +323,8 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1004
-            if (/** фон ячейки ЖЁЛТЫЙ */
-price_Cell_price
-	.getBackground =
+            if (price_Cell_price
+	.getBackground() ===
 	'yellow';) {
                 
             } else {
@@ -344,7 +343,9 @@ price_Cell_price
             // item 1021
             AMain_Drakon_All();
             // item 1022
-            if (/** фон ячейки БЕЛЫЙ */) {
+            if (price_Cell_price
+	.getBackground() ===
+	'white';) {
                 
             } else {
                 // item 1023
@@ -362,7 +363,9 @@ price_Cell_price
             // item 1028
             AMain_Drakon_All();
             // item 1029
-            if (/** фон ячейки БЕЛЫЙ */) {
+            if (price_Cell_price
+	.getBackground() ===
+	'white';) {
                 
             } else {
                 // item 1030
