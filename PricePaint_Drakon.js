@@ -649,30 +649,10 @@ function SKUs_History_Row_Update(row, price_New, date_New, user_Email) {
     // item 718
     const price_Old = 
     	NS.table_SKUs_History[row][2];
-    // item 902
-    let price_Old_Compare = price_Old;
-    let price_New_Compare = price_New;
-    // item 885
-    if ((isNumeric(price_Old)) && (isNumeric(price_New))) {
-        // item 891
-        price_Old_Compare = 
-        	toNumber(price_Old);
-        
-        price_New_Compare = 
-        	toNumber(price_New);
-    } else {
-        // item 903
-        price_Old_Compare = price_Old
-        		.toString()
-        		.trim();
-        
-        price_New_Compare = price_New
-        		.toString()
-        		.trim();
-    }
     // item 911
-    if (price_Old_Compare ==
-	price_New_Compare) {
+    if (numbers_Strings_Equal(
+	price_Old,
+	price_New)) {
         // item 914
         // Обновление НЕ нужно
     } else {
@@ -1059,7 +1039,7 @@ function maps_Equal_Test() {
         );
 }
 
-function numbers_Strings_Compare(left_, right) {
+function numbers_Strings_Equal(left_, right) {
     // item 935
     // сранивать числа, строки,
     // строки как числа
@@ -1085,7 +1065,9 @@ function numbers_Strings_Compare(left_, right) {
     return left_ == right;
 }
 
-function numbers_Strings_Compare_Test() {
+function numbers_Strings_Equal_Test() {
+    // item 949
+    // таблица решений теста
     // item 941
         const table = [
             [0, 0, true],
@@ -1093,6 +1075,35 @@ function numbers_Strings_Compare_Test() {
             [0, '1', false],
             ['1 000,00', 1000, true],
         ];
+    // item 9420001
+    let i = 0;
+    while (true) {
+        // item 9420002
+        if (i < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 944
+        let result =
+              numbers_Strings_Equal(
+                table[i][0],
+                table[i][1]);
+        // item 945
+        if (result === table[i][2]) {
+            
+        } else {
+            // item 948
+            Logger.log(
+            	'Ошибка: для ' +
+            	table[i][0] + ' и ' +
+            	table[i][1] + ' ждал ' +
+            	table[i][2] + 'прибыл ' +
+            	result);
+        }
+        // item 9420003
+        i++;
+    }
 }
 
 function price_BackGrounds_Paint() {
@@ -1588,10 +1599,10 @@ function toNumber(string) {
     // почти число превратить
     // в число
     // item 909
-    return string
-    	.toString()	
-    	.replace(' ','')
-    	.replace(',','.');
+    return parseFloat(string
+    		.toString()
+    		.replace(' ', '')
+    		.replace(',', '.'));
 }
 
 
