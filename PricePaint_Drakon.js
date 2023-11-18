@@ -527,6 +527,8 @@ function SKU_Random_Get() {
     из истории, чтобы он был
     в прайсе */
     // item 1054
+    /** для краткого имени */
+    
     const table =
     	table_Copy(
     		NS.table_SKUs_History);
