@@ -499,7 +499,7 @@ function SKU_History_Date(SKU) {
 
 function SKU_History_Date_Set(SKU, day) {
     // item 1111
-    const date_New =
+    let date_New =
     	new Date(
     		NS.date_Paint_Start);
     
