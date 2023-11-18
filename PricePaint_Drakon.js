@@ -284,10 +284,10 @@ function AMain_Drakon_TestS() {
     // item 1048
     /** лист История найди
     Артикул случайный */
-    const SKU_Random = 
+    var SKU = 
     	SKU_Random_Get();
     // item 996
-    if (SKU_Random === undefined) {
+    if (SKU === undefined) {
         // item 999
         state = 
         `❌ Артикул на листе История 
@@ -297,24 +297,26 @@ function AMain_Drakon_TestS() {
         /** лист Прайс 
         найди Артикул */
         
-        var price_Cell_price =
-        	price_Cell_price_Get(
-        	SKU_Random);
+        var price_Cell_Price =
+        	price_Cell_Price_Get(
+        	SKU.value);
         // item 998
-        if (price_Cell_price ===
+        if (price_Cell_Price ===
 	undefined) {
             // item 1000
             state = 
             `❌ Артикул на листе Прайс
             НЕ найден`;
         } else {
-            // item 995
-            /** артикул дата запомни
             // item 994
             /** ячейка цены
             цвет фона запомни */
+            var cell_BackGround_Origin =
+            	price_Cell_Price
+            	.getBackground();
             // item 1002
-            /** артикулу поставь дату
+            /** артикулу в историю
+            поставь дату
             случайно старше
             даты окраски */
             // item 1001
@@ -323,7 +325,7 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1004
-            if (price_Cell_price
+            if (price_Cell_Price
 	.getBackground() ===
 	'yellow') {
                 
@@ -343,7 +345,7 @@ function AMain_Drakon_TestS() {
             // item 1021
             AMain_Drakon_All();
             // item 1022
-            if (price_Cell_price
+            if (price_Cell_Price
 	.getBackground() ===
 	'white') {
                 
@@ -363,7 +365,7 @@ function AMain_Drakon_TestS() {
             // item 1028
             AMain_Drakon_All();
             // item 1029
-            if (price_Cell_price
+            if (price_Cell_Price
 	.getBackground() ===
 	'white') {
                 
@@ -383,7 +385,7 @@ function AMain_Drakon_TestS() {
             // item 1035
             AMain_Drakon_All();
             // item 1036
-            if (price_Cell_price
+            if (price_Cell_Price
 	.getBackground() ===
 	'yellow') {
                 
@@ -394,10 +396,19 @@ function AMain_Drakon_TestS() {
                 НЕ жёлтый`;
             }
             // item 1041
-            /** артикул дата верни
+            /** в историю артикулу 
+            дату верни */
+            
+            NS.sheet_SKUs_History
+            	.getRange(SKU.row, 1)
+            	.setValue(SKU.date);
             // item 1040
             /** ячейка цены
             цвет фона верни */
+            
+            price_Cell_Price
+            	.setBackground(
+            		cell_BackGround_Origin);
         }
     }
     // item 1012
@@ -598,7 +609,11 @@ function SKU_Random_Get() {
         // item 1066
         if ((NS.sku_Regex.test(SKU)) && (SKU_In_History(SKU))) {
             // item 1072
-            return SKU;
+            return {
+            	date: table[row][0],
+            	row: row,
+            	value: SKU
+            };
         } else {
             
         }
