@@ -277,96 +277,12 @@ function AMain_Drakon_All() {
 }
 
 function AMain_Drakon_TestS() {
-    // item 500
-    // Тесты общие
-    
-    /** 
-      const spread = SpreadsheetApp.getActive()  	
-      const sheet_Price = spread
-    		.getSheetByName('Прайс без НДС');
-      
-      let cell = sheet_Price.getRange('A1');
-      console.time('Ячейка НЕ нужная');
-      AMain_Drakon(cell);
-      console.timeEnd('Ячейка НЕ нужная');
-    
-      cell = sheet_Price.getRange('D8');
-      console.time('Ячейка нужная');
-      AMain_Drakon(cell);
-      console.timeEnd('Ячейка нужная');*/
-    // item 554
-    const SKU_History_Row_2 = 2;
-    
-    const SKU_Date_Origin = 
-    	SKU_Date_Get(
-    		SKU_History_Row_2);
-    
-    const date_New = 
-    	new Date()
-    	.toISOString()
-    	.slice(0, 10);
-    
-    SKU_Date_Set(
-    	SKU_History_Row_2,
-    	date_New);
-    // item 597
-    Logger.log(
-    	'Запуск AMain_Drakon ...');
-    // item 596
-    const cell_Price = 
-    	SpreadsheetApp.getActive()
-    	.getSheetByName('Прайс без НДС')
-    	.getRange('D8');
-    
-    AMain_Drakon_All;
-    // item 561
-    let cell_Price_BackGround =
-    	cell_Price_BackGround_Get(
-    		SKU_History_Row_2);
-    // item 555
-    if (cell_Price_BackGround ===
-	'yellow') {
+    // item 955
+    if (// Артикул случайный) {
         
     } else {
-        // item 558
-        Logger.log(
-        	'Ошибка в ' +
-        	'AMain_Drakon_TestS ' +
-        	'ячейка не стала жёлтой');
-    }
-    // item 560
-    const SKU_Date_New = 
-    	new Date()
-    	.toISOString()
-    	.slice(0, 10);
-    
-    SKU_Date_Set(
-    	SKU_History_Row_2,
-    	SKU_Date_New);
-    // item 598
-    Logger.log(
-    	'Запуск AMain_Drakon_TestS 2 ...');
-    
-    AMain_Drakon_All;
-    // item 562
-    cell_Price_BackGround =
-    	cell_Price_BackGround_Get(
-    		SKU_History_Row_2);
-    // item 563
-    if (cell_Price_BackGround ===
-	'white') {
         
-    } else {
-        // item 566
-        Logger.log(
-        	'Ошибка в ' +
-        	'AMain_Drakon_TestS ' +
-        	'ячейка не стала белой');
     }
-    // item 567
-    SKU_Date_Set(
-    	SKU_History_Row_2,
-    	SKU_Date_Origin);
 }
 
 function AOnEdit_Check(event) {
