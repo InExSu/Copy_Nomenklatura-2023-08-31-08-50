@@ -318,7 +318,7 @@ function AMain_Drakon_TestS() {
     	.getSheetByName('Прайс без НДС')
     	.getRange('D8');
     
-    AMain_Drako_All;
+    AMain_Drakon_All;
     // item 561
     let cell_Price_BackGround =
     	cell_Price_BackGround_Get(
