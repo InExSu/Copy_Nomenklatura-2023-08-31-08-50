@@ -277,49 +277,122 @@ function AMain_Drakon_All() {
 }
 
 function AMain_Drakon_TestS() {
-    // item 967
-    let state = 'Начало';
-    // item 955
-    if (/** лист История найди
-Артикул случайный */) {
-        // item 958
-        if (/** лист Прайс 
-найди Артикул */) {
-            // item 965
-            /** артикул дата запомни
-            // item 964
-            /** ячейка цены
-            цвет фона запомни */
-            // item 962
-            /** артикулу поставь дату
-            древнюю */
-            // item 961
-            /** ячейке цены
-            фон жёлтый */
-            // item 963
-            AMain_Drakon_All();
-            // item 969
-            if (/** фон ячейки БЕЛЫЙ */) {
-                
-            } else {
-                // item 973
-                state = 
-                `❌ Фон ячейки прайса
-                НЕ белый`;
-            }
-        } else {
-            // item 968
-            state = 
-            `❌ Артикул на листе Прайс
-            НЕ найден`;
-        }
-    } else {
-        // item 966
+    // item 1008
+    var state = 'Начало';
+    // item 1052
+    ranges_2_NS();
+    // item 1048
+    /** лист История найди
+    Артикул случайный */
+    const SKU_Random = 
+    	SKU_Random_Get();
+    // item 996
+    if (SKU_Random === undefined;) {
+        // item 999
         state = 
         `❌ Артикул на листе История 
         НЕ найден`
+    } else {
+        // item 1049
+        /** лист Прайс 
+        найди Артикул */
+        
+        const price_Cell_price =
+        	price_Cell_price_Get(
+        	SKU_Random);
+        // item 998
+        if (price_Cell_price ===
+	undefined) {
+            // item 1000
+            state = 
+            `❌ Артикул на листе Прайс
+            НЕ найден`;
+        } else {
+            // item 995
+            /** артикул дата запомни
+            // item 994
+            /** ячейка цены
+            цвет фона запомни */
+            // item 1002
+            /** артикулу поставь дату
+            случайно старше
+            даты окраски */
+            // item 1001
+            /** ячейке цены
+            фон БЕЛЫЙ */
+            // item 1003
+            AMain_Drakon_All();
+            // item 1004
+            if (/** фон ячейки ЖЁЛТЫЙ */) {
+                
+            } else {
+                // item 1006
+                state = state + '\n' + 
+                `❌ Фон ячейки прайса
+                НЕ жёлтый`;
+            }
+            // item 1020
+            /** артикулу поставь дату
+            случайно младше
+            даты окраски */
+            // item 1016
+            /** ячейке цены
+            фон жёлтый */
+            // item 1021
+            AMain_Drakon_All();
+            // item 1022
+            if (/** фон ячейки БЕЛЫЙ */) {
+                
+            } else {
+                // item 1023
+                state = state + '\n' + 
+                `❌ Фон ячейки прайса
+                НЕ белый`;
+            }
+            // item 1027
+            /** артикулу поставь дату
+            случайно младше
+            даты окраски */
+            // item 1017
+            /** ячейке цены
+            фон БЕЛЫЙ */
+            // item 1028
+            AMain_Drakon_All();
+            // item 1029
+            if (/** фон ячейки БЕЛЫЙ */) {
+                
+            } else {
+                // item 1030
+                state = state + '\n' + 
+                `❌ Фон ячейки прайса
+                НЕ белый`;
+            }
+            // item 1034
+            /** артикулу поставь дату
+            случайно старше
+            даты окраски */
+            // item 1033
+            /** ячейке цены
+            фон жёлтый */
+            // item 1035
+            AMain_Drakon_All();
+            // item 1036
+            if (/** фон ячейки ЖЁЛТЫЙ */) {
+                
+            } else {
+                // item 1037
+                state = state + '\n' + 
+                `❌ Фон ячейки прайса
+                НЕ жёлтый`;
+            }
+            // item 1041
+            /** артикул дата верни
+            // item 1040
+            /** ячейка цены
+            цвет фона верни */
+        }
     }
-    // item 972
+    // item 1012
     Logger.log(state);
 }
 
@@ -445,6 +518,48 @@ function SKU_History_Row_Test() {
         	'Ошибка в SKU_History_Row_Test' +
         	'для 102 ожидалось -1 \n' +
         	'вернулось ' + result);
+    }
+}
+
+function SKU_Random_Get() {
+    // item 1053
+    /** получить артикул случайный
+    из истории, чтобы он был
+    в прайсе */
+    // item 1054
+    const table =
+    	table_Copy(
+    		NS.table_SKUs_History);
+    // item 1055
+    const cells = 
+    	table.length *
+    	table[0]length;
+    // item 10560001
+    let i = 0;
+    while (true) {
+        // item 10560002
+        if (i < cells) {
+            
+        } else {
+            break;
+        }
+        // item 1058
+        const row = 
+        	random_Int_Min_Max(0, table.length);
+        const col = 
+        	random_Int_Min_Max(0, table[0].length);
+        // item 1065
+        const SKU = 
+        	table[row][col];
+        // item 1066
+        if ((NS.sku_Regex.test(SKU)) && (SKU_In_History(SKU))) {
+            // item 1072
+            return SKU;
+        } else {
+            
+        }
+        // item 10560003
+        i++;
     }
 }
 
@@ -1133,6 +1248,53 @@ NS.date_Paint) {
         	.setBackgrounds(
         		NS.table_Prices_BackGrounds);
     }
+}
+
+function price_Cell_price_Get(SKU) {
+    // item 1082
+    /** вернуть ячейку цены 
+    для артикула или undefined */
+    // item 10780001
+    let row = 0;
+    while (true) {
+        // item 10780002
+        if (row < NS.table_Prices.length) {
+            
+        } else {
+            break;
+        }
+        // item 10800001
+        col = 0;
+        while (true) {
+            // item 10800002
+            if (col < NS.table_Prices[0].length) {
+                
+            } else {
+                break;
+            }
+            // item 1083
+            const string =
+            	 NS.table_Prices[row][col];
+            // item 1084
+            if (string.includes(SKU)) {
+                // item 1087
+                return NS.range_Prices
+                	.getRange(row,col);
+            } else {
+                
+            }
+            // item 10800003
+            col++;
+        }
+        // item 10780003
+        row++;
+    }
+}
+
+function random_Int_Min_Max(min, max) {
+    // item 1064
+    return Math.floor(Math.random() * 
+    		 (max - min + 1) + min);
 }
 
 function ranges_2_NS() {
