@@ -230,6 +230,13 @@ function AMain_Drakon_All() {
                     }
                     // item 7270004
                     var SKU_i = _col727[_ind727];
+                    // item 1139
+                    if (SKU_i === '205-512-0001';) {
+                        // item 1142
+                        debugger;
+                    } else {
+                        
+                    }
                     // item 752
                     const date_History = 
                     	SKU_History_Date(SKU_i);
