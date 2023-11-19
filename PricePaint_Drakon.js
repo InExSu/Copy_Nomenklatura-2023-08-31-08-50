@@ -189,11 +189,6 @@ function AMain_Drakon_All() {
         console.log(
         	`История обновилась: ' +
         	'${timer()} миллисек`);
-        // item 861
-        const date_Paint = 
-        	NS.date_Paint_Start
-            	.toISOString()
-            	.slice(0, 10);
         // item 7240001
         // проход по массиву
         // артикулов прайса
@@ -236,13 +231,15 @@ function AMain_Drakon_All() {
                     // item 7270004
                     var SKU_i = _col727[_ind727];
                     // item 752
-                    const date_History = SKU_History_Date(SKU_i);
+                    const date_History = 
+                    	SKU_History_Date(SKU_i);
                     // item 742
                     if (date_History === undefined) {
                         
                     } else {
                         // item 745
-                        if (date_History >= date_Paint) {
+                        if (date_History >= 
+	NS.date_Paint_Start) {
                             // item 748
                             NS.table_Prices_BackGrounds[row][col] =
                             	'yellow';
