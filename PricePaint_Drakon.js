@@ -326,8 +326,7 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1004
-            if (price_Cell_Price
-	.getBackground() ===
+            if (cell_Color_by_Array(cell) ===
 	'yellow') {
                 
             } else {
