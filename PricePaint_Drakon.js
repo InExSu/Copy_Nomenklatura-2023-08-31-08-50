@@ -175,8 +175,8 @@ function AMain_Drakon_All() {
             		NS.sheet_SKUs_History
             		.getLastRow() - 2);
             // item 803
-            const a2 = table_Copy(
-            	NS.table_SKUs_History);
+            const a2 = 
+            	NS.table_SKUs_History;
             // item 781
             NS.sheet_SKUs_History
             	.getRange('A1')
@@ -326,7 +326,8 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1004
-            if (cell_Color_by_Array(cell) ===
+            if (cell_Color_by_Array(
+	price_Cell_Price) ===
 	'yellow') {
                 
             } else {
@@ -582,8 +583,7 @@ function SKU_In_Price(SKU) {
     /** true, если SKU в прайсе */
     // item 1098
     const table = 
-    	table_Copy(
-    	NS.table_SKUs_3D);
+    	NS.table_SKUs_3D;
     // item 10990001
     let row = 0;
     while (true) {
@@ -650,8 +650,7 @@ function SKU_Random_Get() {
     /** для краткого имени */
     
     const table =
-    	table_Copy(
-    		NS.table_SKUs_History);
+    	NS.table_SKUs_History;
     // item 1055
     const cells = table.length;
     const col = 1;
@@ -1072,8 +1071,8 @@ function cell_Color_by_Array(cell) {
         
     } else {
         // item 1152
-        const row = cel.getRow() - 1;
-        const col = cel.getColumn() - 1;
+        const row = cell.getRow() - 1;
+        const col = cell.getColumn() - 1;
         // item 1161
         const table = 
         	NS.table_Prices_BackGrounds;
@@ -1418,8 +1417,7 @@ function price_Cell_Price_Get(SKU) {
     для артикула или undefined */
     // item 1126
     const table = 
-    	table_Copy(
-    		NS.table_SKUs_3D);
+    	NS.table_SKUs_3D;
     // item 10780001
     let row = 0;
     while (true) {
