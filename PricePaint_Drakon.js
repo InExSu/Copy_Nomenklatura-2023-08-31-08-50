@@ -324,6 +324,11 @@ function AMain_Drakon_TestS() {
             price_Cell_Price
             	.setBackground(
             	'white');
+            // item 1188
+            console.log(
+            	'цвет ячейки белый? ' + 
+            	price_Cell_Price
+            	.getBackground());
             // item 1003
             AMain_Drakon_All();
             // item 1004
