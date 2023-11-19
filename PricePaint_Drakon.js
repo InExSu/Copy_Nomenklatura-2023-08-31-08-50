@@ -367,7 +367,7 @@ function AMain_Drakon_TestS() {
                 // item 1023
                 state = state + '\n' + 
                 `❌ Фон ячейки прайса
-                НЕ белый`;
+                НЕ белый! ` + color;
             }
             // item 1113
             /** артикулу истории 
