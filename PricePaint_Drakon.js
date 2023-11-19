@@ -282,7 +282,7 @@ function AMain_Drakon_TestS() {
     // item 1052
     ranges_2_NS();
     // item 1048
-    /** лист История найди
+    /** лист Прайс найди
     Артикул случайный */
     var SKU = 
     	SKU_Random_Get();
@@ -574,15 +574,13 @@ function SKU_History_Row_Test() {
     }
 }
 
-function SKU_In_History(SKU) {
+function SKU_In_Price(SKU) {
     // item 1094
-    /** true, если SKU в истории */
-    // item 1093
-    const col = 1;
+    /** true, если SKU в прайсе */
     // item 1098
     const table = 
     	table_Copy(
-    	NS.table_SKUs_History);
+    	NS.table_SKUs_3D);
     // item 10990001
     let row = 0;
     while (true) {
@@ -592,14 +590,45 @@ function SKU_In_History(SKU) {
         } else {
             break;
         }
-        // item 1101
-        if (table[row][col]
-	.toString()
-	.includes(SKU)) {
-            // item 1104
-            return true;
-        } else {
-            
+        // item 11170001
+        let col = 0;
+        while (true) {
+            // item 11170002
+            if (col < table[0].length) {
+                
+            } else {
+                break;
+            }
+            // item 1119
+            const SKUs_1D = 
+            	table[row][col]
+            	.toString()
+            	.split(',');
+            // item 11200001
+            var _ind1120 = 0;
+            var _col1120 = SKUs_1D;
+            var _len1120 = _col1120.length;
+            while (true) {
+                // item 11200002
+                if (_ind1120 < _len1120) {
+                    
+                } else {
+                    break;
+                }
+                // item 11200004
+                var needle = _col1120[_ind1120];
+                // item 1101
+                if (needle === SKU) {
+                    // item 1104
+                    return true;
+                } else {
+                    
+                }
+                // item 11200003
+                _ind1120++;
+            }
+            // item 11170003
+            col ++;
         }
         // item 10990003
         row++;
@@ -637,7 +666,7 @@ function SKU_Random_Get() {
         // item 1065
         const SKU = table[row][col];
         // item 1066
-        if ((NS.sku_Regex.test(SKU)) && (SKU_In_History(SKU))) {
+        if ((NS.sku_Regex.test(SKU)) && (SKU_In_Price(SKU))) {
             // item 1072
             return {
             	date: table[row][0],
