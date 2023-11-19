@@ -1110,7 +1110,8 @@ function cell_Color_by_Array(cell) {
             // item 1162
             console.log(
             	'cell_Color_by_Array: \n' +
-            	'table_Row_Col вернул false');
+            	'table_Row_Col вернул false' + '\n' +
+            	'Строка ' + row + ' Столбец: ' + col);
         }
     }
 }
@@ -1374,6 +1375,20 @@ function numbers_Strings_Equal_Test() {
         }
         // item 9420003
         i++;
+    }
+}
+
+function onEdit(event) {
+    // item 1205
+    let sheet_Name =
+    	event.range.getSheet().getName();
+    // item 1202
+    if (sheet_Name ===
+	'Прайс без НДС') {
+        // item 1206
+        AMain_Drakon_All();
+    } else {
+        
     }
 }
 
