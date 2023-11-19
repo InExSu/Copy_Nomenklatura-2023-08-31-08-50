@@ -393,7 +393,7 @@ function AMain_Drakon_TestS() {
                 // item 1030
                 state = state + '\n' + 
                 `❌ Фон ячейки прайса
-                НЕ белый`;
+                НЕ белый ` + color;
             }
             // item 1114
             /** артикулу истории
@@ -420,7 +420,7 @@ function AMain_Drakon_TestS() {
                 // item 1037
                 state = state + '\n' + 
                 `❌ Фон ячейки прайса
-                НЕ жёлтый`;
+                НЕ жёлтый ` + color;
             }
             // item 1041
             /** в историю артикулу 
@@ -531,6 +531,11 @@ function SKU_History_Date_Set(SKU, day) {
     NS.sheet_SKUs_History
     	.getRange(SKU.row, 1)
     	.setValue(date_New);
+    // item 1192
+    console.log(
+    	'SKU_History_Date_Set: ' +
+    	date_New + ', строка ' +
+    	SKU.row);
 }
 
 function SKU_History_Row(SKU) {
