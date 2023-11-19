@@ -284,8 +284,7 @@ function AMain_Drakon_TestS() {
     // item 1048
     /** лист Прайс найди
     Артикул случайный */
-    var SKU = 
-    	SKU_Random_Get();
+    var SKU = SKU_Random_Get();
     // item 996
     if (SKU === undefined) {
         // item 999
@@ -690,7 +689,8 @@ function SKU_Random_Get() {
         const row = 
         	random_Int_Min_Max(0, table.length);
         // item 1065
-        const SKU = table[row][col];
+        // const SKU = table[row][col];
+        const SKU = 102-011-0008;
         // item 1066
         if ((NS.SKU_Regex.test(SKU)) && (SKU_In_Price(SKU))) {
             // item 1072
