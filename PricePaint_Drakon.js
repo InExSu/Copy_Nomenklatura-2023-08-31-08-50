@@ -265,6 +265,8 @@ function AMain_Drakon_All() {
         NS.range_Prices
         	.setBackgrounds(
         		backGrounds);
+        // item 1190
+        SpreadsheetApp.flush();
     } else {
         // item 677
         log_Toast_SendEmail(
