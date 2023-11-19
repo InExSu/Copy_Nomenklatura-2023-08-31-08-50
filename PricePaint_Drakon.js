@@ -618,6 +618,13 @@ function SKU_In_Price(SKU) {
                 }
                 // item 11200004
                 var needle = _col1120[_ind1120];
+                // item 1122
+                if (needle === '') {
+                    
+                } else {
+                    // item 1125
+                    debugger;
+                }
                 // item 1101
                 if (needle === SKU) {
                     // item 1104
