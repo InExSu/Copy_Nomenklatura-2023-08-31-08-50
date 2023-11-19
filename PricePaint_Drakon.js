@@ -620,9 +620,8 @@ function SKU_Random_Get() {
     	table_Copy(
     		NS.table_SKUs_History);
     // item 1055
-    const cells = 
-    	table.length *
-    	table[0].length;
+    const cells = table.length;
+    const col = 1;
     // item 10560001
     let i = 0;
     while (true) {
@@ -635,11 +634,8 @@ function SKU_Random_Get() {
         // item 1058
         const row = 
         	random_Int_Min_Max(0, table.length);
-        const col = 
-        	random_Int_Min_Max(0, table[0].length);
         // item 1065
-        const SKU = 
-        	table[row][col];
+        const SKU = table[row][col];
         // item 1066
         if ((NS.sku_Regex.test(SKU)) && (SKU_In_History(SKU))) {
             // item 1072
