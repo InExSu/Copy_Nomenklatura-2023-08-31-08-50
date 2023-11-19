@@ -495,10 +495,17 @@ function SKU_History_Date(SKU) {
     /** 
     Искать артикул, вернуть дату */
     // item 772
-    return table_Find_Shift(
+    const date = table_Find_Shift(
     	NS.table_SKUs_History,
     	SKU,
     	1, 0);
+    // item 1143
+    if (isDate(date)) {
+        // item 1146
+        return new Date(date);
+    } else {
+        
+    }
 }
 
 function SKU_History_Date_Set(SKU, day) {
