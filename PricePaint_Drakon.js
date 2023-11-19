@@ -527,7 +527,7 @@ function SKU_History_Date_Set(SKU, day) {
         	.toISOString()
         	.slice(0, 10);
     // item 1191
-    NS.range_SKUs_History
+    NS.sheet_SKUs_History
     	.getRange(SKU.row, 0)
     	.setValue(date_New);
 }
