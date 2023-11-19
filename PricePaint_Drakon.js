@@ -1105,7 +1105,7 @@ function isDate(string) {
     // item 1132
     const date = new Date(
     		string
-    		.toString();
+    		.toString());
      
     return !isNaN(
     	date)
