@@ -271,7 +271,7 @@ function AMain_Drakon_All() {
         // item 677
         log_Toast_SendEmail(
         	'НЕ найден лист ' + 
-        	'истории артикулов');
+        	'Прайс без НДС Артикулы история');
     }
 }
 
@@ -1517,7 +1517,7 @@ undefined) {
         
     } else {
         // item 1136
-        return;
+        // return;
     }
     // item 83
     NS.date_Paint_Start =   
