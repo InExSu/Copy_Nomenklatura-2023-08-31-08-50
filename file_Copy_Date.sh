@@ -5,7 +5,7 @@
 # "2023-11-19 12-13"), 
 # и помещает копию файла в указанную папку:
 
-# вызов: ./file_Copy_Date.sh /путь/к/файлу /путь/к/папке
+# вызов:  ./file_Copy_Date.sh PricePaint_Drakon.drn Git_Ignore_BackUps/
 
 file_path=$1
 folder_path=$2
