@@ -186,9 +186,9 @@ function AMain_Drakon_All() {
             	.setValues(a2);
         }
         // item 858
-        console.log(
+        /** console.log(
         	`История обновилась: ' +
-        	'${timer()} миллисек`);
+        	'${timer()} миллисек`); */
         // item 7240001
         // проход по массиву
         // артикулов прайса
@@ -1445,10 +1445,10 @@ function price_Cell_Price_Get(SKU) {
                 const cell_Row = row + 1;
                 const cell_Col = col + 3;
                 // item 1138
-                console.log(
+                /** console.log(
                 	'price_Cell_Price \n' +
                 	'cell_Row ' + cell_Row + '\n' +
-                	'cell_Col ' + cell_Col);
+                	'cell_Col ' + cell_Col); */
                 // item 1087
                 return NS.sheet_Price_NDS_NO
                 	.getRange(cell_Row, cell_Col);
@@ -1509,11 +1509,11 @@ undefined) {
 
 function ranges_2_NS_Test() {
     // item 151
-    console.time('range_2_NS');
+    console.time('range_2_NS_Test');
     // item 153
     ranges_2_NS();
     // item 152
-    console.timeEnd('range_2_NS');
+    console.timeEnd('range_2_NS_Test');
 }
 
 function sheet_Name_Exists(name) {
