@@ -1085,7 +1085,7 @@ function cell_Color_by_Array(cell) {
             // item 1162
             console.log(
             	'cell_Color_by_Array: \n' +
-            	'table_Row_Col вернул false );
+            	'table_Row_Col вернул false');
         }
     }
 }
