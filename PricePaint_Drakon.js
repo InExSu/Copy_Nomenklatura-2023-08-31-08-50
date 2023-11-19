@@ -275,7 +275,8 @@ function AMain_Drakon_All() {
 
 function AMain_Drakon_TestS() {
     // item 1008
-    var state = 'Начало';
+    var state = 
+    	'AMain_Drakon_TestS';
     // item 1052
     ranges_2_NS();
     // item 1048
@@ -1129,6 +1130,21 @@ function cell_Price_BackGround_Get(row) {
         	'Артикул не найден');
         // item 592
         return '';
+    }
+}
+
+function cell_Row_Col(cell) {
+    // item 1182
+    // вернуть текстовую строку
+    // item 1183
+    if (cell ===
+	undefined) {
+        // item 1186
+        return 'ячейки нет';
+    } else {
+        // item 1187
+        return 'Строка: ' + cell.getRow() + 
+        	'; Столб: ' + cell.getColumn();
     }
 }
 
