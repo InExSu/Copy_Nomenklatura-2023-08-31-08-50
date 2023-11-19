@@ -351,8 +351,8 @@ function AMain_Drakon_TestS() {
             // item 1021
             AMain_Drakon_All();
             // item 1022
-            if (price_Cell_Price
-	.getBackground() ===
+            if (cell_Color_by_Array(
+	price_Cell_Price) ===
 	'white') {
                 
             } else {
@@ -376,8 +376,8 @@ function AMain_Drakon_TestS() {
             // item 1028
             AMain_Drakon_All();
             // item 1029
-            if (price_Cell_Price
-	.getBackground() ===
+            if (cell_Color_by_Array(
+	price_Cell_Price) ===
 	'white') {
                 
             } else {
@@ -401,8 +401,8 @@ function AMain_Drakon_TestS() {
             // item 1035
             AMain_Drakon_All();
             // item 1036
-            if (price_Cell_Price
-	.getBackground() ===
+            if (cell_Color_by_Array(
+	price_Cell_Price) ===
 	'yellow') {
                 
             } else {
