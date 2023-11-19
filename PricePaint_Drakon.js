@@ -430,7 +430,7 @@ function AMain_Drakon_TestS() {
     }
     // item 1012
     Logger.log(state + '\n' +
-    	cell_Row_Cell(
+    	cell_Row_Coll(
     	price_Cell_Price));
 }
 
