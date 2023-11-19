@@ -526,6 +526,10 @@ function SKU_History_Date_Set(SKU, day) {
     date_New = date_New
         	.toISOString()
         	.slice(0, 10);
+    // item 1191
+    NS.range_SKUs_History
+    	.getRange(SKU.row, 0)
+    	.setValue(date_New);
 }
 
 function SKU_History_Row(SKU) {
@@ -657,7 +661,8 @@ function SKU_Random_Get() {
     // item 1053
     /** получить артикул случайный
     из истории, чтобы он был
-    в прайсе */
+    в прайсе.
+    Номер строки для листа! */
     // item 1054
     /** для краткого имени */
     
@@ -685,7 +690,7 @@ function SKU_Random_Get() {
             // item 1072
             return {
             	date: table[row][0],
-            	row: row,
+            	row: row + 1,
             	value: SKU
             };
         } else {
