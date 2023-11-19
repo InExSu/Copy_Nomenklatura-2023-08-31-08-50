@@ -1750,7 +1750,7 @@ function table_Row_Col(table, row, col) {
     // item 1168
     // есть ли в таблице адрес
     // item 1169
-    if ((row <= table.length;) && (col <= table[0].lentgh;)) {
+    if ((row <= table.length) && (col <= table[0].lentgh)) {
         // item 1176
         return true;
     } else {
