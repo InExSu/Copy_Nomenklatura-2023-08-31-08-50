@@ -1408,6 +1408,14 @@ function price_Cell_Price_Get(SKU) {
             	.toString();
             // item 1084
             if (string.includes(SKU)) {
+                // item 1137
+                const cell_Price_Row = row + 1;
+                const cell_Price_Col = col + 3;
+                // item 1138
+                console.log(
+                	'price_Cell_Price \n' +
+                	'row ' + row + '\n' +
+                	'col ' + col;
                 // item 1087
                 return NS.sheet_Price_NDS_NO
                 	.getRange(row + 1, 3 + col);
