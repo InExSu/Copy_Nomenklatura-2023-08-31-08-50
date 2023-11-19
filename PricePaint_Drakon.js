@@ -356,10 +356,12 @@ function AMain_Drakon_TestS() {
             	'yellow');
             // item 1021
             AMain_Drakon_All();
+            // item 1189
+            let color =
+            	cell_Color_by_Array(
+            	price_Cell_Price);
             // item 1022
-            if (cell_Color_by_Array(
-	price_Cell_Price) ===
-	'white') {
+            if (color === '#ffffff') {
                 
             } else {
                 // item 1023
