@@ -690,7 +690,8 @@ function SKU_Random_Get() {
         	random_Int_Min_Max(0, table.length);
         // item 1065
         // const SKU = table[row][col];
-        const SKU = 102-011-0008;
+        
+        const SKU = '102-011-0008';
         // item 1066
         if ((NS.SKU_Regex.test(SKU)) && (SKU_In_Price(SKU))) {
             // item 1072
