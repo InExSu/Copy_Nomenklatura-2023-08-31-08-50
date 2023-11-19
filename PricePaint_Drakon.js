@@ -1108,7 +1108,7 @@ function isDate(string) {
     		.toString());
      
     return !isNaN(
-    	date)
+    	date
     	.valueOf());
 }
 
