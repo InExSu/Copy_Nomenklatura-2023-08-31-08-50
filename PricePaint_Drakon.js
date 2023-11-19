@@ -1415,7 +1415,7 @@ function price_Cell_Price_Get(SKU) {
                 console.log(
                 	'price_Cell_Price \n' +
                 	'row ' + row + '\n' +
-                	'col ' + col;
+                	'col ' + col);
                 // item 1087
                 return NS.sheet_Price_NDS_NO
                 	.getRange(row + 1, 3 + col);
