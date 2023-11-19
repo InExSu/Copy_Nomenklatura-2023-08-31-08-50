@@ -1429,6 +1429,14 @@ function random_Int_Min_Max(min, max) {
 }
 
 function ranges_2_NS() {
+    // item 1133
+    if (NS.date_Paint_Start ===
+undefined) {
+        // item 1136
+        return;
+    } else {
+        
+    }
     // item 83
     NS.date_Paint_Start =   
     	new Date(
