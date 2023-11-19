@@ -1409,16 +1409,16 @@ function price_Cell_Price_Get(SKU) {
             // item 1084
             if (string.includes(SKU)) {
                 // item 1137
-                const cell_Price_Row = row + 1;
-                const cell_Price_Col = col + 3;
+                const cell_Row = row + 1;
+                const cell_Col = col + 3;
                 // item 1138
                 console.log(
                 	'price_Cell_Price \n' +
-                	'row ' + row + '\n' +
-                	'col ' + col);
+                	'cell_Row ' + cell_Row + '\n' +
+                	'cell_Col ' + cell_Col);
                 // item 1087
                 return NS.sheet_Price_NDS_NO
-                	.getRange(row + 1, 3 + col);
+                	.getRange(cell_Row, cell_Col);
             } else {
                 
             }
