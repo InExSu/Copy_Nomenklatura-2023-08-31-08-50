@@ -603,7 +603,8 @@ function SKU_In_Price(SKU) {
             const SKUs_1D = 
             	table[row][col]
             	.toString()
-            	.split(',');
+            	.split(',')
+            	.map(item => item.trim());
             // item 11200001
             var _ind1120 = 0;
             var _col1120 = SKUs_1D;
