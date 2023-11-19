@@ -112,7 +112,7 @@ function AMain_Drakon_All() {
                   .toString()
                   .replace(/\s/g, "")
                   .split(',')
-                  .filter(element => NS.sku_Regex.test(element));
+                  .filter(element => NS.SKU_Regex.test(element));
                 // item 691
                 const price = 
                 	NS.table_Prices[row][col];
@@ -219,7 +219,7 @@ function AMain_Drakon_All() {
                   .toString()
                   .replace(/\s/g, "")
                   .split(',')
-                  .filter(element => NS.sku_Regex.test(element));
+                  .filter(element => NS.SKU_Regex.test(element));
                 // item 782
                 /** проход по артикулам ячейки */
                 // item 7270001
@@ -667,7 +667,7 @@ function SKU_Random_Get() {
         // item 1065
         const SKU = table[row][col];
         // item 1066
-        if ((NS.sku_Regex.test(SKU)) && (SKU_In_Price(SKU))) {
+        if ((NS.SKU_Regex.test(SKU)) && (SKU_In_Price(SKU))) {
             // item 1072
             return {
             	date: table[row][0],
@@ -888,7 +888,7 @@ function SKUs_History_Update() {
             var array_SKUs = 
             	string_Filter(
             		NS.table_SKUs_3D[row][col],
-            		NS.sku_Regex);
+            		NS.SKU_Regex);
             // item 99
             array_SKUs = 
             	array_Trim(
@@ -1099,6 +1099,17 @@ function cell_Price_BackGround_Get(row) {
         // item 592
         return '';
     }
+}
+
+function isDate(string) {
+    // item 1132
+    const date = new Date(
+    		string
+    		.toString();
+     
+    return !isNaN(
+    	date)
+    	.valueOf());
 }
 
 function isNumeric(num) {
@@ -1324,7 +1335,7 @@ function price_BackGrounds_Paint() {
             var array_SKUs = 
             	string_Filter(
             		NS.table_SKUs_3D[row][col],
-            		NS.sku_Regex);
+            		NS.SKU_Regex);
             // item 366
             array_SKUs = 
             	array_Trim(
@@ -1431,7 +1442,7 @@ function ranges_2_NS() {
     	.toISOString()
     	.slice(0, 10));
     
-    NS.sku_Regex = /\d{3}-\d{3}-\d{4}/;
+    NS.SKU_Regex = /\d{3}-\d{3}-\d{4}/;
     
     NS.spread = SpreadsheetApp.getActive();
     
