@@ -429,7 +429,9 @@ function AMain_Drakon_TestS() {
         }
     }
     // item 1012
-    Logger.log(state);
+    Logger.log(state + '\n' +
+    	cell_Row_Cell(
+    	price_Cell_Price));
 }
 
 function AOnEdit_Check(event) {
