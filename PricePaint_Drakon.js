@@ -1432,10 +1432,10 @@ function ranges_2_NS() {
     // item 1133
     if (NS.date_Paint_Start ===
 undefined) {
+        
+    } else {
         // item 1136
         return;
-    } else {
-        
     }
     // item 83
     NS.date_Paint_Start =   
