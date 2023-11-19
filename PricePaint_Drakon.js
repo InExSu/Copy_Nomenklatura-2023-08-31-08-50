@@ -65,9 +65,9 @@ function AMain_Drakon_All() {
         // item 670
         ranges_2_NS();
         // item 856
-        console.log(
+        /** console.log(
         	`range_2_NS: ' +
-        	'${timer()} миллисек`);
+        	'${timer()} миллисек`); */
         // item 857
         timer = time_Measure();
         // item 862
@@ -363,7 +363,7 @@ function AMain_Drakon_TestS() {
             	cell_Color_by_Array(
             	price_Cell_Price);
             // item 1022
-            if (color === '#ffffff') {
+            if (color === 'white') {
                 
             } else {
                 // item 1023
