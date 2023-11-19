@@ -230,13 +230,6 @@ function AMain_Drakon_All() {
                     }
                     // item 7270004
                     var SKU_i = _col727[_ind727];
-                    // item 1139
-                    if (SKU_i === '205-512-0001') {
-                        // item 1142
-                        debugger;
-                    } else {
-                        
-                    }
                     // item 752
                     const date_History = 
                     	SKU_History_Date(SKU_i);
@@ -1069,6 +1062,35 @@ function cellS_Has_SKU_Test() {
     }
 }
 
+function cell_Color_by_Array(cell) {
+    // item 1157
+    /** вернуть цвет ячейки из массива 
+    так как гуглтаблица 
+    меняет цвет ячейки после
+    работы скрипта */
+    // item 1153
+    if (cell === undefined) {
+        
+    } else {
+        // item 1152
+        const row = cel.getRow() - 1;
+        const col = cel.getColumn() - 1;
+        // item 1161
+        const table = 
+        	NS.table_Prices_BackGrounds;
+        // item 1158
+        if (table_Row_Col(table, row, col)) {
+            // item 1156
+            return table[row][col];
+        } else {
+            // item 1162
+            console.log(
+            	'cell_Color_by_Array: \n' +
+            	'table_Row_Col вернул false );
+        }
+    }
+}
+
 function cell_Price_BackGround_Get(row) {
     // item 595
     const spread = 
@@ -1723,6 +1745,20 @@ function table_Find_Test() {
             	'ОШибка в table_Find_Test');
         }
     }
+}
+
+function table_Row_Col(table, row, col) {
+    // item 1168
+    // есть ли в таблице адрес
+    // item 1169
+    if ((row <= table.length;) && (col <= table[0].lentgh;)) {
+        // item 1176
+        return true;
+    } else {
+        
+    }
+    // item 1175
+    return false
 }
 
 function table_Row_by_Column_Value(table, column_Number, needle) {
