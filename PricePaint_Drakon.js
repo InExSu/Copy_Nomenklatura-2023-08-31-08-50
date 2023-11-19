@@ -263,7 +263,6 @@ function AMain_Drakon_All() {
         // item 859
         const backGrounds =
         	NS.table_Prices_BackGrounds;
-        debugger;
         // item 750
         NS.range_Prices
         	.setBackgrounds(
@@ -618,13 +617,6 @@ function SKU_In_Price(SKU) {
                 }
                 // item 11200004
                 var needle = _col1120[_ind1120];
-                // item 1122
-                if (needle === '') {
-                    
-                } else {
-                    // item 1125
-                    debugger;
-                }
                 // item 1101
                 if (needle === SKU) {
                     // item 1104
@@ -636,7 +628,7 @@ function SKU_In_Price(SKU) {
                 _ind1120++;
             }
             // item 11170003
-            col ++;
+            col++;
         }
         // item 10990003
         row++;
@@ -1380,11 +1372,15 @@ function price_Cell_Price_Get(SKU) {
     // item 1082
     /** вернуть ячейку цены 
     для артикула или undefined */
+    // item 1126
+    const table = 
+    	table_Copy(
+    		NS.table_SKUs_3D);
     // item 10780001
     let row = 0;
     while (true) {
         // item 10780002
-        if (row < NS.table_Prices.length) {
+        if (row < table.length) {
             
         } else {
             break;
@@ -1393,20 +1389,19 @@ function price_Cell_Price_Get(SKU) {
         let col = 0;
         while (true) {
             // item 10800002
-            if (col < NS.table_Prices[0].length) {
+            if (col < table[0].length) {
                 
             } else {
                 break;
             }
             // item 1083
-            const string =
-            	NS.table_Prices[row][col]
+            const string = table[row][col]
             	.toString();
             // item 1084
             if (string.includes(SKU)) {
                 // item 1087
                 return NS.range_Prices
-                	.getRange(row,col);
+                	.getRange(row,col - 9);
             } else {
                 
             }
