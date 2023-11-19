@@ -326,17 +326,14 @@ function AMain_Drakon_TestS() {
             price_Cell_Price
             	.setBackground(
             	'white');
-            // item 1188
-            console.log(
-            	'цвет ячейки белый? ' + 
-            	price_Cell_Price
-            	.getBackground());
             // item 1003
             AMain_Drakon_All();
+            // item 1193
+            let color =
+            	cell_Color_by_Array(
+            	price_Cell_Price);
             // item 1004
-            if (cell_Color_by_Array(
-	price_Cell_Price) ===
-	'yellow') {
+            if (color === 'yellow') {
                 
             } else {
                 // item 1006
@@ -359,7 +356,7 @@ function AMain_Drakon_TestS() {
             // item 1021
             AMain_Drakon_All();
             // item 1189
-            let color =
+            color =
             	cell_Color_by_Array(
             	price_Cell_Price);
             // item 1022
@@ -385,10 +382,12 @@ function AMain_Drakon_TestS() {
             	'white');
             // item 1028
             AMain_Drakon_All();
+            // item 1194
+            color =
+            	cell_Color_by_Array(
+            	price_Cell_Price);
             // item 1029
-            if (cell_Color_by_Array(
-	price_Cell_Price) ===
-	'white') {
+            if (color === 'white') {
                 
             } else {
                 // item 1030
@@ -410,10 +409,12 @@ function AMain_Drakon_TestS() {
             	'yellow');
             // item 1035
             AMain_Drakon_All();
+            // item 1195
+            color =
+            	cell_Color_by_Array(
+            	price_Cell_Price);
             // item 1036
-            if (cell_Color_by_Array(
-	price_Cell_Price) ===
-	'yellow') {
+            if (color === 'yellow') {
                 
             } else {
                 // item 1037
