@@ -449,6 +449,54 @@ function AMain_Drakon_TestS() {
     	price_Cell_Price));
 }
 
+function AMain_Tests_Simple() {
+    // item 1230
+    const spread = SpreadsheetApp.getActive();
+    const sheet_Price = spread.getSheetByName('Прайс без НДС');
+    const sheet_History = spread.getSheetByName(
+    	'Прайс без НДС Артикулы история');
+    // item 1231
+    // запомнить цвет и дату
+    
+    
+    let cell_History_Date = sheet_History.getRange('B2');
+    let cell_Price = sheet_Price.getRange('D8');
+    
+    let date_Origin = cell_History_Date.getValue();
+    let color_Origin = cell_Price.getBackground();
+    // item 1223
+    // Дату поставить новую
+    
+    let date = new Date().toISOString().slice(0, 10);
+    
+    console.log('date: ' + date);
+    
+    cell_History_Date.setValue(date);
+    // item 1224
+    // цвет цене белый
+    
+    cell.setBackground('white');
+    // item 1228
+    AMain_Drakon_All();
+    // item 1229
+    // цвет ячейки узнать
+    
+    let color_New = cell_Price.getBackground();
+    // item 1225
+    if (color_New === 'yellow') {
+        
+    } else {
+        // item 1233
+        console.log(
+        	'Ожидался yellow, пришёл: ' + color_New);
+    }
+    // item 1232
+    // вернуть цвет и дату
+    
+    cell_History_Date.setValue(date_Origin);
+    cell_Price.getBackground(color_Origin);
+}
+
 function AOnEdit_Check(event) {
     // item 788
     const cell = event.range;
