@@ -506,7 +506,7 @@ function AMain_Tests_Simple() {
     
     date = new Date(
     		new Date().getTime() - 
-    		31 * 24 * 60 * 60 * 1000);
+    		31 * 24 * 60 * 60 * 1000)
     		.toISOString().slice(0, 10);
     
     console.log('Тест 2 date: ' + date);
