@@ -1461,7 +1461,7 @@ function filter_Max_Date_Test() {
       ];
     // item 1347
     var filteredData = 
-    	filterMaxDate(inputData, 0,1);
+    	filter_Max_Date(inputData, 0,1);
     // item 1348
     var wanted = [
         ['2022-01-02', 'Data 1'],
