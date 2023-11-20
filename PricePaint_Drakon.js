@@ -458,17 +458,17 @@ function AMain_Tests_Simple() {
     const sheet_History = spread.getSheetByName(
     	'Прайс без НДС Артикулы история');
     // item 1243
-    let cell_History_Date = sheet_History.getRange('B2');
-    let cell_Price = sheet_Price.getRange('D8');
+    var cell_History_Date = sheet_History.getRange('B2');
+    var cell_Price = sheet_Price.getRange('D8');
     // item 1231
     // запомнить цвет и дату
     
-    let date_Origin = cell_History_Date.getValue();
-    let color_Origin = cell_Price.getBackground();
+    var date_Origin = cell_History_Date.getValue();
+    var color_Origin = cell_Price.getBackground();
     // item 1223
     // Дату поставить новую
     
-    let date = new Date().toISOString().slice(0, 10);
+    var date = new Date().toISOString().slice(0, 10);
     
     // console.log('date: ' + date);
     
@@ -482,7 +482,7 @@ function AMain_Tests_Simple() {
     // item 1229
     // цвет ячейки узнать
     
-    let color_New = cell_Price.getBackground();
+    var color_New = cell_Price.getBackground();
     // item 1225
     if (color_New === '#ffff00') {
         
