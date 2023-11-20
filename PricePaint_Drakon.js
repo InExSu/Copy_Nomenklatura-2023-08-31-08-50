@@ -2173,61 +2173,38 @@ function table_Rows_Filter(table, regex, column_Number) {
     // искать значения вернуть строки
     // item 608
     return table.filter(
-    	row => 
-    	regex.test(
-    		row[column_Number])); 
+        row =>
+          regex.test(
+            row[column_Number]));
 }
 
 function table_Rows_Filter_Test() {
     // item 614
-      var testCases = [
-        {
-          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          regex: 'red',
-          column_Number: 1,
-          expected: [['apple', 'red', 5], ['cherry', 'red', 8]]
-        },
-        {
-          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          needles: 'cher',
-          column_Number: 1,
-          expected: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8]]
-        },
-        {
-          table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          needles: 'blue',
-          column_Number: 1,
-          expected: []
-        }
-      ];
-    // item 6150001
-    var i = 0;
-    while (true) {
-        // item 6150002
-        if (i < testCases.length) {
-            
-        } else {
-            break;
-        }
-        // item 617
-        var testCase = testCases[i];
-        
-        var result = 
-        	table_Rows_Filter(
-        		testCase.table, 
-        		testCase.regex, 
-        		testCase.column_Number);
-        // item 618
-        assert(
-              arrays_Equal(result, testCase.expected),
-              `Тест ${i + 1} не пройден. Получено: 
-        ${JSON.stringify(result)}, 
-        Ожидалось: 
-        ${JSON.stringify(testCase.expected)}`
-            );
-        // item 6150003
-        i++;
-    }
+      var table = 
+    	[['apple', 'red', 5], 
+    	['banana', 'yellow', 3], 
+    	['cherry', 'red', 8], 
+    	['orange', 'orange', 4]];
+    
+      var regex = /red/;
+      var column_Number = 1;
+    
+      var expected = 
+    	[['apple', 'red', 5], 
+    	['cherry', 'red', 8]];
+    // item 617
+      var result =
+        table_Rows_Filter(
+          table,
+          regex,
+          column_Number);
+    // item 618
+      assert(
+        arrays_Equal(result, expected),
+        `table_Rows_Filter_Test не пройден. Получено: 
+            ${JSON.stringify(result)}, 
+            Ожидалось: 
+            ${JSON.stringify(expected)}`
 }
 
 function time_Measure() {
