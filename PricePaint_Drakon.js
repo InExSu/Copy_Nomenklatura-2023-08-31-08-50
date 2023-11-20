@@ -172,12 +172,21 @@ function AMain_Drakon_All() {
 	NS.table_SKUs_History)) {
             
         } else {
-            // item 863
-            // Удалить строки с 3 по последнюю
-             NS.sheet_SKUs_History
-            	.deleteRows(3, 
-            		NS.sheet_SKUs_History
-            		.getLastRow() - 2);
+            // item 1278
+            const row_Last = 
+            	NS.sheet_SKUs_History
+            	.getLastRow();
+            // item 1275
+            if (row_Last > 5) {
+                // item 863
+                // Удалить строки с 3 по последнюю
+                 NS.sheet_SKUs_History
+                	.deleteRows(3, 
+                		NS.sheet_SKUs_History
+                		.getLastRow() - 2);
+            } else {
+                
+            }
             // item 803
             const a2 = 
             	NS.table_SKUs_History;
