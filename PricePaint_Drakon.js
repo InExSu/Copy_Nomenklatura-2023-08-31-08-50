@@ -498,6 +498,45 @@ function AMain_Tests_Simple() {
     
     cell_History_Date.setValue(date_Origin);
     cell_Price.setBackground(color_Origin);
+    // item 1263
+    cell_History_Date = sheet_History.getRange('A276');
+    cell_Price = sheet_Price.getRange('H116');
+    // item 1270
+    // запомнить цвет и дату
+    
+    date_Origin = cell_History_Date.getValue();
+    color_Origin = cell_Price.getBackground();
+    // item 1274
+    // Дату поставить новую
+    
+    var date = new Date().toISOString().slice(0, 10);
+    
+    // console.log('date: ' + date);
+    
+    cell_History_Date.setValue(date);
+    // item 1272
+    // цвет цене
+    
+    cell_Price.setBackground('white');
+    // item 1267
+    AMain_Drakon_All();
+    // item 1268
+    // цвет ячейки узнать
+    
+    color_New = cell_Price.getBackground();
+    // item 1264
+    if (color_New === '#ffff00') {
+        
+    } else {
+        // item 1269
+        console.log('Тест 4. ' + 
+        	'Ожидался #ffff00, пришёл: ' + color_New);
+    }
+    // item 1273
+    // вернуть цвет и дату
+    
+    cell_History_Date.setValue(date_Origin);
+    cell_Price.setBackground(color_Origin);
     // item 1244
     // запомнить цвет и дату
     
