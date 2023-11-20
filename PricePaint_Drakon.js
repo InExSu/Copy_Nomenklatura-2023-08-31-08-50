@@ -2204,7 +2204,7 @@ function table_Rows_Filter_Test() {
         `table_Rows_Filter_Test не пройден. Получено: 
             ${JSON.stringify(result)}, 
             Ожидалось: 
-            ${JSON.stringify(expected)}`
+            ${JSON.stringify(expected)}`;
 }
 
 function time_Measure() {
