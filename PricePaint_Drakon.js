@@ -2107,6 +2107,7 @@ function table_Find_Test() {
     }
 }
 
+function table_History_MakeUp
 function table_History_MakeUp(table) {
     // item 1358
     return filter_Max_Date(
