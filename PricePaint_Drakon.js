@@ -2108,7 +2108,7 @@ function table_Find_Test() {
 }
 
 function table_History_MakeUp_Test() {
-    const mySKUs_History = [
+    const table = [
         ['2023-11-14', '102-132-0002'],
         ['2023-11-14', ''],
         ['2023-11-14', '102-131-0005'],
