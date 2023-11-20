@@ -457,12 +457,11 @@ function AMain_Tests_Simple() {
     const sheet_Price = spread.getSheetByName('Прайс без НДС');
     const sheet_History = spread.getSheetByName(
     	'Прайс без НДС Артикулы история');
-    // item 1231
-    // запомнить цвет и дату
-    
-    
+    // item 1243
     let cell_History_Date = sheet_History.getRange('B2');
     let cell_Price = sheet_Price.getRange('D8');
+    // item 1231
+    // запомнить цвет и дату
     
     let date_Origin = cell_History_Date.getValue();
     let color_Origin = cell_Price.getBackground();
@@ -471,11 +470,11 @@ function AMain_Tests_Simple() {
     
     let date = new Date().toISOString().slice(0, 10);
     
-    console.log('date: ' + date);
+    // console.log('date: ' + date);
     
     cell_History_Date.setValue(date);
     // item 1224
-    // цвет цене белый
+    // цвет цене
     
     cell_Price.setBackground('white');
     // item 1228
@@ -489,10 +488,49 @@ function AMain_Tests_Simple() {
         
     } else {
         // item 1233
-        console.log(
+        console.log('Тест 1. ' + 
         	'Ожидался #ffff00, пришёл: ' + color_New);
     }
     // item 1232
+    // вернуть цвет и дату
+    
+    cell_History_Date.setValue(date_Origin);
+    cell_Price.setBackground(color_Origin);
+    // item 1244
+    // запомнить цвет и дату
+    
+    date_Origin = cell_History_Date.getValue();
+    color_Origin = cell_Price.getBackground();
+    // item 1245
+    // Дату поставить старую
+    
+    date = new Date(
+    		new Date().getTime() - 
+    		31 * 24 * 60 * 60 * 1000);
+    		.toISOString().slice(0, 10);
+    
+    console.log('Тест 2 date: ' + date);
+    
+    cell_History_Date.setValue(date);
+    // item 1246
+    // цвет цене
+    
+    cell_Price.setBackground('yellow');
+    // item 1240
+    AMain_Drakon_All();
+    // item 1241
+    // цвет ячейки узнать
+    
+    let color_New = cell_Price.getBackground();
+    // item 1237
+    if (color_New === '#ffffff') {
+        
+    } else {
+        // item 1242
+        console.log('Тест 2. ' + 
+        	'Ожидался #ffffff, пришёл: ' + color_New);
+    }
+    // item 1247
     // вернуть цвет и дату
     
     cell_History_Date.setValue(date_Origin);
