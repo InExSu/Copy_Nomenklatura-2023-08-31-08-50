@@ -3,7 +3,9 @@
 
 function AATests_RUN() {
     // item 501
-    AMain_Tests_Simple();
+    SKU_History_Row_Test();
+    
+    // AMain_Tests_Simple();
     
     // AMain_Drakon_All();
     
@@ -694,8 +696,10 @@ function SKU_History_Row_Test() {
     
     NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
     NS.table_SKUs_History = NS.range_SKUs_History.getValues();
+    // item 1259
+    const SKU = '102-011-0005';
     // item 811
-    let result = SKU_History_Row('102-132-0002');
+    let result = SKU_History_Row(SKU);
     // item 812
     if (result > 0) {
         
@@ -703,7 +707,7 @@ function SKU_History_Row_Test() {
         // item 815
         Logger.log(
         	'Ошибка в SKU_History_Row_Test' +
-        	'Артикул не найден');
+        	SKU + ' НЕ найден');
     }
     // item 816
     result = SKU_History_Row('');
