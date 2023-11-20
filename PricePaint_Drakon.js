@@ -328,9 +328,13 @@ function AMain_Drakon_TestS() {
             // item 1003
             AMain_Drakon_All();
             // item 1193
-            let color =
+            /** let color =
             	cell_Color_by_Array(
-            	price_Cell_Price);
+            	price_Cell_Price); */
+            
+            let color =
+            	price_Cell_Price
+            	.getBackground();
             // item 1004
             if (color === 'yellow') {
                 
