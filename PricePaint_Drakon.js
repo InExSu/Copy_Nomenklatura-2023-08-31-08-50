@@ -509,7 +509,7 @@ function AMain_Tests_Simple() {
     // item 1274
     // Дату поставить новую
     
-    var date = new Date().toISOString().slice(0, 10);
+    date = new Date().toISOString().slice(0, 10);
     
     // console.log('date: ' + date);
     
