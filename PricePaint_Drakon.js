@@ -3,9 +3,7 @@
 
 function AATests_RUN() {
     // item 501
-    filter_Max_Date_Test();
-    
-    // AMain_Tests_Simple();
+    AMain_Tests_Simple();
     
     // AMain_Drakon_All();
     
@@ -23,7 +21,9 @@ function AATests_RUN() {
     table_2_Map_Test()
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
-    table_Rows_Filter_Test(); */
+    table_Rows_Filter_Test(); 
+    filter_Max_Date_Test();
+    */
     // item 169
     // Тесты функций данных
     
