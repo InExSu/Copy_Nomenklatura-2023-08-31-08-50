@@ -2,6 +2,12 @@
 
 
 function AATests_RUN() {
+    // item 501
+    AMain_Tests_Simple();
+    
+    // AMain_Drakon_All();
+    
+    //AMain_Drakon_TestS();
     // item 192
     // Тесты чистых функций
     /**
@@ -14,10 +20,6 @@ function AATests_RUN() {
     table_Copy_Test();
     table_Row_by_Column_Value_Test();
     table_Rows_Filter_Test(); */
-    // item 501
-    // AMain_Drakon_All();
-    
-    AMain_Drakon_TestS();
     // item 169
     // Тесты функций данных
     
@@ -475,7 +477,7 @@ function AMain_Tests_Simple() {
     // item 1224
     // цвет цене белый
     
-    cell.setBackground('white');
+    cell_Price.setBackground('white');
     // item 1228
     AMain_Drakon_All();
     // item 1229
