@@ -3,13 +3,13 @@
 
 function AATests_RUN() {
     // item 501
-    SKU_History_Row_Test();
-    
-    // AMain_Tests_Simple();
+    AMain_Tests_Simple();
     
     // AMain_Drakon_All();
     
     //AMain_Drakon_TestS();
+    
+    // SKU_History_Row_Test();
     // item 192
     // Тесты чистых функций
     /**
@@ -536,7 +536,7 @@ function AMain_Tests_Simple() {
     cell_History_Date.setValue(date_Origin);
     cell_Price.setBackground(color_Origin);
     // item 1248
-    cell_History_Date = sheet_History.getRange('B276');
+    cell_History_Date = sheet_History.getRange('A276');
     cell_Price = sheet_Price.getRange('H116');
     // item 1255
     // запомнить цвет и дату
