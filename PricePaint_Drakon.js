@@ -533,6 +533,46 @@ function AMain_Tests_Simple() {
     
     cell_History_Date.setValue(date_Origin);
     cell_Price.setBackground(color_Origin);
+    // item 1248
+    var cell_History_Date = sheet_History.getRange('B276');
+    var cell_Price = sheet_Price.getRange('H116');
+    // item 1255
+    // запомнить цвет и дату
+    
+    date_Origin = cell_History_Date.getValue();
+    color_Origin = cell_Price.getBackground();
+    // item 1256
+    // Дату поставить старую
+    
+    date = new Date('2020-10-13')
+    		.toISOString().slice(0, 10);
+    
+    console.log('Тест 2 date: ' + date);
+    
+    cell_History_Date.setValue(date);
+    // item 1257
+    // цвет цене
+    
+    cell_Price.setBackground('yellow');
+    // item 1252
+    AMain_Drakon_All();
+    // item 1253
+    // цвет ячейки узнать
+    
+    color_New = cell_Price.getBackground();
+    // item 1249
+    if (color_New === '#ffffff') {
+        
+    } else {
+        // item 1254
+        console.log('Тест 2. ' + 
+        	'Ожидался #ffffff, пришёл: ' + color_New);
+    }
+    // item 1258
+    // вернуть цвет и дату
+    
+    cell_History_Date.setValue(date_Origin);
+    cell_Price.setBackground(color_Origin);
 }
 
 function AOnEdit_Check(event) {
