@@ -485,18 +485,18 @@ function AMain_Tests_Simple() {
     
     let color_New = cell_Price.getBackground();
     // item 1225
-    if (color_New === 'yellow') {
+    if (color_New === '#ffff00') {
         
     } else {
         // item 1233
         console.log(
-        	'Ожидался yellow, пришёл: ' + color_New);
+        	'Ожидался #ffff00, пришёл: ' + color_New);
     }
     // item 1232
     // вернуть цвет и дату
     
     cell_History_Date.setValue(date_Origin);
-    cell_Price.getBackground(color_Origin);
+    cell_Price.setBackground(color_Origin);
 }
 
 function AOnEdit_Check(event) {
