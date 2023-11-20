@@ -521,7 +521,7 @@ function AMain_Tests_Simple() {
     // item 1241
     // цвет ячейки узнать
     
-    let color_New = cell_Price.getBackground();
+    color_New = cell_Price.getBackground();
     // item 1237
     if (color_New === '#ffffff') {
         
