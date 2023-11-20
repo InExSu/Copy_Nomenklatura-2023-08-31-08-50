@@ -507,7 +507,7 @@ function AMain_Tests_Simple() {
     date = new Date('2020-10-13')
     		.toISOString().slice(0, 10);
     
-    console.log('Тест 2 date: ' + date);
+    // console.log('Тест 2 date: ' + date);
     
     cell_History_Date.setValue(date);
     // item 1246
@@ -547,7 +547,7 @@ function AMain_Tests_Simple() {
     date = new Date('2020-10-13')
     		.toISOString().slice(0, 10);
     
-    console.log('Тест 2 date: ' + date);
+    console.log('Тест 3 date: ' + date);
     
     cell_History_Date.setValue(date);
     // item 1257
@@ -565,7 +565,7 @@ function AMain_Tests_Simple() {
         
     } else {
         // item 1254
-        console.log('Тест 2. ' + 
+        console.log('Тест 3. ' + 
         	'Ожидался #ffffff, пришёл: ' + color_New);
     }
     // item 1258
