@@ -2167,15 +2167,15 @@ function table_Row_by_Column_Value_Test() {
     }
 }
 
-function table_Rows_Filter(table, needles, column_Number) {
+function table_Rows_Filter(table, regex, column_Number) {
     // item 607
     // В столбце таблицы (массив из диапазона)
     // искать значения вернуть строки
     // item 608
     return table.filter(
     	row => 
-    	needles.includes(
-    		row[column_Number]));
+    	regex.test(
+    		row[column_Number])); 
 }
 
 function table_Rows_Filter_Test() {
@@ -2183,19 +2183,19 @@ function table_Rows_Filter_Test() {
       var testCases = [
         {
           table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          needles: ['red'],
+          regex: 'red',
           column_Number: 1,
           expected: [['apple', 'red', 5], ['cherry', 'red', 8]]
         },
         {
           table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          needles: ['red', 'yellow'],
+          needles: 'cher',
           column_Number: 1,
           expected: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8]]
         },
         {
           table: [['apple', 'red', 5], ['banana', 'yellow', 3], ['cherry', 'red', 8], ['orange', 'orange', 4]],
-          needles: ['blue'],
+          needles: 'blue',
           column_Number: 1,
           expected: []
         }
@@ -2215,7 +2215,7 @@ function table_Rows_Filter_Test() {
         var result = 
         	table_Rows_Filter(
         		testCase.table, 
-        		testCase.needles, 
+        		testCase.regex, 
         		testCase.column_Number);
         // item 618
         assert(
