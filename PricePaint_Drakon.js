@@ -2123,7 +2123,8 @@ function table_History_MakeUp_Test() {
 
     const result = table_History_MakeUp(table);
 
-    if(!arrays_Equal(result, wanted))
+    if (!arrays_Equal(result, wanted)) 
+        throw new 
 }
 function table_History_MakeUp(table) {
     // item 1359
