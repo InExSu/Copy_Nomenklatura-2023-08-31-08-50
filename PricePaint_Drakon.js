@@ -1918,10 +1918,6 @@ function string_Filter_Test() {
     }
 }
 
-function tabel_History_MakeUp(table) {
-    
-}
-
 function table_2_Map(table, column_Key, column_Item) {
     // item 448
     var map = new Map();
@@ -2109,6 +2105,13 @@ function table_Find_Test() {
             	'ОШибка в table_Find_Test');
         }
     }
+}
+
+function table_History_MakeUp(table) {
+    // item 1358
+    return filter_Max_Date(
+    	table_Rows_Filter(
+    		table, NS.SKU_Regex, 1);
 }
 
 function table_Row_Col(table, row, col) {
