@@ -1422,6 +1422,8 @@ function filter_Max_Date(table, column_Date, column_Needle) {
     		table,
     		column_Date,
     		column_Needle);
+    
+    let filtered = [];
     // item 13320001
     let row = 0;
     while (true) {
