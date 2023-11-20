@@ -2123,7 +2123,7 @@ function table_History_MakeUp_Test() {
 
     const result = table_History_MakeUp(table);
 
-    assert(result, wa)
+    assert(result,, wanted);
 }
 function table_History_MakeUp(table) {
     // item 1359
