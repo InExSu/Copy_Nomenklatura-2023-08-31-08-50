@@ -2110,7 +2110,7 @@ function table_Find_Test() {
 }
 
 function table_History_MakeUp_Test() {
-
+    
 }
 function table_History_MakeUp(table) {
     // item 1358
