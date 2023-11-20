@@ -504,9 +504,7 @@ function AMain_Tests_Simple() {
     // item 1245
     // Дату поставить старую
     
-    date = new Date(
-    		new Date().getTime() - 
-    		31 * 24 * 60 * 60 * 1000)
+    date = new Date('2020-10-13')
     		.toISOString().slice(0, 10);
     
     console.log('Тест 2 date: ' + date);
