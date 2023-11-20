@@ -458,7 +458,7 @@ function AMain_Tests_Simple() {
     const sheet_History = spread.getSheetByName(
     	'Прайс без НДС Артикулы история');
     // item 1243
-    var cell_History_Date = sheet_History.getRange('B2');
+    var cell_History_Date = sheet_History.getRange('A2');
     var cell_Price = sheet_Price.getRange('D8');
     // item 1231
     // запомнить цвет и дату
