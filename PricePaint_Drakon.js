@@ -2116,7 +2116,9 @@ function table_History_MakeUp(table) {
     		table, NS.SKU_Regex, 1),
     		0, 1);
     
-    return result.unshift(table[0]);
+    result.unshift(table[0]);
+    
+    return result;
 }
 
 function table_History_MakeUp_Test() {
