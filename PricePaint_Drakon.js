@@ -2111,7 +2111,7 @@ function table_History_MakeUp(table) {
     // item 1358
     return filter_Max_Date(
     	table_Rows_Filter(
-    		table, NS.SKU_Regex, 1);
+    		table, NS.SKU_Regex, 1));
 }
 
 function table_Row_Col(table, row, col) {
