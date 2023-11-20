@@ -337,7 +337,9 @@ function AMain_Drakon_TestS() {
             	.getBackground();
             // item 1004
             if (color === 'yellow') {
-                
+                // item 1208
+                console.log(
+                	'Тест 1 ОК');
             } else {
                 // item 1006
                 state = state + '\n' + 
