@@ -191,7 +191,8 @@ function AMain_Drakon_All() {
             }
             // item 803
             const a2 = 
-            	NS.table_SKUs_History;
+            	table_History_MakeUp(
+            		NS.table_SKUs_History);
             // item 781
             NS.sheet_SKUs_History
             	.getRange('A1')
