@@ -1434,12 +1434,12 @@ function filter_Max_Date(table, column_Date, column_Needle) {
             break;
         }
         // item 1335
-        var date = row[column_Date];
-        var needle = row[column_Needle];
+        var date = table[row][column_Date];
+        var needle = table[row][column_Needle];
         // item 1336
         if (date === dates_Max[needle]) {
             // item 1339
-            filtered.push(row);
+            filtered.push(table[row]);
         } else {
             
         }
@@ -2107,34 +2107,46 @@ function table_Find_Test() {
     }
 }
 
-function table_History_MakeUp_Test() {
-    const table = [
-        ['2023-11-14', '102-132-0002'],
-        ['2023-11-14', ''],
-        ['2023-11-14', '102-131-0005'],
-        ['2023-11-13', '102-132-0002'],
-        ['2023-11-13', '102-131-0005']
-    ];
-
-    const wanted = [
-        ['2023-11-14', '102-132-0002'],
-        ['2023-11-14', '102-131-0005']
-    ];
-
-    const result = table_History_MakeUp(table);
-
-    if (!arrays_Equal(result, wanted))
-        throw new Error();
-}
 function table_History_MakeUp(table) {
     // item 1359
     // удалить не артикулы и старые даты
     // item 1358
     let result = filter_Max_Date(
     	table_Rows_Filter(
-    		table, NS.SKU_Regex, 1));
+    		table, NS.SKU_Regex, 1),
+    		0, 1);
     
     return result.unshift(table[0]);
+}
+
+function table_History_MakeUp_Test() {
+    // item 1365
+      const table = [
+        ['Дата', 'Артикул'],
+        ['2023-11-14', '102-132-0002'],
+        ['2023-11-14', ''],
+        ['2023-11-14', '102-131-0005'],
+        ['2023-11-13', '102-132-0002'],
+        ['2023-11-13', '102-131-0005']
+      ];
+    
+      const wanted = [
+        ['Дата', 'Артикул'],
+        ['2023-11-14', '102-132-0002'],
+        ['2023-11-14', '102-131-0005']
+      ];
+    
+      NS.SKU_Regex = /\d{3}-\d{3}-\d{4}/;
+    // item 1369
+    const result = table_History_MakeUp(
+    		table);
+    // item 1366
+    if (arrays_Equal(result, wanted)) {
+        
+    } else {
+        // item 1370
+        throw new Error();
+    }
 }
 
 function table_Row_Col(table, row, col) {
