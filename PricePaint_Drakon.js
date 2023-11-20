@@ -3,7 +3,9 @@
 
 function AATests_RUN() {
     // item 501
-    AMain_Tests_Simple();
+    filter_Max_Date_Test();
+    
+    // AMain_Tests_Simple();
     
     // AMain_Drakon_All();
     
@@ -1362,6 +1364,121 @@ function cell_Row_Col(cell) {
     }
 }
 
+function dates_Max_ForEach(table, column_Date, column_Needles) {
+    // item 1315
+    // Вернуть массив
+    // макс дат для
+    // каждого needle
+    // item 1316
+    var dates_Max = {};
+    // item 13170001
+    var row = 0;
+    while (true) {
+        // item 13170002
+        if (row < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 1319
+        var date = table[row][column_Date];
+        var needle = table[row][column_Needles];
+        // item 1320
+        if (dates_Max.hasOwnProperty(needle)) {
+            // item 1326
+            var maxDate = dates_Max[needle];
+            // item 1329
+            // Если статья уже существует в объекте maxDates,
+            // сравните текущую дату с сохраненной максимальной датой
+            // и при необходимости обновите максимальную дату
+            // item 1323
+            if (date > maxDate) {
+                // item 1327
+                dates_Max[needle] = date;
+            } else {
+                
+            }
+        } else {
+            // item 1328
+            dates_Max[needle] = date;
+        }
+        // item 13170003
+        row++;
+    }
+    // item 1330
+    return dates_Max;
+}
+
+function filter_Max_Date(table, column_Date, column_Needle) {
+    // item 1334
+    // вернуть массив строк
+    // с макс датами
+    // item 1331
+    // получить массив
+    // дата_Макс Артикул
+    // item 1309
+    const dates_Max = 
+    	dates_Max_ForEach(
+    		table,
+    		column_Date,
+    		column_Needle);
+    // item 13320001
+    row = 0;
+    while (true) {
+        // item 13320002
+        if (row < table.length) {
+            
+        } else {
+            break;
+        }
+        // item 1335
+        var date = row[column_Date];
+        var needle = row[column_Needle];
+        // item 1336
+        if (date === dates_Max[needle]) {
+            // item 1339
+            filtered.push(row);
+        } else {
+            
+        }
+        // item 13320003
+        row++;
+    }
+    // item 1340
+    return filtered;
+}
+
+function filter_Max_Date_Test() {
+    // item 1346
+      var inputData = [
+        ['2022-01-01', 'Data 1'],
+        ['2022-01-02', 'Data 1'],
+        ['2022-01-01', 'Data 2'],
+        ['2022-01-03', 'Data 2'],
+        ['2022-01-03', 'Data 2']
+      ];
+    // item 1347
+    var filteredData = 
+    	filterMaxDate(inputData, 0,1);
+    // item 1348
+    var wanted = [
+        ['2022-01-02', 'Data 1'],
+        ['2022-01-03', 'Data 2']
+      ];
+      
+    var comparision =
+        JSON.stringify(filteredData ===
+          JSON.stringify(wanted));
+    // item 1349
+    if (comparision) {
+        
+    } else {
+        // item 1352
+        console.log(
+        	'filterMaxDate_Test ошибка');
+    }
+}
+
 function isDate(string) {
     // item 1132
     const date = new Date(
@@ -1797,6 +1914,10 @@ function string_Filter_Test() {
         Logger.log(
         	'Ошибка в string_Filter_Test');
     }
+}
+
+function tabel_History_MakeUp(table) {
+    
 }
 
 function table_2_Map(table, column_Key, column_Item) {
