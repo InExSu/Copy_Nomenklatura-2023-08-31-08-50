@@ -1105,6 +1105,10 @@ function cell_Color_by_Array(cell) {
             // item 1156
             return table[row][col];
         } else {
+            // item 1207
+            const table_Row = table[row];
+            
+            console.log(table_Row);
             // item 1196
             debugger;
             // item 1162
