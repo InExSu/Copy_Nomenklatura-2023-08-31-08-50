@@ -2123,7 +2123,7 @@ function table_History_MakeUp_Test() {
 
     const result = table_History_MakeUp(table);
 
-    if(!arrays_Equal())
+    if(!arrays_Equal(result, wanted))
 }
 function table_History_MakeUp(table) {
     // item 1359
