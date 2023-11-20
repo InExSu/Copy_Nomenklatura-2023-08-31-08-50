@@ -1423,7 +1423,7 @@ function filter_Max_Date(table, column_Date, column_Needle) {
     		column_Date,
     		column_Needle);
     // item 13320001
-    row = 0;
+    let row = 0;
     while (true) {
         // item 13320002
         if (row < table.length) {
