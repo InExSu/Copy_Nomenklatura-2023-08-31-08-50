@@ -2118,9 +2118,10 @@ function table_History_MakeUp_Test() {
 
     const wanted = [
         ['2023-11-14', '102-132-0002'],
-        ['2023-11-14', '102-131-0005'],
+        ['2023-11-14', '102-131-0005']
     ];
 
+    
 }
 function table_History_MakeUp(table) {
     // item 1359
