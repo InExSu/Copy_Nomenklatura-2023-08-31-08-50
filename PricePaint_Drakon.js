@@ -459,10 +459,10 @@ function AMain_Tests_Simple() {
     	.slice(0, 10);
     // item 1388
     AMain_Tests_Simple_Action(
-    	'#ffffff'
-    	'#ffff00'
-    	cell_History_Date
-    	cell_Price
+    	'#ffffff',
+    	'#ffff00',
+    	cell_History_Date,
+    	cell_Price,
     	date);
     // item 1263
     cell_History_Date = sheet_History.getRange('A276');
