@@ -480,7 +480,7 @@ function AMain_Tests_Simple() {
     	'#ffffff',
     	cell_History_Date,
     	cell_Price,
-    	date);
+    	'2023-10-10');
 }
 
 function AMain_Tests_Simple_Action(color_Set, color_Wanted, cell_History_Date, cell_Price, date) {
