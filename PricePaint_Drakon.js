@@ -470,8 +470,8 @@ function AMain_Tests_Simple() {
     // item 1270
     // запомнить цвет и дату
     
-    date_Origin = cell_History_Date.getValue();
-    color_Origin = cell_Price.getBackground();
+    var date_Origin = cell_History_Date.getValue();
+    var color_Origin = cell_Price.getBackground();
     // item 1274
     // Дату поставить новую
     
