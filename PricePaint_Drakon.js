@@ -451,8 +451,8 @@ function AMain_Tests_Simple() {
     const sheet_History = spread.getSheetByName(
     	'Прайс без НДС Артикулы история');
     // item 1243
-    var cell_History_Date = sheet_History.getRange('A2');
     var cell_Price = sheet_Price.getRange('D8');
+    var cell_History_Date = sheet_History.getRange('A2');
     // item 1389
     var date = new Date()
     	.toISOString()
@@ -467,111 +467,20 @@ function AMain_Tests_Simple() {
     // item 1263
     cell_History_Date = sheet_History.getRange('A276');
     cell_Price = sheet_Price.getRange('H116');
-    // item 1270
-    // запомнить цвет и дату
-    
-    var date_Origin = cell_History_Date.getValue();
-    var color_Origin = cell_Price.getBackground();
-    // item 1274
-    // Дату поставить новую
-    
-    date = new Date().toISOString().slice(0, 10);
-    
-    // console.log('date: ' + date);
-    
-    cell_History_Date.setValue(date);
-    // item 1272
-    // цвет цене
-    
-    cell_Price.setBackground('white');
-    // item 1267
-    AMain_Drakon_All();
-    // item 1268
-    // цвет ячейки узнать
-    
-    var color_New = cell_Price.getBackground();
-    // item 1264
-    if (color_New === '#ffff00') {
-        
-    } else {
-        // item 1269
-        console.log('Тест 4. ' + 
-        	'Ожидался #ffff00, пришёл: ' + color_New);
-    }
-    // item 1273
-    // вернуть цвет и дату
-    
-    cell_History_Date.setValue(date_Origin);
-    cell_Price.setBackground(color_Origin);
-    // item 1244
-    // запомнить цвет и дату
-    
-    date_Origin = cell_History_Date.getValue();
-    color_Origin = cell_Price.getBackground();
-    // item 1245
-    // Дату поставить старую
-    
-    cell_History_Date
-    	.setValue('2020-10-13');
-    // item 1246
-    // цвет цене
-    
-    cell_Price.setBackground('yellow');
-    // item 1240
-    AMain_Drakon_All();
-    // item 1241
-    // цвет ячейки узнать
-    
-    color_New = cell_Price.getBackground();
-    // item 1237
-    if (color_New === '#ffffff') {
-        
-    } else {
-        // item 1242
-        console.log('Тест 2. ' + 
-        	'Ожидался #ffffff, пришёл: ' + color_New);
-    }
-    // item 1247
-    // вернуть цвет и дату
-    
-    cell_History_Date.setValue(date_Origin);
-    cell_Price.setBackground(color_Origin);
-    // item 1248
-    cell_History_Date = sheet_History.getRange('A276');
-    cell_Price = sheet_Price.getRange('H116');
-    // item 1255
-    // запомнить цвет и дату
-    
-    date_Origin = cell_History_Date.getValue();
-    color_Origin = cell_Price.getBackground();
-    // item 1256
-    // Дату поставить старую
-    
-    cell_History_Date
-    	.setValue('2020-10-13');
-    // item 1257
-    // цвет цене
-    
-    cell_Price.setBackground('yellow');
-    // item 1252
-    AMain_Drakon_All();
-    // item 1253
-    // цвет ячейки узнать
-    
-    color_New = cell_Price.getBackground();
-    // item 1249
-    if (color_New === '#ffffff') {
-        
-    } else {
-        // item 1254
-        console.log('Тест 3. ' + 
-        	'Ожидался #ffffff, пришёл: ' + color_New);
-    }
-    // item 1258
-    // вернуть цвет и дату
-    
-    cell_History_Date.setValue(date_Origin);
-    cell_Price.setBackground(color_Origin);
+    // item 1390
+    AMain_Tests_Simple_Action(
+    	'#ffffff',
+    	'#ffff00',
+    	cell_History_Date,
+    	cell_Price,
+    	date);
+    // item 1391
+    AMain_Tests_Simple_Action(
+    	'#ffff00',
+    	'#ffffff',
+    	cell_History_Date,
+    	cell_Price,
+    	date);
 }
 
 function AMain_Tests_Simple_Action(color_Set, color_Wanted, cell_History_Date, cell_Price, date) {
@@ -1283,6 +1192,30 @@ function cell_Color_by_Array(cell) {
             	'table_Row_Col вернул false' + '\n' +
             	'Строка ' + row + ' Столбец: ' + col);
         }
+    }
+}
+
+function cell_History_Date_From_Cell_Price(cell_Price) {
+    // item 1397
+    // для ячейки прайса вернуть 
+    // ячейку даты истории артикула
+    // item 1398
+    const SKUs = 
+    	cell_Price
+    	.offset(0,9)
+    	.getValue()
+    	.toString()
+    	.split(',')
+    	.map(e => e.toString().trim())
+    	.filter(e => /\d{3}-\d{3}-\d{4}/.test(e));
+    // item 1399
+    if (SKUs.length > 0) {
+        // item 1402
+        const SKU = SKUs[0];
+        // item 1403
+        const history = history_Array();
+    } else {
+        
     }
 }
 
