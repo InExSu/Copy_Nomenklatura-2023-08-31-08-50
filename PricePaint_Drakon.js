@@ -1489,11 +1489,12 @@ function log_Toast_SendEmail(subject, message, to = 'mihail.popov@zelinskygroup.
     // item 676
       Logger.log(message);
       SpreadsheetApp.getActive().toast(message);
+    /** Если сюда дошло из onEdit, то будет ошибка
       MailApp.sendEmail({
         to: to,
         subject: subject,
         body: message
-      });
+      }); */
 }
 
 function maps_Equal(map_1, map_2) {
