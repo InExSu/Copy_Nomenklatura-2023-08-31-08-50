@@ -1605,6 +1605,13 @@ function numbers_Strings_Equal_Test() {
 }
 
 function onEdit(event) {
+    // item 1425
+    /** 
+    Так как в коде используются сервисные функции,
+    которые вызывают ошибку доступа, 
+    если код начался из onEdit,
+    нужно вручную прописать в редакторе скриптов 
+    триггер на редактирование таблицы */
     // item 1423
     let sheet_Name =
     	event.range.getSheet().getName();
