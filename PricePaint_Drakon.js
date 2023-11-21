@@ -1616,6 +1616,20 @@ function numbers_Strings_Equal_Test() {
     }
 }
 
+function onEdit(event) {
+    // item 1423
+    let sheet_Name =
+    	event.range.getSheet().getName();
+    // item 1420
+    if (sheet_Name ===
+	'Прайс без НДС') {
+        // item 1424
+        AMain_Drakon_All();
+    } else {
+        
+    }
+}
+
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
