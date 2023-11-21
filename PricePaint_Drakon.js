@@ -1604,7 +1604,7 @@ function numbers_Strings_Equal_Test() {
     }
 }
 
-function onEdit(event) {
+function onEdit_Price_Paint(event) {
     // item 1425
     /** 
     Так как в коде используются сервисные функции,
