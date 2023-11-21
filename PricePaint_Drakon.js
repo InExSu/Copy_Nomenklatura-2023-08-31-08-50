@@ -1394,6 +1394,24 @@ function filter_Max_Date_Test() {
     }
 }
 
+function history_Array() {
+    // item 1410
+    if (NS.history_GetValues === undefined) {
+        // item 1413
+        NS.spread = SpreadsheetApp.getActive();
+        
+        NS.sheet_SKUs_History = NS.spread.getSheetByName('Прайс без НДС Артикулы история');
+        
+        NS.range_SKUs_History = NS.sheet_SKUs_History.getRange('A1:D');
+        
+        NS.history_GetValues= NS.range_SKUs_History.getValues();
+    } else {
+        
+    }
+    // item 1409
+    return NS.history_GetValuesNS;
+}
+
 function isDate(string) {
     // item 1132
     const date = new Date(
