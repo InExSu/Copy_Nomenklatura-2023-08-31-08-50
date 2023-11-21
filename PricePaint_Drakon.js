@@ -33,27 +33,6 @@ function AATests_RUN() {
     cellS_Has_SKU_Test(); */
 }
 
-function AMain_Drakon(cell) {
-    // item 391
-    if (cellS_Has_SKU(
-	cell, 
-	/\d{3}-\d{3}-\d{4}/)) {
-        // item 144
-        ranges_2_NS();
-        // item 23
-        SKUs_History_Update();
-        // item 373
-        NS.date_Paint_Start =   
-        	new Date(
-        		new Date().getTime() - 
-        		30 * 24 * 60 * 60 * 1000);
-        // item 357
-        price_BackGrounds_Paint();
-    } else {
-        
-    }
-}
-
 function AMain_Drakon_All() {
     // item 804
     // чтобы eslint не ругался
@@ -205,6 +184,9 @@ function AMain_Drakon_All() {
         /** console.log(
         	`История обновилась: ' +
         	'${timer()} миллисек`); */
+        // item 859
+        const backGrounds =
+        	NS.table_Prices_BackGrounds;
         // item 7240001
         // проход по массиву
         // артикулов прайса
@@ -257,11 +239,11 @@ function AMain_Drakon_All() {
                         if (date_History >= 
 	NS.date_Paint_Start) {
                             // item 748
-                            NS.table_Prices_BackGrounds[row][col] =
+                            backGrounds[row][col] =
                             	'yellow';
                         } else {
                             // item 749
-                            NS.table_Prices_BackGrounds[row][col] =
+                            backGrounds[row][col] =
                             	'white';
                         }
                     }
@@ -274,13 +256,11 @@ function AMain_Drakon_All() {
             // item 7240003
             row++;
         }
-        // item 859
-        const backGrounds =
-        	NS.table_Prices_BackGrounds;
         // item 750
         NS.range_Prices
         	.setBackgrounds(
-        		backGrounds);
+        	table_History_MakeUp(
+        	backGrounds));
         // item 1190
         SpreadsheetApp.flush();
     } else {
