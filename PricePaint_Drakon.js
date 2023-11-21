@@ -259,8 +259,7 @@ function AMain_Drakon_All() {
         // item 750
         NS.range_Prices
         	.setBackgrounds(
-        	table_History_MakeUp(
-        	backGrounds));
+        		backGrounds);
         // item 1190
         SpreadsheetApp.flush();
     } else {
