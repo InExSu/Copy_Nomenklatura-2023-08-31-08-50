@@ -1616,20 +1616,6 @@ function numbers_Strings_Equal_Test() {
     }
 }
 
-function onEdit(event) {
-    // item 1205
-    let sheet_Name =
-    	event.range.getSheet().getName();
-    // item 1202
-    if (sheet_Name ===
-	'Прайс без НДС') {
-        // item 1206
-        AMain_Drakon_All();
-    } else {
-        
-    }
-}
-
 function price_BackGrounds_Paint() {
     // item 384
     const price_BackGrounds_Old = 
@@ -1778,16 +1764,14 @@ undefined) {
     		new Date().getTime() - 
     		30 * 24 * 60 * 60 * 1000);
     
-    Logger.log(NS.date_Paint_Start
-    	.toISOString()
-    	.slice(0, 10));
-    
     NS.SKU_Regex = /\d{3}-\d{3}-\d{4}/;
     
     NS.spread = SpreadsheetApp.getActive();
+    NS.spread_History = SpreadsheetApp.openById(
+    	'1P3SgV_8n8uRGtbbcDtuQFeSdBkTW5JFYaDXzqzSRlDQ');
     
     NS.sheet_Price_NDS_NO = NS.spread.getSheetByName('Прайс без НДС');
-    NS.sheet_SKUs_History = NS.spread.getSheetByName('Прайс без НДС Артикулы история');
+    NS.sheet_SKUs_History = NS.spread_History.getSheetByName('Прайс без НДС Артикулы история');
     
     NS.range_Prices = NS.sheet_Price_NDS_NO.getRange('C1:H');
     NS.table_Prices = NS.range_Prices.getValues();
