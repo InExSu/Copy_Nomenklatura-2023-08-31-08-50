@@ -453,42 +453,17 @@ function AMain_Tests_Simple() {
     // item 1243
     var cell_History_Date = sheet_History.getRange('A2');
     var cell_Price = sheet_Price.getRange('D8');
-    // item 1231
-    // запомнить цвет и дату
-    
-    var date_Origin = cell_History_Date.getValue();
-    var color_Origin = cell_Price.getBackground();
-    // item 1223
-    // Дату поставить новую
-    
-    var date = new Date().toISOString().slice(0, 10);
-    
-    // console.log('date: ' + date);
-    
-    cell_History_Date.setValue(date);
-    // item 1224
-    // цвет цене
-    
-    cell_Price.setBackground('white');
-    // item 1228
-    AMain_Drakon_All();
-    // item 1229
-    // цвет ячейки узнать
-    
-    var color_New = cell_Price.getBackground();
-    // item 1225
-    if (color_New === '#ffff00') {
-        
-    } else {
-        // item 1233
-        console.log('Тест 1. ' + 
-        	'Ожидался #ffff00, пришёл: ' + color_New);
-    }
-    // item 1232
-    // вернуть цвет и дату
-    
-    cell_History_Date.setValue(date_Origin);
-    cell_Price.setBackground(color_Origin);
+    // item 1389
+    var date = new Date()
+    	.toISOString()
+    	.slice(0, 10);
+    // item 1388
+    AMain_Tests_Simple_Action(
+    	'#ffffff'
+    	'#ffff00'
+    	cell_History_Date
+    	cell_Price
+    	date);
     // item 1263
     cell_History_Date = sheet_History.getRange('A276');
     cell_Price = sheet_Price.getRange('H116');
@@ -536,12 +511,8 @@ function AMain_Tests_Simple() {
     // item 1245
     // Дату поставить старую
     
-    date = new Date('2020-10-13')
-    		.toISOString().slice(0, 10);
-    
-    // console.log('Тест 2 date: ' + date);
-    
-    cell_History_Date.setValue(date);
+    cell_History_Date
+    	.setValue('2020-10-13');
     // item 1246
     // цвет цене
     
@@ -576,12 +547,8 @@ function AMain_Tests_Simple() {
     // item 1256
     // Дату поставить старую
     
-    date = new Date('2020-10-13')
-    		.toISOString().slice(0, 10);
-    
-    console.log('Тест 3 date: ' + date);
-    
-    cell_History_Date.setValue(date);
+    cell_History_Date
+    	.setValue('2020-10-13');
     // item 1257
     // цвет цене
     
@@ -601,6 +568,39 @@ function AMain_Tests_Simple() {
         	'Ожидался #ffffff, пришёл: ' + color_New);
     }
     // item 1258
+    // вернуть цвет и дату
+    
+    cell_History_Date.setValue(date_Origin);
+    cell_Price.setBackground(color_Origin);
+}
+
+function AMain_Tests_Simple_Action(color_Set, color_Wanted, cell_History_Date, cell_Price, date) {
+    // item 1383
+    // запомнить цвет и дату
+    
+    var date_Origin = cell_History_Date.getValue();
+    var color_Origin = cell_Price.getBackground();
+    // item 1377
+    cell_History_Date.setValue(date);
+    // item 1378
+    // цвет цене
+    
+    cell_Price.setBackground(color_Set);
+    // item 1381
+    AMain_Drakon_All();
+    // item 1382
+    // цвет ячейки узнать
+    
+    var color_New = cell_Price.getBackground();
+    // item 1379
+    if (color_New === color_Wanted) {
+        
+    } else {
+        // item 1385
+        console.log('Ожидался ' + color_Wanted, ' +
+        	    'Пришёл: ' + color_New);
+    }
+    // item 1384
     // вернуть цвет и дату
     
     cell_History_Date.setValue(date_Origin);
