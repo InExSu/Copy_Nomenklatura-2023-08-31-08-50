@@ -597,8 +597,8 @@ function AMain_Tests_Simple_Action(color_Set, color_Wanted, cell_History_Date, c
         
     } else {
         // item 1385
-        console.log('Ожидался ' + color_Wanted, ' +
-        	    'Пришёл: ' + color_New);
+        console.log('Ожидался ' + color_Wanted  + '\n' + 
+        	    'Пришёл:  ' + color_New);
     }
     // item 1384
     // вернуть цвет и дату
